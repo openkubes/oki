@@ -186,25 +186,24 @@ for (const scene of scenes) {
 const epilogueAssets = [
   {
     filename: "earth-island.png",
-    source: "art/keyframes/OKI-EPILOGUE-EARTH-001-v1-C01.png",
+    expectedSha256: "787c2a8e90ea750033323ab11abd53821a28b672591b09711ec133ab9ce79e46",
   },
   {
     filename: "solar-family.png",
-    source: "art/keyframes/OKI-EPILOGUE-SOLAR-FAMILY-001-v1-C01.png",
+    expectedSha256: "523d1c826418108cd1ecfba636a879eac7395fc12fd27008dec3e308c75c82d2",
   },
 ];
 
 for (const asset of epilogueAssets) {
-  const expected = await sha256(resolve(okiRoot, asset.source));
   assert.equal(
     await sha256(resolve(projectRoot, "public/epilogue", asset.filename)),
-    expected,
-    `Public-Epilogbild ${asset.filename} stimmt nicht mit dem Quellbild überein.`,
+    asset.expectedSha256,
+    `Public-Epilogbild ${asset.filename} stimmt nicht mit dem Provenance-Hash überein.`,
   );
   assert.equal(
     await sha256(resolve(projectRoot, "standalone/epilogue", asset.filename)),
-    expected,
-    `Offline-Epilogbild ${asset.filename} stimmt nicht mit dem Quellbild überein.`,
+    asset.expectedSha256,
+    `Offline-Epilogbild ${asset.filename} stimmt nicht mit dem Provenance-Hash überein.`,
   );
 }
 
