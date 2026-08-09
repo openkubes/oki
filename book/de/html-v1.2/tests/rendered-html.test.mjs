@@ -90,6 +90,42 @@ test("renders the Japanese review edition at /ja", async () => {
   assert.match(html, /<main[^>]+lang="ja"[^>]+dir="ltr"/);
 });
 
+test("renders the Arabic review edition at /ar with RTL content", async () => {
+  const response = await render("/ar");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /أوكي والجزر الكثيرة/);
+  assert.match(html, /معاينة HTML العربية/);
+  assert.match(html, /دليل الأطفال المصوّر إلى OpenKubes/);
+  assert.match(html, /فتح فهرس الشرائح/);
+  assert.match(html, /<main[^>]+lang="ar"[^>]+dir="rtl"/);
+});
+
+test("renders the French review edition at /fr", async () => {
+  const response = await render("/fr");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Oki et les nombreuses îles/);
+  assert.match(html, /Aperçu HTML en français/);
+  assert.match(html, /Le guide illustré d&#x27;OpenKubes pour les enfants/);
+  assert.match(html, /Ouvrir le sommaire des diapositives/);
+  assert.match(html, /<main[^>]+lang="fr"[^>]+dir="ltr"/);
+});
+
+test("renders the Hindi review edition at /hi", async () => {
+  const response = await render("/hi");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /ओकी और बहुत-से द्वीप/);
+  assert.match(html, /हिन्दी HTML समीक्षा-पूर्वावलोकन/);
+  assert.match(html, /OpenKubes के बारे में बच्चों की चित्रमय मार्गदर्शिका/);
+  assert.match(html, /स्लाइड सूची खोलें/);
+  assert.match(html, /<main[^>]+lang="hi"[^>]+dir="ltr"/);
+});
+
 test("keeps all canonical scene assets in the public build", async () => {
   const manifest = await readFile(
     new URL("../app/story.ts", import.meta.url),
@@ -171,6 +207,39 @@ test("exports a directly openable Japanese standalone presentation", async () =>
   assert.match(html, /オキとたくさんの島々/);
   assert.match(html, /生まれたことと、準備ができたことは違う/);
   assert.match(html, /href="\.\.\/zh\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Arabic standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/ar/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="ar" dir="rtl"/);
+  assert.match(html, /أوكي والجزر الكثيرة/);
+  assert.match(html, /الولادة لا تعني الجاهزية/);
+  assert.match(html, /href="\.\.\/fr\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable French standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/fr/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="fr" dir="ltr"/);
+  assert.match(html, /Oki et les nombreuses îles/);
+  assert.match(html, /Naître ne veut pas dire être prêt/);
+  assert.match(html, /href="\.\.\/hi\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Hindi standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/hi/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="hi" dir="ltr"/);
+  assert.match(html, /ओकी और बहुत-से द्वीप/);
+  assert.match(html, /जन्म लेना तैयार होना नहीं है/);
+  assert.match(html, /href="\.\.\/ar\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
   assert.doesNotMatch(html, /src="\/scenes\//);
 });

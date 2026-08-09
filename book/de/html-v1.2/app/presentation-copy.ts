@@ -3,22 +3,38 @@ import { spanishScenes } from "./story.es.ts";
 import { persianScenes } from "./story.fa.ts";
 import { chineseScenes } from "./story.zh.ts";
 import { japaneseScenes } from "./story.ja.ts";
+import { arabicScenes } from "./story.ar.ts";
+import { frenchScenes } from "./story.fr.ts";
+import { hindiScenes } from "./story.hi.ts";
 import { scenes as germanScenes } from "./story.ts";
 
-export type PresentationLocale = "de" | "en" | "es" | "fa" | "zh" | "ja";
+export type PresentationLocale =
+  | "de"
+  | "en"
+  | "es"
+  | "fa"
+  | "zh"
+  | "ja"
+  | "ar"
+  | "fr"
+  | "hi";
 
 export const languageOptions: Array<{
   locale: PresentationLocale;
   code: string;
   label: string;
   href: string;
+  direction: "ltr" | "rtl";
 }> = [
-  { locale: "de", code: "DE", label: "Deutsch", href: "/" },
-  { locale: "en", code: "EN", label: "English", href: "/en/" },
-  { locale: "es", code: "ES", label: "Español", href: "/es/" },
-  { locale: "fa", code: "فا", label: "فارسی", href: "/fa/" },
-  { locale: "zh", code: "中文", label: "简体中文", href: "/zh/" },
-  { locale: "ja", code: "日本語", label: "日本語", href: "/ja/" },
+  { locale: "de", code: "DE", label: "Deutsch", href: "/", direction: "ltr" },
+  { locale: "en", code: "EN", label: "English", href: "/en/", direction: "ltr" },
+  { locale: "es", code: "ES", label: "Español", href: "/es/", direction: "ltr" },
+  { locale: "fa", code: "فا", label: "فارسی", href: "/fa/", direction: "rtl" },
+  { locale: "zh", code: "中文", label: "简体中文", href: "/zh/", direction: "ltr" },
+  { locale: "ja", code: "日本語", label: "日本語", href: "/ja/", direction: "ltr" },
+  { locale: "ar", code: "ع", label: "العربية", href: "/ar/", direction: "rtl" },
+  { locale: "fr", code: "FR", label: "Français", href: "/fr/", direction: "ltr" },
+  { locale: "hi", code: "हि", label: "हिन्दी", href: "/hi/", direction: "ltr" },
 ];
 
 const creationCredit = {
@@ -326,6 +342,156 @@ export const presentationCopy = {
     fullscreen: "全画面",
     window: "ウィンドウ",
     keyboardHint: "← → 移動 · M 一覧 · F 全画面",
+  },
+  ar: {
+    locale: "ar",
+    direction: "rtl",
+    scenes: arabicScenes,
+    title: "أوكي والجزر الكثيرة",
+    subtitle: "دليل الأطفال المصوّر إلى OpenKubes",
+    edition: "معاينة HTML العربية · v1.0 RC1",
+    coverIntro:
+      "قصة عن الوعود الواضحة، والأدلة الصادقة، والأشخاص الذين يتحملون المسؤولية.",
+    creationCredit,
+    sceneCount: "18 مشهدًا",
+    language: "العربية",
+    languageMenuLabel: "اختر اللغة",
+    sceneLabel: "المشهد",
+    canonicalIllustration: "الرسم الرسمي",
+    quoteEyebrow: "الفكرة الأساسية",
+    quoteTitle: "في العائلة يمكن لكل فرد أن يكون مختلفًا.",
+    quoteBody: "وتبقى العائلة معًا لأن أفرادها يستطيعون الاعتماد بعضهم على بعض.",
+    quoteNote:
+      "ما يربط الجزر ليس أداة بعينها، بل وعودًا يفهمها الجميع معًا.",
+    finaleEyebrow: "ما هو OpenKubes؟",
+    finaleTitle: "طريقة جيدة لبناء جزر موثوقة مرة بعد مرة.",
+    finaleRhythm: "ابنِ. اربط. تحقّق. تعلّم. انمُ.",
+    finaleSmall:
+      "ليس جزيرة واحدة، بل طريقة مشتركة لمنصات كثيرة ومختلفة.",
+    aboutEyebrow: "تابع الاستكشاف",
+    aboutTitle: "تنشأ جزيرة، ثم تنشأ أخرى.",
+    aboutQuestion: "لكن متى لا تكون موجودة فحسب، بل موثوقة حقًا؟",
+    license:
+      "النص والفكرة: OpenKubes Community. الرسوم: CC BY 4.0؛ أسماء OpenKubes/Oki وشعاراتها وعلاماتها التجارية مستثناة.",
+    startLabel: "البداية",
+    quoteLabel: "الفكرة الأساسية",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "تابع الاستكشاف",
+    presentationAria: "أوكي والجزر الكثيرة – عرض HTML",
+    slideAnnouncement: "الشريحة",
+    of: "من",
+    menu: "الفهرس",
+    menuOpen: "فتح فهرس الشرائح",
+    menuClose: "إغلاق فهرس الشرائح",
+    menuTitle: "فهرس الشرائح",
+    menuAria: "أدوات التحكم في العرض",
+    previous: "الشريحة السابقة",
+    next: "الشريحة التالية",
+    fullscreenStart: "بدء وضع ملء الشاشة",
+    fullscreenEnd: "إنهاء وضع ملء الشاشة",
+    fullscreen: "ملء الشاشة",
+    window: "نافذة",
+    keyboardHint: "← → للتنقل · M للفهرس · F لملء الشاشة",
+  },
+  fr: {
+    locale: "fr",
+    direction: "ltr",
+    scenes: frenchScenes,
+    title: "Oki et les nombreuses îles",
+    subtitle: "Le guide illustré d'OpenKubes pour les enfants",
+    edition: "Aperçu HTML en français · v1.0 RC1",
+    coverIntro:
+      "Une histoire de promesses claires, de preuves sincères et de personnes qui prennent leurs responsabilités.",
+    creationCredit,
+    sceneCount: "18 scènes",
+    language: "Français",
+    languageMenuLabel: "Choisir la langue",
+    sceneLabel: "Scène",
+    canonicalIllustration: "Illustration canonique",
+    quoteEyebrow: "L'idée centrale",
+    quoteTitle: "Dans une famille, chacun peut être différent.",
+    quoteBody: "Elle reste unie parce que tous peuvent compter les uns sur les autres.",
+    quoteNote:
+      "Ce ne sont pas des outils précis qui relient les îles, mais des promesses comprises par tous.",
+    finaleEyebrow: "Qu'est-ce qu'OpenKubes ?",
+    finaleTitle: "Une bonne façon de construire des îles fiables, encore et encore.",
+    finaleRhythm: "Construire. Relier. Vérifier. Apprendre. Grandir.",
+    finaleSmall:
+      "Pas une seule île. Une méthode commune pour de nombreuses plateformes différentes.",
+    aboutEyebrow: "Continuer à explorer",
+    aboutTitle: "Une île apparaît. Puis une autre.",
+    aboutQuestion: "Mais quand est-elle vraiment fiable, et pas seulement présente ?",
+    license:
+      "Texte et concept : OpenKubes Community. Illustrations : CC BY 4.0 ; noms, logos et marques OpenKubes/Oki exclus.",
+    startLabel: "Début",
+    quoteLabel: "Idée centrale",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "Continuer à explorer",
+    presentationAria: "Oki et les nombreuses îles – présentation HTML",
+    slideAnnouncement: "Diapositive",
+    of: "sur",
+    menu: "Sommaire",
+    menuOpen: "Ouvrir le sommaire des diapositives",
+    menuClose: "Fermer le sommaire des diapositives",
+    menuTitle: "Sommaire des diapositives",
+    menuAria: "Commandes de la présentation",
+    previous: "Diapositive précédente",
+    next: "Diapositive suivante",
+    fullscreenStart: "Passer en plein écran",
+    fullscreenEnd: "Quitter le plein écran",
+    fullscreen: "Plein écran",
+    window: "Fenêtre",
+    keyboardHint: "← → naviguer · M sommaire · F plein écran",
+  },
+  hi: {
+    locale: "hi",
+    direction: "ltr",
+    scenes: hindiScenes,
+    title: "ओकी और बहुत-से द्वीप",
+    subtitle: "OpenKubes के बारे में बच्चों की चित्रमय मार्गदर्शिका",
+    edition: "हिन्दी HTML समीक्षा-पूर्वावलोकन · v1.0 RC1",
+    coverIntro:
+      "साफ वादों, सच्चे प्रमाणों और ज़िम्मेदारी लेने वाले लोगों की कहानी।",
+    creationCredit,
+    sceneCount: "18 दृश्य",
+    language: "हिन्दी",
+    languageMenuLabel: "भाषा चुनें",
+    sceneLabel: "दृश्य",
+    canonicalIllustration: "आधिकारिक चित्र",
+    quoteEyebrow: "मुख्य विचार",
+    quoteTitle: "परिवार में हर कोई अलग हो सकता है।",
+    quoteBody: "परिवार साथ रहता है क्योंकि सभी एक-दूसरे पर भरोसा कर सकते हैं।",
+    quoteNote:
+      "द्वीपों को कोई एक औज़ार नहीं, बल्कि सबके समझे हुए साझा वादे जोड़ते हैं।",
+    finaleEyebrow: "OpenKubes क्या है?",
+    finaleTitle: "बार-बार भरोसेमंद द्वीप बनाने का एक अच्छा तरीका।",
+    finaleRhythm: "बनाओ। जोड़ो। जाँचो। सीखो। बढ़ो।",
+    finaleSmall:
+      "कोई एक द्वीप नहीं। कई अलग-अलग प्लेटफ़ॉर्म के लिए एक साझा तरीका।",
+    aboutEyebrow: "आगे खोजें",
+    aboutTitle: "एक द्वीप उगता है। फिर एक और।",
+    aboutQuestion: "लेकिन वह कब केवल मौजूद नहीं, बल्कि सचमुच भरोसेमंद होता है?",
+    license:
+      "पाठ और विचार: OpenKubes Community। चित्र: CC BY 4.0; OpenKubes/Oki के नाम, लोगो और ट्रेडमार्क इसमें शामिल नहीं हैं।",
+    startLabel: "शुरुआत",
+    quoteLabel: "मुख्य विचार",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "आगे खोजें",
+    presentationAria: "ओकी और बहुत-से द्वीप – HTML प्रस्तुति",
+    slideAnnouncement: "स्लाइड",
+    of: "में से",
+    menu: "सूची",
+    menuOpen: "स्लाइड सूची खोलें",
+    menuClose: "स्लाइड सूची बंद करें",
+    menuTitle: "स्लाइड सूची",
+    menuAria: "प्रस्तुति नियंत्रण",
+    previous: "पिछली स्लाइड",
+    next: "अगली स्लाइड",
+    fullscreenStart: "पूर्ण स्क्रीन शुरू करें",
+    fullscreenEnd: "पूर्ण स्क्रीन बंद करें",
+    fullscreen: "पूर्ण स्क्रीन",
+    window: "विंडो",
+    keyboardHint: "← → आगे-पीछे · M सूची · F पूर्ण स्क्रीन",
   },
 } as const;
 

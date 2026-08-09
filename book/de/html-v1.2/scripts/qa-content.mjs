@@ -9,6 +9,9 @@ import { spanishScenes } from "../app/story.es.ts";
 import { persianScenes } from "../app/story.fa.ts";
 import { chineseScenes } from "../app/story.zh.ts";
 import { japaneseScenes } from "../app/story.ja.ts";
+import { arabicScenes } from "../app/story.ar.ts";
+import { frenchScenes } from "../app/story.fr.ts";
+import { hindiScenes } from "../app/story.hi.ts";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const okiRoot = resolve(projectRoot, "../../..");
@@ -64,6 +67,24 @@ const editions = [
     scenes: japaneseScenes,
     manuscript: "story/ja/manuscript-v1.0-rc1.md",
     heading: /^## シーン (\d+) - (.+)$/gm,
+  },
+  {
+    label: "AR v1.0 RC1",
+    scenes: arabicScenes,
+    manuscript: "story/ar/manuscript-v1.0-rc1.md",
+    heading: /^## المشهد (\d+) - (.+)$/gm,
+  },
+  {
+    label: "FR v1.0 RC1",
+    scenes: frenchScenes,
+    manuscript: "story/fr/manuscript-v1.0-rc1.md",
+    heading: /^## Scène (\d+) - (.+)$/gm,
+  },
+  {
+    label: "HI v1.0 RC1",
+    scenes: hindiScenes,
+    manuscript: "story/hi/manuscript-v1.0-rc1.md",
+    heading: /^## दृश्य (\d+) - (.+)$/gm,
   },
 ];
 
@@ -161,6 +182,18 @@ const japaneseStandalone = await readFile(
   resolve(projectRoot, "standalone/ja/index.html"),
   "utf8",
 );
+const arabicStandalone = await readFile(
+  resolve(projectRoot, "standalone/ar/index.html"),
+  "utf8",
+);
+const frenchStandalone = await readFile(
+  resolve(projectRoot, "standalone/fr/index.html"),
+  "utf8",
+);
+const hindiStandalone = await readFile(
+  resolve(projectRoot, "standalone/hi/index.html"),
+  "utf8",
+);
 assert.match(standalone, /In einer Familie darf jeder anders sein\./);
 assert.match(standalone, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
 assert.match(standalone, /data-slide="21"/);
@@ -196,7 +229,25 @@ assert.match(japaneseStandalone, /でも、ただそこにあるだけでなく�
 assert.match(japaneseStandalone, /data-slide="21"/);
 assert.match(japaneseStandalone, /<html lang="ja" dir="ltr">/);
 assert.match(japaneseStandalone, /href="\.\.\/zh\/"/);
+assert.match(arabicStandalone, /أوكي والجزر الكثيرة/);
+assert.match(arabicStandalone, /في العائلة يمكن لكل فرد أن يكون مختلفًا\./);
+assert.match(arabicStandalone, /لكن متى لا تكون موجودة فحسب، بل موثوقة حقًا؟/);
+assert.match(arabicStandalone, /data-slide="21"/);
+assert.match(arabicStandalone, /<html lang="ar" dir="rtl">/);
+assert.match(arabicStandalone, /href="\.\.\/fr\/"/);
+assert.match(frenchStandalone, /Oki et les nombreuses îles/);
+assert.match(frenchStandalone, /Dans une famille, chacun peut être différent\./);
+assert.match(frenchStandalone, /Mais quand est-elle vraiment fiable, et pas seulement présente ?/);
+assert.match(frenchStandalone, /data-slide="21"/);
+assert.match(frenchStandalone, /<html lang="fr" dir="ltr">/);
+assert.match(frenchStandalone, /href="\.\.\/hi\/"/);
+assert.match(hindiStandalone, /ओकी और बहुत-से द्वीप/);
+assert.match(hindiStandalone, /परिवार में हर कोई अलग हो सकता है।/);
+assert.match(hindiStandalone, /लेकिन वह कब केवल मौजूद नहीं, बल्कि सचमुच भरोसेमंद होता है\?/);
+assert.match(hindiStandalone, /data-slide="21"/);
+assert.match(hindiStandalone, /<html lang="hi" dir="ltr">/);
+assert.match(hindiStandalone, /href="\.\.\/ar\/"/);
 
 console.log(
-  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA v1.0 RC1, 18 canonical images and all standalone editions agree.",
+  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA/AR/FR/HI v1.0 RC1, 18 canonical images and all standalone editions agree.",
 );

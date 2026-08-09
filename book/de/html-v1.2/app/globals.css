@@ -285,8 +285,13 @@ button {
   unicode-bidi: isolate;
 }
 
-.presentation-shell[lang="fa"] {
+.presentation-shell[lang="fa"],
+.presentation-shell[lang="ar"] {
   font-family: Tahoma, "Noto Sans Arabic", Arial, Helvetica, sans-serif;
+}
+
+.presentation-shell[lang="hi"] {
+  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", Mangal, Arial, sans-serif;
 }
 
 .presentation-shell[lang="zh"] {
@@ -298,7 +303,8 @@ button {
 }
 
 .presentation-shell[lang="zh"] .text-panel h1,
-.presentation-shell[lang="ja"] .text-panel h1 {
+.presentation-shell[lang="ja"] .text-panel h1,
+.presentation-shell[lang="hi"] .text-panel h1 {
   letter-spacing: 0;
   line-height: 1.12;
 }

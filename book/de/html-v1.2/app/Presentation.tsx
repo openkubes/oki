@@ -354,7 +354,7 @@ export function Presentation({ locale = "de" }: { locale?: PresentationLocale })
               key={option.locale}
               href={option.href}
               lang={option.locale}
-              dir={option.locale === "fa" ? "rtl" : "ltr"}
+              dir={option.direction}
               aria-current={option.locale === locale ? "page" : undefined}
               className={option.locale === locale ? "active" : undefined}
             >

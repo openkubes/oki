@@ -41,3 +41,9 @@ at `/zh/` and `/ja/`. Character names are introduced with localized phonetic
 forms while canonical Latin names remain visible on first introduction.
 Japanese readings are added selectively for difficult terms. Native-language
 approval and localized illustration lettering remain open.
+
+Arabic, French and Hindi HTML v1.0 RC1 review candidates are available at
+`/ar/`, `/fr/` and `/hi/`. Arabic uses a right-to-left layout while technical
+identifiers stay isolated left-to-right. Hindi uses Devanagari and child-friendly
+modern Standard Hindi. Native-language approval and localized illustration
+lettering remain open for all three editions.
