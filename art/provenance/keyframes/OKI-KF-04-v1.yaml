@@ -1,0 +1,78 @@
+asset_id: OKI-KF-04-v1
+asset_version: 1.0.0
+title: "Archipelago closing - canonical acceptance keyframe"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-KF-04-v1-C02
+
+purpose:
+  product: "Oki Universe - Kinderbuch"
+  scene: "Scene 18 - What is OpenKubes?"
+  narrative_job: "Show a family of reliable, distinct cluster islands rather than one fixed OpenKubes product"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen image edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/keyframes/KF-04-archipelago-closing-v1-candidate-02-edit.md"
+  prompt_file: "art/prompts/keyframes/KF-04-archipelago-closing-v1-candidate-02-edit.md"
+  seed: "not exposed"
+  generation_id: "exec-714cebf5-396a-4b1e-bb52-6eb1038f7e1c"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "bda0fcc80ac4ba9710b2c15c1e6c345539f5e732a8dde8ad649709a900e5cdf2"
+  prompt_sha256: "4df8218e9b876996e2129f7e34f89a35fc73147e59ba45a5265158c7030d57b7"
+
+references:
+  - asset_id_or_path: "OKI-KF-04-v1-C02"
+    owner_or_source: "OpenKubes Gate-3 candidate"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Selected canonical source"
+
+editing:
+  source_file: "art/canonical/keyframes/OKI-KF-04-v1.png"
+  steps:
+    - "Promoted selected candidate without pixel modification"
+  editor: "Codex; human selection by project owner"
+
+exports:
+  - path: "art/canonical/keyframes/OKI-KF-04-v1.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Edited only from an OpenKubes candidate and canonical OpenKubes Oki/Aia references"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community, CC BY 4.0; changes must be indicated"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/keyframes/GATE-3-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Gate 3 approved after the town-hall delta"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

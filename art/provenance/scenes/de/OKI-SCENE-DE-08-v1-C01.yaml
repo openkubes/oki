@@ -1,0 +1,82 @@
+asset_id: OKI-SCENE-DE-08-v1-C01
+asset_version: 0.1.0
+title: "Eine neue Insel am Horizont - scene 8 candidate 01"
+status: RETIRED
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-CHAR-001-v1
+  - OKI-KF-02-v1
+  - OKI-SCENE-DE-01-v1
+
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 8 - Eine neue Insel am Horizont"
+  narrative_job: "Show independent workload creation before management registration"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/scenes/de/scene-08-new-island-horizon-v1.md"
+  prompt_file: "art/prompts/scenes/de/scene-08-new-island-horizon-v1.md"
+  seed: "not exposed"
+  generation_id: "exec-7bc6a661-4b81-4996-a133-9df6b57489c6"
+
+integrity:
+  source_sha256: "dd031e10314f07cf7c57cc9c28124b271d8e20f5e7bfa527a422ef278a214975"
+  prompt_sha256: "cd39ccedc8733b32488441c8e79d2f1670c2dcd9e7e0d054ddd541b63d591651"
+
+references:
+  - asset_id_or_path: "OKI-CHAR-001-v1"
+    owner_or_source: "OpenKubes canonical Gate-2B character"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Canonical Oki identity"
+  - asset_id_or_path: "OKI-KF-02-v1"
+    owner_or_source: "OpenKubes canonical Gate-3 keyframe"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Nested host and management relationship"
+  - asset_id_or_path: "OKI-SCENE-DE-01-v1"
+    owner_or_source: "OpenKubes canonical Gate-4 scene"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Human builder language"
+
+editing:
+  source_file: "art/scenes/de/scene-08-new-island-horizon-candidate-01.png"
+  steps:
+    - "Copied losslessly from the original built-in generation output"
+    - "Retired because Oki's host-cluster town hall was omitted from the three-cluster composition"
+  editor: "Codex"
+
+exports:
+  - path: "art/scenes/de/scene-08-new-island-horizon-candidate-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+
+rights:
+  review_status: NOT_FOR_RELEASE
+  third_party_assets: false
+  third_party_details: "Generated only from canonical OpenKubes references"
+  attribution_required: false
+  approved_openkubes_license: "Not released"
+
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-B-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: FAIL
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: ""
+  approved_at: ""
+  release_notes: "Retired after assistant preflight; superseded by C02"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: false

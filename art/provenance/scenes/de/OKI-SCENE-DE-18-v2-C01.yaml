@@ -1,0 +1,22 @@
+asset_id: OKI-SCENE-DE-18-v2-C01
+asset_version: 0.1.0
+title: "Was ist OpenKubes? - Mio ensemble candidate 01"
+status: CANDIDATE_NOT_SELECTED
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids: [OKI-SCENE-DE-18-v1, OKI-CHAR-001-v1, OKMGMT-CHAR-001-v1, AIA-CHAR-001-v1]
+purpose: {product: "Oki Universe - German children's book v1.1 Mio amendment", scene: "Scene 18 - Was ist OpenKubes?", narrative_job: "Form the canonical Oki, Mio and Aia closing ensemble"}
+creation: {tool: "OpenAI built-in image generation", model_or_method: "Built-in ImageGen image edit; model identifier not exposed", tool_terms_version_or_date: "2026-08-09", creative_brief_file: "art/prompts/scenes/de/scene-18-mio-ensemble-v2-c01.md", prompt_file: "art/prompts/scenes/de/scene-18-mio-ensemble-v2-c01.md", seed: "not exposed", generation_id: "exec-b6a15d75-6548-42e1-bc4d-811611e9e168"}
+integrity: {source_sha256: "923358d6d59d5cdd983718d686c6e39166beb8732794399a4fa7dbdcfe644217", prompt_sha256: "892aba87c6702c2d0715cc29830a5810cdbdb772cbbcb7c57e9e5b45ee500aa3"}
+references:
+  - {asset_id_or_path: OKI-SCENE-DE-18-v1, owner_or_source: OpenKubes canonical Gate-4 scene, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Closing composition"}
+  - {asset_id_or_path: OKI-CHAR-001-v1, owner_or_source: OpenKubes canonical Oki reference, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Canonical Oki"}
+  - {asset_id_or_path: OKMGMT-CHAR-001-v1, owner_or_source: OpenKubes canonical Mio reference, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Canonical Mio"}
+  - {asset_id_or_path: AIA-CHAR-001-v1, owner_or_source: OpenKubes canonical Aia reference, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Canonical Aia"}
+editing: {source_file: "art/scenes/de/OKI-SCENE-DE-18-v2-C01.png", steps: ["Added Mio to the equal closing ensemble", "Generation placed Mio's light core incorrectly on the back"], editor: "OpenAI built-in image generation directed by Codex"}
+exports: [{path: "art/scenes/de/OKI-SCENE-DE-18-v2-C01.png", format: PNG, dimensions: "1536x1024"}]
+rights: {review_status: PENDING, third_party_assets: false, third_party_details: "Edited only from owned canonical OpenKubes references", approved_openkubes_license: "not selected", rights_reviewed_by: "", rights_reviewed_at: ""}
+conformance: {checklist_file: "art/scenes/de/GATE-4-1-PRESENCE-AUDIT-REVIEW-01.md", current_vs_target_reviewed: true, architecture_reviewed: true, character_reviewed: true, result: CHANGES_REQUESTED}
+approval: {responsible_person: "human project owner", approved_by: "", approved_at: "", release_notes: "Retained for provenance; Mio light-core placement violated the canonical character reference"}
+canonical_release_gate: {eligible: false, required_conformance_result: PASS, required_rights_review_status: PASS, integrity_verified: true, approval_complete: false}

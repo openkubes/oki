@@ -1,0 +1,91 @@
+asset_id: OKI-KF-MIO-01-v1-C02
+asset_version: 0.2.0
+title: "Mio Current and Target visual acceptance candidate 02"
+status: SELECTED_CANDIDATE
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKI-KF-MIO-01-v1-C01
+  - OKMGMT-CHAR-001-v1
+  - OKI-CHAR-001-v1
+
+purpose:
+  product: "Oki Universe - Mio Amendment"
+  scene: "Gate 3.1 Current / Target acceptance"
+  narrative_job: "Validate Registration, management boundary and MORGEN lifecycle with canonical Mio"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen image edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/keyframes/KF-MIO-01-current-target-v1-c01.md"
+  prompt_file: "art/prompts/keyframes/KF-MIO-01-current-target-v1-c02-boundary-delta.md"
+  seed: "not exposed"
+  generation_id: "exec-b7803de1-0fcc-46dd-b83f-4db7b1e27fb4"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "9b4459662aa5818b758c49e5847ff466b3ba3a14b6e96d02919a603ff9aaabef"
+  prompt_sha256: "1915094f85dbe08dde641d30b12c75b21131e25ab09af1eb74a077d4fc159c6c"
+
+references:
+  - asset_id_or_path: "art/keyframes/OKI-KF-MIO-01-v1-C01.png"
+    owner_or_source: "OpenKubes Gate-3.1 candidate"
+    license: "candidate under OpenKubes rights review"
+    purpose: "Edit target; preserve Current/Target study and correct only the inner boundary"
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical Mio reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Canonical Mio identity"
+  - asset_id_or_path: "characters/oki/OKI-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical Oki reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Canonical Oki identity and host observer boundary"
+
+editing:
+  source_file: "art/keyframes/OKI-KF-MIO-01-v1-C02.png"
+  steps:
+    - "Used C01 as the image-edit source"
+    - "Placed Mio and the blue-roofed town hall inside one clearly bounded inner management island"
+    - "Kept Oki on the outer host-island ground outside Mio's boundary"
+    - "Preserved the Registration relationship and the MORGEN Target panel"
+  editor: "OpenAI built-in image generation directed by Codex"
+
+exports:
+  - path: "art/keyframes/OKI-KF-MIO-01-v1-C02.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Edited only from an OpenKubes candidate and canonical OpenKubes Oki/Mio references"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-09"
+
+conformance:
+  checklist_file: "art/keyframes/GATE-3-1-CANDIDATE-REVIEW-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-09"
+  release_notes: "Selected and promoted byte-identically to OKI-KF-MIO-01-v1"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

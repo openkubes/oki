@@ -1,0 +1,84 @@
+asset_id: OKI-KF-04-v1-C01
+asset_version: 0.1.0
+title: "Archipelago closing - acceptance keyframe candidate 01"
+status: RETIRED
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-CHAR-001-v1
+  - AIA-CHAR-001-v1
+
+purpose:
+  product: "Oki Universe - Kinderbuch"
+  scene: "Scene 18 - What is OpenKubes?"
+  narrative_job: "Initial archipelago candidate; retained as the source of the C02 conformance edit"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/keyframes/KF-04-archipelago-closing-v1.md"
+  prompt_file: "art/prompts/keyframes/KF-04-archipelago-closing-v1.md"
+  seed: "not exposed"
+  generation_id: "exec-29243758-a1cd-4847-9896-b44467554263"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "b920e3df0034e917507ac3bf40a47e95e839e15706bb08cf0c7684768d899f3c"
+  prompt_sha256: "a1fd123ecdfdf908d41c09c4086dfd3f28ef6dc54042f366c9b56984e1907993"
+
+references:
+  - asset_id_or_path: "OKI-CHAR-001-v1"
+    owner_or_source: "OpenKubes canonical Gate-2B asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Canonical Oki identity"
+  - asset_id_or_path: "AIA-CHAR-001-v1"
+    owner_or_source: "OpenKubes canonical Gate-2B asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Canonical Aia identity"
+
+editing:
+  source_file: "art/keyframes/KF-04-archipelago-closing-candidate-01.png"
+  steps:
+    - "Copied losslessly from the original built-in generation output"
+    - "Retired because the far radio/IoT island lacked an unmistakable town hall"
+  editor: "Codex"
+
+exports:
+  - path: "art/keyframes/KF-04-archipelago-closing-candidate-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from canonical OpenKubes Oki and Aia references; no additional asset supplied"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community, CC BY 4.0; changes must be indicated"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/keyframes/GATE-3-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: FAIL
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: ""
+  approved_at: ""
+  release_notes: "Superseded by C02 after the town-hall delta"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: false

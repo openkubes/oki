@@ -1,0 +1,33 @@
+# Local and generated working data
+.DS_Store
+~$*
+tmp/
+.local-backups/
+**/.openai/
+
+# Early concept packages kept locally until separately reviewed
+/Oki_Finalpaket_DE_v1.0.docx
+/Oki_Finalpaket_DE_v1.0.pdf
+/Oki_Storyboard_DE_v1.0.pptx
+/Oki_Storyboard_DE_v1.0.pdf
+/Oki_Storyboard_DE_v1.1.pptx
+/Oki_Storyboard_DE_v1.1.pdf
+/Oki-und-die-Inseln-der-vielen-Cluster-DE-v1.pptx
+/montage-final.png
+
+# Gate proofs and superseded binary book derivatives
+/book/de/*.pptx
+/book/de/*.pdf
+/book/de/*.png
+/book/de/*.inspect.ndjson
+/book/de/Oki-und-die-Inseln-der-vielen-Cluster-DE-Gate5-layout-proof-v0.1/
+!/book/de/Oki-und-die-vielen-Inseln-DE-digital-v1.2.pptx
+!/book/de/Oki-und-die-vielen-Inseln-DE-digital-v1.2.pdf
+
+# Superseded video deck; keep the current recording deck
+/video/de/*.pptx
+/video/de/*.inspect.ndjson
+!/video/de/Oki-und-die-vielen-Inseln-DE-video-recording-v1.0.pptx
+
+# Generated HTML output is rebuilt and verified by GitHub Actions
+/book/de/html-v1.2/standalone/

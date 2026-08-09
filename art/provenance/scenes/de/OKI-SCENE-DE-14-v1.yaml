@@ -1,0 +1,16 @@
+asset_id: OKI-SCENE-DE-14-v1
+asset_version: 1.0.0
+title: "Die Familie der vielen Inseln - canonical German scene 14"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: [OKI-SCENE-DE-14-v1-C01]
+purpose: {product: "Oki Universe - German children's book", scene: "Scene 14 - Die Familie der vielen Inseln", narrative_job: "Show independent platform distributions sharing contracts without becoming copies"}
+creation: {tool: "OpenAI built-in image generation", model_or_method: "Built-in ImageGen; model identifier not exposed", prompt_file: "art/prompts/scenes/de/scene-14-island-family-v1.md", generation_id: "exec-86c4b2ae-d1b8-4d93-b7fa-f1bce1bb90ef"}
+integrity: {source_sha256: "25bf865a96509e629e22ef99b2d24bdda01251f4b1d4a733dc7dd03c2b7bb14f", prompt_sha256: "3cb2ca76ac0537b159b5a3c8675510d12518aae5fb2f05602209fe170cb01c2a"}
+editing: {source_file: "art/canonical/scenes/de/OKI-SCENE-DE-14-v1.png", steps: ["Promoted selected candidate without pixel modification"], editor: "Codex; human selection by project owner"}
+rights: {review_status: PASS, third_party_assets: false, approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded", rights_reviewed_by: "human project owner", rights_reviewed_at: "2026-08-08"}
+conformance: {checklist_file: "art/scenes/de/GATE-4-BATCH-D-CONFORMANCE-01.md", result: PASS}
+approval: {approved_by: "human project owner", approved_at: "2026-08-08", release_notes: "Gate 4 Batch D approved"}
+canonical_release_gate: {eligible: true, integrity_verified: true, approval_complete: true}

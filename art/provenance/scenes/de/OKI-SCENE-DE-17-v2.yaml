@@ -1,0 +1,18 @@
+asset_id: OKI-SCENE-DE-17-v2
+asset_version: 2.0.0
+title: "Die nächste Generation - canonical Mio edition"
+status: CANONICAL
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids: [OKI-SCENE-DE-17-v2-C02, OKMGMT-CHAR-001-v1, OKI-KF-MIO-01-v1]
+purpose: {product: "Oki Universe - German children's book v1.1 Mio amendment", scene: "Scene 17 - Die nächste Generation", narrative_job: "Complete Mio's responsibility arc inside an explicit MORGEN target frame"}
+creation: {tool: "OpenAI built-in image generation", model_or_method: "Byte-identical canonical promotion of approved candidate", tool_terms_version_or_date: "2026-08-09", creative_brief_file: "art/prompts/scenes/de/scene-17-mio-tomorrow-v2-c01.md", prompt_file: "art/prompts/scenes/de/scene-17-mio-tomorrow-v2-c02-delta.md", seed: "not exposed", generation_id: "exec-fb0d8b8b-7de4-4f20-927c-cf071156fc84"}
+integrity: {source_sha256: "d011e1a69eb7a26a57d6640c8832cff8712add6fe8420be1c28a3e2003ba4c74", prompt_sha256: "9f78501043338d288cd491dff0fc4b0cd7f901679b54ceda5907de7792ef2339"}
+references: [{asset_id_or_path: OKI-SCENE-DE-17-v2-C02, owner_or_source: OpenKubes approved Gate-4.1 candidate, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Byte-identical source"}]
+editing: {source_file: "art/scenes/de/OKI-SCENE-DE-17-v2-C02.png", steps: ["Copied byte-identically to canonical path after human approval"], editor: Codex}
+exports: [{path: "art/canonical/scenes/de/OKI-SCENE-DE-17-v2.png", format: PNG, dimensions: "1536x1024"}]
+rights: {review_status: PASS, third_party_assets: false, third_party_details: "Generated only from owned canonical OpenKubes references", approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", rights_reviewed_by: "human project owner", rights_reviewed_at: "2026-08-09"}
+conformance: {checklist_file: "art/scenes/de/GATE-4-1-BATCH-D1-REVIEW-01.md", current_vs_target_reviewed: true, architecture_reviewed: true, character_reviewed: true, result: PASS}
+approval: {responsible_person: "human project owner", approved_by: "human project owner", approved_at: "2026-08-09", release_notes: "Canonical Mio amendment Scene 17 v2"}
+canonical_release_gate: {eligible: true, required_conformance_result: PASS, required_rights_review_status: PASS, integrity_verified: true, approval_complete: true}

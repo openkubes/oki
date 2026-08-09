@@ -1,0 +1,35 @@
+asset_id: OKI-SCENE-DE-09-v2-C01
+asset_version: 0.1.0
+title: "Darf ich dich vorstellen - Mio amendment candidate 01"
+status: SELECTED_CANDIDATE
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids: [OKI-SCENE-DE-09-v1, OKMGMT-CHAR-001-v1, OKI-KF-MIO-01-v1, OKI-SCENE-DE-05-v2]
+purpose:
+  product: "Oki Universe - German children's book v1.1 Mio amendment"
+  scene: "Scene 09 - Darf ich dich vorstellen?"
+  narrative_job: "Show an existing workload cluster being consciously introduced to Mio and registered without implying creation"
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen image edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/scenes/de/scene-09-mio-registration-v2-c01.md"
+  prompt_file: "art/prompts/scenes/de/scene-09-mio-registration-v2-c01.md"
+  seed: "not exposed"
+  generation_id: "exec-fcdc02db-7e7a-4c28-9b6f-46ad070ee416"
+integrity: {source_sha256: "0db04f210394d224f57879d3751363ca22441867d60638b1fbefdfe7a877d063", prompt_sha256: "e9dd2a6529b7ab06632dd8d9c018096a8d2b3631524d1b20541330da93a84009"}
+references:
+  - {asset_id_or_path: OKI-SCENE-DE-09-v1, owner_or_source: OpenKubes canonical Gate-4 scene, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Edit source and Registration composition"}
+  - {asset_id_or_path: OKMGMT-CHAR-001-v1, owner_or_source: OpenKubes canonical Mio reference, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Canonical Mio identity"}
+  - {asset_id_or_path: OKI-KF-MIO-01-v1, owner_or_source: OpenKubes canonical Gate-3.1 keyframe, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Registration and boundary rules"}
+  - {asset_id_or_path: OKI-SCENE-DE-05-v2, owner_or_source: OpenKubes canonical Gate-4.1 scene, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Mio and builder world continuity"}
+editing:
+  source_file: "art/scenes/de/OKI-SCENE-DE-09-v2-C01.png"
+  steps: ["Replaced the former desk actor with canonical Mio", "Kept Oki observing and the builder presenting identity and promises", "Preserved the already-existing workload island and relationship-only bridge", "Copied the generation output without pixel edits"]
+  editor: "OpenAI built-in image generation directed by Codex"
+exports: [{path: "art/scenes/de/OKI-SCENE-DE-09-v2-C01.png", format: PNG, dimensions: "1536x1024"}]
+rights: {review_status: PASS, third_party_assets: false, third_party_details: "Edited only from owned canonical OpenKubes references", approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", rights_reviewed_by: "human project owner", rights_reviewed_at: "2026-08-09"}
+conformance: {checklist_file: "art/scenes/de/GATE-4-1-BATCH-B1-REVIEW-01.md", current_vs_target_reviewed: true, architecture_reviewed: true, character_reviewed: true, result: PASS}
+approval: {responsible_person: "human project owner", approved_by: "human project owner", approved_at: "2026-08-09", release_notes: "Selected and promoted byte-identically to OKI-SCENE-DE-09-v2"}
+canonical_release_gate: {eligible: true, required_conformance_result: PASS, required_rights_review_status: PASS, integrity_verified: true, approval_complete: true}

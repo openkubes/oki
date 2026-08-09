@@ -1,0 +1,38 @@
+asset_id: OKI-SCENE-DE-08-v1
+asset_version: 1.0.0
+title: "Eine neue Insel am Horizont - canonical German scene 8"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: [OKI-SCENE-DE-08-v1-C02]
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 8 - Eine neue Insel am Horizont"
+  narrative_job: "Show independent workload creation before management registration"
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen precise-object edit; model identifier not exposed"
+  prompt_file: "art/prompts/scenes/de/scene-08-new-island-horizon-v1-candidate-02-edit.md"
+  generation_id: "exec-8781d301-6dcc-42fa-93dc-5b2e86296634"
+integrity:
+  source_sha256: "f109c258085838dcf9cf57e7e1e59cbe931651f667ee3eb0df4e7fe59ea8799d"
+  prompt_sha256: "53dcd6d7dcfb30e7e1c9d90877b0b077b83ba1a976e0b328cf1073c55fab985e"
+editing:
+  source_file: "art/canonical/scenes/de/OKI-SCENE-DE-08-v1.png"
+  steps: ["Promoted candidate C02 without further pixel modification"]
+  editor: "Codex; human selection by project owner"
+rights:
+  review_status: PASS
+  third_party_assets: false
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-B-CONFORMANCE-01.md"
+  result: PASS
+approval:
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Gate 4 Batch B approved after host-town-hall correction"
+canonical_release_gate: {eligible: true, integrity_verified: true, approval_complete: true}

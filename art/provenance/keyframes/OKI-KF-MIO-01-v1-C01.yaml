@@ -1,0 +1,89 @@
+asset_id: OKI-KF-MIO-01-v1-C01
+asset_version: 0.1.0
+title: "Mio Current and Target visual acceptance candidate 01"
+status: CANDIDATE
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKMGMT-CHAR-001-v1
+  - OKI-SCENE-DE-09-v1
+  - OKI-SCENE-DE-17-v1
+
+purpose:
+  product: "Oki Universe - Mio Amendment"
+  scene: "Gate 3.1 Current / Target acceptance"
+  narrative_job: "Separate Mio's present-day Registration role from the MORGEN declarative lifecycle"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/keyframes/KF-MIO-01-current-target-v1-c01.md"
+  prompt_file: "art/prompts/keyframes/KF-MIO-01-current-target-v1-c01.md"
+  seed: "not exposed"
+  generation_id: "exec-d3c3b9ad-d565-4740-9ff6-7a945f1213f2"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "431f91cf284631c9ee78a45fae5e1bf9eb7889925f30b1eb1a62239c3c6f5986"
+  prompt_sha256: "4d4e9ce35e1aed3448c5c5f54aced9c5a7f7bdc126185c4285f07779d89d4e1a"
+
+references:
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical Mio reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Canonical Mio identity"
+  - asset_id_or_path: "art/canonical/scenes/de/OKI-SCENE-DE-09-v1.png"
+    owner_or_source: "OpenKubes canonical scene"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Registration-world reference"
+  - asset_id_or_path: "art/canonical/scenes/de/OKI-SCENE-DE-17-v1.png"
+    owner_or_source: "OpenKubes canonical scene"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "MORGEN visual-grammar reference"
+
+editing:
+  source_file: "art/keyframes/OKI-KF-MIO-01-v1-C01.png"
+  steps:
+    - "Generated a two-state acceptance study from canonical OpenKubes references"
+    - "Copied built-in generation output into the project without pixel edits"
+  editor: "Codex"
+
+exports:
+  - path: "art/keyframes/OKI-KF-MIO-01-v1-C01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from owned canonical OpenKubes references"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "pending human approval"
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "art/keyframes/GATE-3-1-CANDIDATE-REVIEW-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: CHANGES_REQUESTED
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: ""
+  approved_at: ""
+  release_notes: "Retained for provenance; inner management-island boundary requires correction"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: false

@@ -1,0 +1,87 @@
+asset_id: OKMGMT-CHAR-001-v1-C02
+asset_version: 0.2.0
+title: "Mio character reference candidate 02"
+status: SELECTED_CANDIDATE
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKMGMT-CHAR-001-v1-C01
+
+purpose:
+  product: "Kinderbuch"
+  scene: "Character reference"
+  narrative_job: "Define Mio with an unambiguous relationship-light core"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/characters/mio-character-candidate-v1-c01.md"
+  prompt_file: "art/prompts/characters/mio-character-candidate-v1-c02-core-delta.md"
+  seed: "not exposed"
+  generation_id: "exec-6a53ebe3-c9d3-40b8-a132-9170c5302a79"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "226ff2b19360f8b312870b8c5d0300e2ddd65420ea9d091415240a459e3fcacc"
+  prompt_sha256: "ca02f2acec6a1936e31fae2f90e26e076143a026c374d2f068a48d9a99564779"
+
+references:
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1-candidate-01.png"
+    owner_or_source: "OpenKubes Mio candidate C01"
+    license: "candidate; rights review pending"
+    purpose: "edit target; preserve Mio identity and revise only the light core"
+  - asset_id_or_path: "characters/oki/OKI-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "inherited visual-universe reference"
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "inherited visual-universe reference"
+
+editing:
+  source_file: "characters/mio/OKMGMT-CHAR-001-v1-candidate-02.png"
+  steps:
+    - "Replaced only the ECG-like circular core with a connected-point relationship constellation"
+    - "Copied built-in edit output into the project without further pixel edits"
+  editor: "Codex"
+
+exports:
+  - path: "characters/mio/OKMGMT-CHAR-001-v1-candidate-02.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated from C01 and OpenKubes canonical reference assets"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-09"
+
+conformance:
+  checklist_file: "characters/GATE-2B1-CANDIDATE-REVIEW-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-09"
+  release_notes: "Scale comparison approved; selected and promoted byte-identically to OKMGMT-CHAR-001-v1"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

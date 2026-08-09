@@ -1,0 +1,47 @@
+asset_id: OKI-SCENE-DE-16-v1-C01
+asset_version: 0.1.0
+title: "Der große Sturm - scene 16 candidate 01"
+status: CANDIDATE
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: [OKI-KF-02-v1, OKI-CHAR-001-v1, OKI-SCENE-DE-06-v1]
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 16 - Der große Sturm"
+  narrative_job: "Separate external rebuild anchor, human reconstruction and separately restored memory"
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/scenes/de/scene-16-storm-rebuild-not-memory-v1.md"
+  prompt_file: "art/prompts/scenes/de/scene-16-storm-rebuild-not-memory-v1.md"
+  seed: "not exposed"
+  generation_id: "exec-46cf651a-b12d-4b67-b713-f253d85eb7a5"
+integrity:
+  source_sha256: "f6e9141a5dd07971a572d4eba0a1aab3bbdda56a96db8566d3a17b97cc4561be"
+  prompt_sha256: "73800a655072b2c8288520b0262797db1fc8594002d96e81b0f0eee46cbe0526"
+references:
+  - {asset_id_or_path: OKI-KF-02-v1, owner_or_source: OpenKubes canonical Gate-3 keyframe, license: "CC BY 4.0; OpenKubes/Oki marks excluded", purpose: "Host and management cluster continuity"}
+  - {asset_id_or_path: OKI-CHAR-001-v1, owner_or_source: OpenKubes canonical Gate-2B character, license: "CC BY 4.0; OpenKubes/Oki marks excluded", purpose: "Canonical Oki identity"}
+  - {asset_id_or_path: OKI-SCENE-DE-06-v1, owner_or_source: OpenKubes canonical Gate-4 scene, license: "CC BY 4.0; OpenKubes/Oki marks excluded", purpose: "Declared-plan visual language"}
+editing:
+  source_file: "art/scenes/de/scene-16-storm-rebuild-not-memory-candidate-01.png"
+  steps: ["Copied losslessly from the original built-in generation output"]
+  editor: "Codex"
+exports: [{path: "art/scenes/de/scene-16-storm-rebuild-not-memory-candidate-01.png", format: PNG, dimensions: "1536x1024"}]
+rights:
+  review_status: PASS
+  third_party_assets: false
+  third_party_details: "Generated only from canonical OpenKubes references"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-D-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+approval: {responsible_person: "human project owner", approved_by: "human project owner", approved_at: "2026-08-08", release_notes: "Selected and promoted to OKI-SCENE-DE-16-v1"}
+canonical_release_gate: {eligible: true, required_conformance_result: PASS, required_rights_review_status: PASS, integrity_verified: true, approval_complete: true}

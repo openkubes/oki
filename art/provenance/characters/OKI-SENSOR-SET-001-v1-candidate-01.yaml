@@ -1,0 +1,89 @@
+asset_id: OKI-SENSOR-SET-001-v1-C01
+asset_version: 0.1.0
+title: "Oki sensor set reference candidate 01"
+status: RETIRED
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: []
+
+purpose:
+  product: "Kinderbuch"
+  scene: "Character set reference"
+  narrative_job: "Define Scout, Meter, Check and Proof as a consistent evidence family"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/characters/sensor-set-candidate-v1.md"
+  prompt_file: "art/prompts/characters/sensor-set-candidate-v1.md"
+  seed: "not exposed"
+  generation_id: "exec-8fbbe64d-a633-4d28-b2b1-6e794d2de852"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "7194fecdf7eb319c95ba72f883579f53de0135d83497fa30514a803867cb8582"
+  prompt_sha256: "d5559a385a40fb9ae477c6d38fedc331573e04e37045e679021fb9c0266f1e00"
+
+references:
+  - asset_id_or_path: "art/concepts/prototype-references/scout-prototype-slide-12.png"
+    owner_or_source: "OpenKubes concept prototype supplied by project owner"
+    license: "project concept; original generation provenance pending"
+    purpose: "Scout identity and instrument cue"
+  - asset_id_or_path: "art/concepts/prototype-references/meter-prototype-slide-12.png"
+    owner_or_source: "OpenKubes concept prototype supplied by project owner"
+    license: "project concept; original generation provenance pending"
+    purpose: "Meter identity and instrument cue"
+  - asset_id_or_path: "art/concepts/prototype-references/check-prototype-slide-12.png"
+    owner_or_source: "OpenKubes concept prototype supplied by project owner"
+    license: "project concept; original generation provenance pending"
+    purpose: "Check identity and instrument cue"
+  - asset_id_or_path: "art/concepts/prototype-references/proof-prototype-slide-12.png"
+    owner_or_source: "OpenKubes concept prototype supplied by project owner"
+    license: "project concept; original generation provenance pending"
+    purpose: "Proof identity and evidence cue"
+
+editing:
+  source_file: "characters/sensors/OKI-SENSOR-SET-001-v1-candidate-01.png"
+  steps:
+    - "Copied built-in generation output into the project without pixel edits"
+  editor: "Codex"
+
+exports:
+  - path: "characters/sensors/OKI-SENSOR-SET-001-v1-candidate-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Prototype reference provenance remains incomplete"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "characters/GATE-2B-CANDIDATE-REVIEW-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING
+
+approval:
+  responsible_person: "project owner"
+  approved_by: ""
+  approved_at: ""
+  release_notes: "Retired after Meter was found to read as a clock; superseded by C02"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: false

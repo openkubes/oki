@@ -1,0 +1,89 @@
+asset_id: OKMGMT-CHAR-001-v1-SCALE-C01
+asset_version: 0.1.0
+title: "Oki Mio Aia scale comparison candidate 01"
+status: APPROVED_QA
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKI-CHAR-001-v1
+  - OKMGMT-CHAR-001-v1-C02
+  - AIA-CHAR-001-v1
+
+purpose:
+  product: "Character QA"
+  scene: "Scale comparison"
+  narrative_job: "Validate Oki, Mio and Aia as a peer ensemble"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/characters/mio-scale-comparison-v1-c01.md"
+  prompt_file: "art/prompts/characters/mio-scale-comparison-v1-c01.md"
+  seed: "not exposed"
+  generation_id: "exec-b71fbd6c-dc41-4304-b277-fb581d948aa3"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "7c7f655033ba701ea398367fe6ff61c7b4ce9eb56f7daacd40b60caebaa5a8cb"
+  prompt_sha256: "2be1e7cbd1953365cdd89746e0ad63fa117789f4db02d4d48a1371dd41512767"
+
+references:
+  - asset_id_or_path: "characters/oki/OKI-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Oki identity and scale reference"
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1-candidate-02.png"
+    owner_or_source: "OpenKubes Mio candidate; human design and rights approval recorded"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Mio identity and scale reference"
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Aia identity and scale reference"
+
+editing:
+  source_file: "characters/mio/OKMGMT-CHAR-001-v1-scale-comparison-candidate-01.png"
+  steps:
+    - "Generated a QA lineup from the three approved OpenKubes character references"
+    - "Copied built-in generation output into the project without pixel edits"
+  editor: "Codex"
+
+exports:
+  - path: "characters/mio/OKMGMT-CHAR-001-v1-scale-comparison-candidate-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from owned and approved OpenKubes character references"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-09"
+
+conformance:
+  checklist_file: "characters/GATE-2B1-SCALE-REVIEW-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-09"
+  release_notes: "Scale rule and peer ensemble approved; QA derivative does not replace canonical character sheets"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

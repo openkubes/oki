@@ -1,0 +1,90 @@
+asset_id: OKI-SCENE-DE-03-v1-C02
+asset_version: 0.2.0
+title: "Die Werkstatt und das erste Ei - scene 3 candidate 02"
+status: CANDIDATE
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-SCENE-DE-03-v1-C01
+  - OKI-CHAR-001-v1
+  - OKI-KF-02-v1
+
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 3 - Die Werkstatt und das erste Ei"
+  narrative_job: "Show VM infrastructure and the earliest not-ready cluster-egg stage"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen precise-object edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/scenes/de/scene-03-workshop-first-egg-v1-candidate-02-edit.md"
+  prompt_file: "art/prompts/scenes/de/scene-03-workshop-first-egg-v1-candidate-02-edit.md"
+  seed: "not exposed"
+  generation_id: "exec-ae7b934b-10ab-4609-a0da-a299c320bbbb"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "2056ab909221b002e8b22e77151f2c0e35bfff57b8087258b5dee3153d5ba1b6"
+  prompt_sha256: "81e541212c9d6055660f318be595a12b3e43dce9fe91ce2bcec001691c0cd076"
+
+references:
+  - asset_id_or_path: "OKI-SCENE-DE-03-v1-C01"
+    owner_or_source: "OpenKubes Gate-4 candidate"
+    license: "Unreleased project candidate"
+    purpose: "Edit target; preserve all except the shell crack"
+  - asset_id_or_path: "OKI-CHAR-001-v1"
+    owner_or_source: "OpenKubes canonical Gate-2B character"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Canonical Oki identity"
+  - asset_id_or_path: "OKI-KF-02-v1"
+    owner_or_source: "OpenKubes canonical Gate-3 keyframe"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "World and scene continuity"
+
+editing:
+  source_file: "art/scenes/de/scene-03-workshop-first-egg-candidate-02.png"
+  steps:
+    - "Used candidate C01 as the image-edit source"
+    - "Replaced the long bright crack with one short first hairline crack"
+    - "Preserved the scene composition and one-town-hall architecture"
+  editor: "OpenAI built-in image generation directed by Codex"
+
+exports:
+  - path: "art/scenes/de/scene-03-workshop-first-egg-candidate-02.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Edited only from an OpenKubes candidate and canonical OpenKubes references"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community, CC BY 4.0; changes must be indicated"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-A-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Selected and promoted to OKI-SCENE-DE-03-v1 after first-crack correction"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

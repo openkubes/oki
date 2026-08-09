@@ -1,0 +1,66 @@
+name: Publish Oki to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify and build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: book/de/html-v1.2
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: book/de/html-v1.2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check code quality
+        run: npm run lint
+
+      - name: Build and test presentation
+        run: npm test
+
+      - name: Verify frozen manuscript and canonical artwork
+        run: npm run qa
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload verified presentation
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: book/de/html-v1.2/standalone
+
+  deploy:
+    name: Deploy
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

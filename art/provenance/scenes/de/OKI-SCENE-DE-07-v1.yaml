@@ -1,0 +1,38 @@
+asset_id: OKI-SCENE-DE-07-v1
+asset_version: 1.0.0
+title: "Vier neugierige Sensoren - canonical German scene 7"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: [OKI-SCENE-DE-07-v1-C01]
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 7 - Vier neugierige Sensoren"
+  narrative_job: "Introduce evidence gatherers while separating facts from authority"
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  prompt_file: "art/prompts/scenes/de/scene-07-four-sensors-v1.md"
+  generation_id: "exec-4db97946-678c-4940-a668-544f6fc63845"
+integrity:
+  source_sha256: "4355e183180062d3985cd1c2edae8b607995989ff3529a999bc0932f0c435e22"
+  prompt_sha256: "19116cacfe511a05fdab970fe89ba93fcfad688c15b5612b264bf9ff01586d14"
+editing:
+  source_file: "art/canonical/scenes/de/OKI-SCENE-DE-07-v1.png"
+  steps: ["Promoted selected candidate without pixel modification"]
+  editor: "Codex; human selection by project owner"
+rights:
+  review_status: PASS
+  third_party_assets: false
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-B-CONFORMANCE-01.md"
+  result: PASS
+approval:
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Gate 4 Batch B approved"
+canonical_release_gate: {eligible: true, integrity_verified: true, approval_complete: true}

@@ -1,0 +1,47 @@
+asset_id: OKI-SCENE-DE-15-v1-C01
+asset_version: 0.1.0
+title: "Okis Inselwelt für den Rucksack - scene 15 candidate 01"
+status: CANDIDATE
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: [OKI-CHAR-001-v1, AIA-CHAR-001-v1, OKI-KF-04-v1]
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 15 - Okis Inselwelt für den Rucksack"
+  narrative_job: "Present ok-local as a safe miniature learning and reference environment"
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/scenes/de/scene-15-ok-local-backpack-v1.md"
+  prompt_file: "art/prompts/scenes/de/scene-15-ok-local-backpack-v1.md"
+  seed: "not exposed"
+  generation_id: "exec-f8692125-cef5-4cc5-a9d6-41477874d829"
+integrity:
+  source_sha256: "1748b0090829573d26a37613a042797eb8285abc7bd011ff3633e898f735d109"
+  prompt_sha256: "258a809c2cd4ae337da78bcf9a15f3675ffdbbd2aa7531631ddb177f2ee6942e"
+references:
+  - {asset_id_or_path: OKI-CHAR-001-v1, owner_or_source: OpenKubes canonical Gate-2B character, license: "CC BY 4.0; OpenKubes/Oki marks excluded", purpose: "Canonical Oki identity"}
+  - {asset_id_or_path: AIA-CHAR-001-v1, owner_or_source: OpenKubes canonical Gate-2B character, license: "CC BY 4.0; OpenKubes/Oki marks excluded", purpose: "Canonical Aia identity"}
+  - {asset_id_or_path: OKI-KF-04-v1, owner_or_source: OpenKubes canonical Gate-3 keyframe, license: "CC BY 4.0; OpenKubes/Oki marks excluded", purpose: "Miniature island and town-hall visual language"}
+editing:
+  source_file: "art/scenes/de/scene-15-ok-local-backpack-candidate-01.png"
+  steps: ["Copied losslessly from the original built-in generation output"]
+  editor: "Codex"
+exports: [{path: "art/scenes/de/scene-15-ok-local-backpack-candidate-01.png", format: PNG, dimensions: "1536x1024"}]
+rights:
+  review_status: PASS
+  third_party_assets: false
+  third_party_details: "Generated only from canonical OpenKubes references"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-D-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+approval: {responsible_person: "human project owner", approved_by: "human project owner", approved_at: "2026-08-08", release_notes: "Selected and promoted to OKI-SCENE-DE-15-v1"}
+canonical_release_gate: {eligible: true, required_conformance_result: PASS, required_rights_review_status: PASS, integrity_verified: true, approval_complete: true}

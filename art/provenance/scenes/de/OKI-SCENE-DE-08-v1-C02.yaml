@@ -1,0 +1,83 @@
+asset_id: OKI-SCENE-DE-08-v1-C02
+asset_version: 0.2.0
+title: "Eine neue Insel am Horizont - scene 8 candidate 02"
+status: CANDIDATE
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-SCENE-DE-08-v1-C01
+  - OKI-KF-02-v1
+
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 8 - Eine neue Insel am Horizont"
+  narrative_job: "Show independent workload creation before management registration"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen precise-object edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/scenes/de/scene-08-new-island-horizon-v1-candidate-02-edit.md"
+  prompt_file: "art/prompts/scenes/de/scene-08-new-island-horizon-v1-candidate-02-edit.md"
+  seed: "not exposed"
+  generation_id: "exec-8781d301-6dcc-42fa-93dc-5b2e86296634"
+
+integrity:
+  source_sha256: "f109c258085838dcf9cf57e7e1e59cbe931651f667ee3eb0df4e7fe59ea8799d"
+  prompt_sha256: "53dcd6d7dcfb30e7e1c9d90877b0b077b83ba1a976e0b328cf1073c55fab985e"
+
+references:
+  - asset_id_or_path: "OKI-SCENE-DE-08-v1-C01"
+    owner_or_source: "OpenKubes Gate-4 candidate"
+    license: "Unreleased project candidate"
+    purpose: "Edit target; preserve all except the missing host town hall"
+  - asset_id_or_path: "OKI-KF-02-v1"
+    owner_or_source: "OpenKubes canonical Gate-3 keyframe"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Host-town-hall architecture reference"
+
+editing:
+  source_file: "art/scenes/de/scene-08-new-island-horizon-candidate-02.png"
+  steps:
+    - "Used candidate C01 as the image-edit source"
+    - "Added exactly one distant host-cluster town hall"
+    - "Preserved the external builders, unconnected sea and workload-cluster birth"
+  editor: "OpenAI built-in image generation directed by Codex"
+
+exports:
+  - path: "art/scenes/de/scene-08-new-island-horizon-candidate-02.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+
+rights:
+  review_status: PASS
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Edited only from an OpenKubes candidate and canonical OpenKubes reference"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community, CC BY 4.0; changes must be indicated"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-B-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Selected and promoted to OKI-SCENE-DE-08-v1 after host-town-hall correction"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

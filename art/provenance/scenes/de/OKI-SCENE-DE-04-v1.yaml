@@ -1,0 +1,52 @@
+asset_id: OKI-SCENE-DE-04-v1
+asset_version: 1.0.0
+title: "Wie viele Inseln passen in eine Insel? - canonical German scene 4"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-KF-02-v1
+
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 4 - Wie viele Inseln passen in eine Insel?"
+  narrative_job: "Show separate host and guest cluster identities on shared infrastructure"
+
+creation:
+  tool: "Canonical Gate-3 keyframe reuse"
+  model_or_method: "Byte-identical scene mapping"
+  prompt_file: "art/prompts/keyframes/KF-02-kubernetes-on-kubernetes-v1.md"
+  generation_id: "exec-7fa0fe9e-43eb-4e51-a287-e10926f675ff"
+
+integrity:
+  source_sha256: "e69ce7ffd8b532b366b20f688091f118b8cd1ecb248c03ebaaa52f33d03c78ff"
+  prompt_sha256: "90ef1fb741902152771dc418b4224b3cf6361f318438f25c19715d350594012c"
+
+editing:
+  source_file: "art/canonical/scenes/de/OKI-SCENE-DE-04-v1.png"
+  steps:
+    - "Copied canonical OKI-KF-02-v1 without pixel modification"
+  editor: "Codex; human mapping approval by project owner"
+
+rights:
+  review_status: PASS
+  third_party_assets: false
+  attribution_required: true
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-A-CONFORMANCE-01.md"
+  result: PASS
+
+approval:
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Gate 4 Batch A approved; unchanged reuse of OKI-KF-02-v1"
+
+canonical_release_gate:
+  eligible: true
+  integrity_verified: true
+  approval_complete: true

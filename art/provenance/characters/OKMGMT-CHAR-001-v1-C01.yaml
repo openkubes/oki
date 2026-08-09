@@ -1,0 +1,85 @@
+asset_id: OKMGMT-CHAR-001-v1-C01
+asset_version: 0.1.0
+title: "Mio character reference candidate 01"
+status: CANDIDATE
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids: []
+
+purpose:
+  product: "Kinderbuch"
+  scene: "Character reference"
+  narrative_job: "Define Mio as the personification of ok-mgmt"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/characters/mio-character-candidate-v1-c01.md"
+  prompt_file: "art/prompts/characters/mio-character-candidate-v1-c01.md"
+  seed: "not exposed"
+  generation_id: "exec-94dc5d04-11a4-4314-a20b-40593bfbb3cc"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "56f7afc83c0d16e8a86be764768cb7798f13e277c265bc90ce23f07c8e18f157"
+  prompt_sha256: "6ce063a832b97fa33e4eab6a94370d39b4e5a7cd907095087add3b6af5c6234a"
+
+references:
+  - asset_id_or_path: "characters/oki/OKI-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "visual-universe and style reference"
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "visual-universe and sheet-layout reference"
+  - asset_id_or_path: "characters/sensors/OKI-SENSOR-SET-001-v1.png"
+    owner_or_source: "OpenKubes canonical character asset"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "silhouette-separation reference"
+
+editing:
+  source_file: "characters/mio/OKMGMT-CHAR-001-v1-candidate-01.png"
+  steps:
+    - "Copied built-in generation output into the project without pixel edits"
+  editor: "Codex"
+
+exports:
+  - path: "characters/mio/OKMGMT-CHAR-001-v1-candidate-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from OpenKubes canonical reference assets"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "pending human approval"
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "characters/GATE-2B1-CANDIDATE-REVIEW-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: CHANGES_REQUESTED
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: ""
+  approved_at: ""
+  release_notes: "C01 retained; relationship core requires revision"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: false

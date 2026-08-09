@@ -1,0 +1,52 @@
+asset_id: OKI-SCENE-DE-02-v1
+asset_version: 1.0.0
+title: "Oki wird geboren - canonical German scene 2"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-KF-01-v1
+
+purpose:
+  product: "Oki Universe - German children's book"
+  scene: "Scene 2 - Oki wird geboren"
+  narrative_job: "Introduce Oki as the personified host cluster"
+
+creation:
+  tool: "Canonical Gate-3 keyframe reuse"
+  model_or_method: "Byte-identical scene mapping"
+  prompt_file: "art/prompts/keyframes/KF-01-oki-birth-v1.md"
+  generation_id: "exec-e755e460-5c26-4f0c-be4f-283fae76346a"
+
+integrity:
+  source_sha256: "4afb8e92e9d6d17f37424ae5b3db295f4d530da366d1cd5f4328a2c06768aa74"
+  prompt_sha256: "abe8f694b5e8714837a85116f990abe3d154ed6fcf3ff7bd537253303ef9e16b"
+
+editing:
+  source_file: "art/canonical/scenes/de/OKI-SCENE-DE-02-v1.png"
+  steps:
+    - "Copied canonical OKI-KF-01-v1 without pixel modification"
+  editor: "Codex; human mapping approval by project owner"
+
+rights:
+  review_status: PASS
+  third_party_assets: false
+  attribution_required: true
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/scenes/de/GATE-4-BATCH-A-CONFORMANCE-01.md"
+  result: PASS
+
+approval:
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Gate 4 Batch A approved; unchanged reuse of OKI-KF-01-v1"
+
+canonical_release_gate:
+  eligible: true
+  integrity_verified: true
+  approval_complete: true

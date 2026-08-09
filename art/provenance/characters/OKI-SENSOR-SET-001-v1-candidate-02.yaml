@@ -1,0 +1,79 @@
+asset_id: OKI-SENSOR-SET-001-v1-C02
+asset_version: 0.2.0
+title: "Oki sensor set reference candidate 02"
+status: CANDIDATE
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-SENSOR-SET-001-v1-C01
+
+purpose:
+  product: "Kinderbuch"
+  scene: "Character set reference"
+  narrative_job: "Resolve Meter while preserving Scout, Check and Proof"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen identity-preserving edit; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/characters/sensor-set-candidate-v2-meter-delta.md"
+  prompt_file: "art/prompts/characters/sensor-set-candidate-v2-meter-delta.md"
+  seed: "not exposed"
+  generation_id: "exec-e20d36a4-6886-4aa0-b366-eb51c0da2431"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "0aba1f5679e31031697481d4723fbf419efca20fb318af9a91558f96c3c48a2d"
+  prompt_sha256: "57c5fafcfb21fe5c095f98fc06ccf24f0dc4229624bb6c79a636131b4e321984"
+
+references:
+  - asset_id_or_path: "characters/sensors/OKI-SENSOR-SET-001-v1-candidate-01.png"
+    owner_or_source: "OpenKubes Gate-2B candidate"
+    license: "unreleased project candidate"
+    purpose: "edit target; preserve all except Meter"
+
+editing:
+  source_file: "characters/sensors/OKI-SENSOR-SET-001-v1-candidate-02.png"
+  steps:
+    - "Replaced only the clock-like Meter design with a normal amber companion holding an analog measurement gauge"
+    - "Copied built-in generation output into the project without further pixel edits"
+  editor: "Codex with built-in ImageGen"
+
+exports:
+  - path: "characters/sensors/OKI-SENSOR-SET-001-v1-candidate-02.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Project owner confirmed the prototypes were created for OpenKubes with ChatGPT and contain no third-party assets"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "characters/GATE-2B-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Selected and promoted to OKI-SENSOR-SET-001-v1"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

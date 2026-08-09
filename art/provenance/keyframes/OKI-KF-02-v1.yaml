@@ -1,0 +1,78 @@
+asset_id: OKI-KF-02-v1
+asset_version: 1.0.0
+title: "Kubernetes on Kubernetes - canonical acceptance keyframe"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids:
+  - OKI-KF-02-v1-C01
+
+purpose:
+  product: "Oki Universe - Kinderbuch"
+  scene: "Scene 4 - How many islands fit inside an island?"
+  narrative_job: "Prove separate host and guest cluster identity on shared infrastructure"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-08"
+  creative_brief_file: "art/prompts/keyframes/KF-02-kubernetes-on-kubernetes-v1.md"
+  prompt_file: "art/prompts/keyframes/KF-02-kubernetes-on-kubernetes-v1.md"
+  seed: "not exposed"
+  generation_id: "exec-7fa0fe9e-43eb-4e51-a287-e10926f675ff"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "e69ce7ffd8b532b366b20f688091f118b8cd1ecb248c03ebaaa52f33d03c78ff"
+  prompt_sha256: "90ef1fb741902152771dc418b4224b3cf6361f318438f25c19715d350594012c"
+
+references:
+  - asset_id_or_path: "OKI-KF-02-v1-C01"
+    owner_or_source: "OpenKubes Gate-3 candidate"
+    license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+    purpose: "Selected canonical source"
+
+editing:
+  source_file: "art/canonical/keyframes/OKI-KF-02-v1.png"
+  steps:
+    - "Promoted selected candidate without pixel modification"
+  editor: "Codex; human selection by project owner"
+
+exports:
+  - path: "art/canonical/keyframes/OKI-KF-02-v1.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "https://openai.com/policies/eu-terms-of-use/ (updated 2026-01-16)"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from the canonical OpenKubes Oki reference; no additional asset supplied"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community, CC BY 4.0; changes must be indicated"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-08"
+
+conformance:
+  checklist_file: "art/keyframes/GATE-3-CONFORMANCE-01.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-08"
+  release_notes: "Gate 3 approved"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

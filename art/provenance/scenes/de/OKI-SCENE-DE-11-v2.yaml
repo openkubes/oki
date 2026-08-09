@@ -1,0 +1,18 @@
+asset_id: OKI-SCENE-DE-11-v2
+asset_version: 2.0.0
+title: "Der Leuchtturm - canonical Mio edition"
+status: CANONICAL
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids: [OKI-SCENE-DE-11-v2-C01, OKMGMT-CHAR-001-v1]
+purpose: {product: "Oki Universe - German children's book v1.1 Mio amendment", scene: "Scene 11 - Der Leuchtturm", narrative_job: "Show Mio learning that observability reveals but does not remediate"}
+creation: {tool: "OpenAI built-in image generation", model_or_method: "Byte-identical canonical promotion of approved candidate", tool_terms_version_or_date: "2026-08-09", creative_brief_file: "art/prompts/scenes/de/scene-11-mio-lighthouse-v2-c01.md", prompt_file: "art/prompts/scenes/de/scene-11-mio-lighthouse-v2-c01.md", seed: "not exposed", generation_id: "exec-d0abc3a6-5673-41c0-8df0-8a90072374ca"}
+integrity: {source_sha256: "c34693d63f5418feed2df8519aba5e7db42dacf36521717c471976f11421d542", prompt_sha256: "ea3f95ccd3ad4130ff20a068a897602240212ec1d135c11abc865816d6837c63"}
+references: [{asset_id_or_path: OKI-SCENE-DE-11-v2-C01, owner_or_source: OpenKubes approved Gate-4.1 candidate, license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", purpose: "Byte-identical source"}]
+editing: {source_file: "art/scenes/de/OKI-SCENE-DE-11-v2-C01.png", steps: ["Copied byte-identically to canonical path after human approval"], editor: Codex}
+exports: [{path: "art/canonical/scenes/de/OKI-SCENE-DE-11-v2.png", format: PNG, dimensions: "1536x1024"}]
+rights: {review_status: PASS, third_party_assets: false, third_party_details: "Generated only from owned canonical OpenKubes references", approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded", rights_reviewed_by: "human project owner", rights_reviewed_at: "2026-08-09"}
+conformance: {checklist_file: "art/scenes/de/GATE-4-1-PRESENCE-AUDIT-REVIEW-01.md", current_vs_target_reviewed: true, architecture_reviewed: true, character_reviewed: true, result: PASS}
+approval: {responsible_person: "human project owner", approved_by: "human project owner", approved_at: "2026-08-09", release_notes: "Canonical Mio amendment Scene 11 v2"}
+canonical_release_gate: {eligible: true, required_conformance_result: PASS, required_rights_review_status: PASS, integrity_verified: true, approval_complete: true}

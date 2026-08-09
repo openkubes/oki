@@ -1,0 +1,75 @@
+asset_id: OKI-ART-0000
+asset_version: 0.1.0
+title: ""
+status: CONCEPT # CONCEPT | CANDIDATE | CANONICAL | RETIRED
+canon_version: "1.0"
+created_at: YYYY-MM-DD
+updated_at: YYYY-MM-DD
+parent_asset_ids: []
+
+purpose:
+  product: "" # Kinderbuch | Illustrated Technical Guide | PPT | Video | Web | Print
+  scene: ""
+  narrative_job: ""
+
+creation:
+  tool: ""
+  model_or_method: ""
+  tool_terms_version_or_date: ""
+  creative_brief_file: ""
+  prompt_file: ""
+  seed: ""
+  generation_id: ""
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: ""
+  prompt_sha256: ""
+
+references:
+  - asset_id_or_path: ""
+    owner_or_source: ""
+    license: ""
+    purpose: ""
+
+editing:
+  source_file: ""
+  steps:
+    - ""
+  editor: ""
+
+exports:
+  - path: ""
+    format: ""
+    dimensions: ""
+    color_profile: ""
+
+rights:
+  review_status: PENDING # PENDING | PASS | FAIL
+  third_party_assets: false
+  third_party_details: ""
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: ""
+  current_vs_target_reviewed: false
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING # PENDING | PASS | FAIL
+
+approval:
+  responsible_person: ""
+  approved_by: ""
+  approved_at: ""
+  release_notes: ""
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: false
+  approval_complete: false

@@ -1,0 +1,82 @@
+asset_id: OKMGMT-CHAR-001-v1
+asset_version: 1.0.0
+title: "Mio canonical character reference"
+status: CANONICAL
+canon_version: "1.0 + CA-001"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKMGMT-CHAR-001-v1-C02
+
+purpose:
+  product: "Oki Universe"
+  scene: "Canonical character reference"
+  narrative_job: "Personify ok-mgmt as Mio, Oki's first island and the heart of the island family"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Byte-identical promotion of approved built-in ImageGen candidate C02"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/characters/mio-character-candidate-v1-c01.md"
+  prompt_file: "art/prompts/characters/mio-character-candidate-v1-c02-core-delta.md"
+  seed: "not exposed"
+  generation_id: "exec-6a53ebe3-c9d3-40b8-a132-9170c5302a79"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "226ff2b19360f8b312870b8c5d0300e2ddd65420ea9d091415240a459e3fcacc"
+  prompt_sha256: "ca02f2acec6a1936e31fae2f90e26e076143a026c374d2f068a48d9a99564779"
+
+references:
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1-candidate-02.png"
+    owner_or_source: "OpenKubes approved Mio C02"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "byte-identical canonical source"
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1-scale-comparison-candidate-01.png"
+    owner_or_source: "OpenKubes approved scale QA derivative"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "approved peer-scale evidence"
+
+editing:
+  source_file: "characters/mio/OKMGMT-CHAR-001-v1.png"
+  steps:
+    - "Copied C02 byte-identically to the canonical path"
+  editor: "Codex"
+
+exports:
+  - path: "characters/mio/OKMGMT-CHAR-001-v1.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated for OpenKubes from owned canonical OpenKubes references"
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-09"
+
+conformance:
+  checklist_file: "characters/GATE-2B1-MIO.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-09"
+  release_notes: "Mio C02 and scale comparison C01 approved; promoted to OKMGMT-CHAR-001-v1"
+
+canonical_release_gate:
+  eligible: true
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

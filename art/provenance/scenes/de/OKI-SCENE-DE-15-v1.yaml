@@ -1,0 +1,16 @@
+asset_id: OKI-SCENE-DE-15-v1
+asset_version: 1.0.0
+title: "Okis Inselwelt für den Rucksack - canonical German scene 15"
+status: CANONICAL
+canon_version: "1.0"
+created_at: 2026-08-08
+updated_at: 2026-08-08
+parent_asset_ids: [OKI-SCENE-DE-15-v1-C01]
+purpose: {product: "Oki Universe - German children's book", scene: "Scene 15 - Okis Inselwelt für den Rucksack", narrative_job: "Present ok-local as a safe miniature learning and reference environment"}
+creation: {tool: "OpenAI built-in image generation", model_or_method: "Built-in ImageGen; model identifier not exposed", prompt_file: "art/prompts/scenes/de/scene-15-ok-local-backpack-v1.md", generation_id: "exec-f8692125-cef5-4cc5-a9d6-41477874d829"}
+integrity: {source_sha256: "1748b0090829573d26a37613a042797eb8285abc7bd011ff3633e898f735d109", prompt_sha256: "258a809c2cd4ae337da78bcf9a15f3675ffdbbd2aa7531631ddb177f2ee6942e"}
+editing: {source_file: "art/canonical/scenes/de/OKI-SCENE-DE-15-v1.png", steps: ["Promoted selected candidate without pixel modification"], editor: "Codex; human selection by project owner"}
+rights: {review_status: PASS, third_party_assets: false, approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki marks excluded", rights_reviewed_by: "human project owner", rights_reviewed_at: "2026-08-08"}
+conformance: {checklist_file: "art/scenes/de/GATE-4-BATCH-D-CONFORMANCE-01.md", result: PASS}
+approval: {approved_by: "human project owner", approved_at: "2026-08-08", release_notes: "Gate 4 Batch D approved"}
+canonical_release_gate: {eligible: true, integrity_verified: true, approval_complete: true}
