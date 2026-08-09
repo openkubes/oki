@@ -6,6 +6,7 @@ import { japaneseScenes } from "./story.ja.ts";
 import { arabicScenes } from "./story.ar.ts";
 import { frenchScenes } from "./story.fr.ts";
 import { hindiScenes } from "./story.hi.ts";
+import { portugueseScenes } from "./story.pt.ts";
 import { scenes as germanScenes } from "./story.ts";
 
 export type PresentationLocale =
@@ -17,7 +18,8 @@ export type PresentationLocale =
   | "ja"
   | "ar"
   | "fr"
-  | "hi";
+  | "hi"
+  | "pt";
 
 export const languageOptions: Array<{
   locale: PresentationLocale;
@@ -35,6 +37,7 @@ export const languageOptions: Array<{
   { locale: "ar", code: "ع", label: "العربية", href: "/ar/", direction: "rtl" },
   { locale: "fr", code: "FR", label: "Français", href: "/fr/", direction: "ltr" },
   { locale: "hi", code: "हि", label: "हिन्दी", href: "/hi/", direction: "ltr" },
+  { locale: "pt", code: "PT", label: "Português", href: "/pt/", direction: "ltr" },
 ];
 
 const creationCredit = {
@@ -493,6 +496,58 @@ export const presentationCopy = {
     window: "विंडो",
     keyboardHint: "← → आगे-पीछे · M सूची · F पूर्ण स्क्रीन",
   },
+  pt: {
+    locale: "pt",
+    direction: "ltr",
+    scenes: portugueseScenes,
+    title: "Oki e as muitas ilhas",
+    subtitle: "O guia infantil ilustrado de OpenKubes",
+    edition: "Prévia HTML em português · v1.0 RC1",
+    coverIntro:
+      "Uma história sobre promessas claras, provas sinceras e pessoas que assumem responsabilidades.",
+    dedication: "Para a Emily, que em breve chegará ao mundo. 💚",
+    creationCredit,
+    sceneCount: "18 cenas",
+    language: "Português",
+    languageMenuLabel: "Escolher idioma",
+    sceneLabel: "Cena",
+    canonicalIllustration: "Ilustração canônica",
+    quoteEyebrow: "A ideia central",
+    quoteTitle: "Em uma família, cada um pode ser diferente.",
+    quoteBody: "A família permanece unida porque todos podem contar uns com os outros.",
+    quoteNote:
+      "As ilhas são ligadas por promessas que todos entendem juntos, não por uma ferramenta específica.",
+    finaleEyebrow: "O que é OpenKubes?",
+    finaleTitle: "Uma boa maneira de construir ilhas confiáveis muitas e muitas vezes.",
+    finaleRhythm: "Construa. Conecte. Verifique. Aprenda. Cresça.",
+    finaleSmall:
+      "Não é uma única ilha. É um método compartilhado para muitas plataformas diferentes.",
+    aboutEyebrow: "Continue explorando",
+    aboutTitle: "Uma ilha surge. Depois, outra.",
+    aboutQuestion: "Mas quando ela não está apenas presente, e sim verdadeiramente confiável?",
+    license:
+      "Texto e conceito: OpenKubes Community. Ilustrações: CC BY 4.0; nomes, logotipos e marcas OpenKubes/Oki excluídos.",
+    startLabel: "Início",
+    quoteLabel: "Ideia central",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "Continue explorando",
+    presentationAria: "Oki e as muitas ilhas – apresentação HTML",
+    slideAnnouncement: "Slide",
+    of: "de",
+    menu: "Visão geral",
+    menuOpen: "Abrir visão geral dos slides",
+    menuClose: "Fechar visão geral dos slides",
+    menuTitle: "Visão geral dos slides",
+    menuAria: "Controles da apresentação",
+    previous: "Slide anterior",
+    next: "Próximo slide",
+    fullscreenStart: "Entrar em tela cheia",
+    fullscreenEnd: "Sair da tela cheia",
+    fullscreen: "Tela cheia",
+    window: "Janela",
+    keyboardHint: "← → navegar · M visão geral · F tela cheia",
+  },
 } as const;
 
-export type PresentationCopy = (typeof presentationCopy)[PresentationLocale];
+export type PresentationCopy =
+  (typeof presentationCopy)[PresentationLocale] & { readonly dedication?: string };

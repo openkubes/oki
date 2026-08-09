@@ -86,6 +86,8 @@ Preflight artifacts:
 - `book/fr/GATE-5C-HTML-FR-V1.0-REVIEW.md`
 - `story/hi/manuscript-v1.0-rc1.md` - child-friendly modern Standard Hindi review adaptation
 - `book/hi/GATE-5C-HTML-HI-V1.0-REVIEW.md`
+- `story/pt/manuscript-v1.0-rc1.md` - natural Brazilian-Portuguese review adaptation
+- `book/pt/GATE-5C-HTML-PT-V1.0-REVIEW.md`
 - `video/de/Oki-und-die-vielen-Inseln-DE-video-recording-v1.0.pptx`
 - `video/de/Oki-und-die-vielen-Inseln-DE-recording-guide-v1.0.md`
 
@@ -95,13 +97,14 @@ v1.2 PPTX, PDF, HTML presentation and checksums are the current publication
 candidates. The project owner approved the HTML derivative for public GitHub
 Pages publication on 2026-08-09. It passed automated manuscript,
 image-integrity, build, test and offline-export QA before deployment.
-The nine-language HTML build exports English, Spanish, Persian, Simplified
-Chinese, Japanese, Arabic, French and Hindi v1.0 RC1 review routes at `/en/`,
-`/es/`, `/fa/`, `/zh/`, `/ja/`, `/ar/`, `/fr/` and `/hi/` and verifies every
+The ten-language HTML build exports English, Spanish, Persian, Simplified
+Chinese, Japanese, Arabic, French, Hindi and Brazilian Portuguese v1.0 RC1 review routes at `/en/`,
+`/es/`, `/fa/`, `/zh/`, `/ja/`, `/ar/`, `/fr/`, `/hi/` and `/pt/` and verifies every
 set of 18 scene texts against its review manuscript. The Persian and Arabic
 routes use RTL presentation semantics while preserving canonical technical
-identifiers as isolated LTR content. The eight language gates and localized
-illustration deltas remain open.
+identifiers as isolated LTR content. The nine language gates and localized
+illustration deltas remain open. The Portuguese cover includes the approved
+first-name-only dedication to Emily.
 The PDF and PPTX still await explicit final release approval.
 The v1.1 artifacts remain the Mio-layout
 baseline. The print track remains open until trim, binding and printer

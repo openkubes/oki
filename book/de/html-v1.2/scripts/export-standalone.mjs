@@ -72,6 +72,7 @@ function renderDocument(locale) {
       <div class="orange-rule" aria-hidden="true"></div>
       <p class="subtitle">${escapeHtml(copy.subtitle)}</p>
       <p class="cover-intro">${escapeHtml(copy.coverIntro)}</p>
+      ${"dedication" in copy && copy.dedication ? `<p class="cover-dedication">${escapeHtml(copy.dedication)}</p>` : ""}
       <div class="cover-meta"><span>${escapeHtml(copy.sceneCount)}</span><span aria-hidden="true">·</span><span>${escapeHtml(copy.language)}</span><span aria-hidden="true">·</span><span>2026</span></div>
       <p class="creation-credit"><span>${escapeHtml(copy.creationCredit.creator)}</span><span>${escapeHtml(copy.creationCredit.assistance)}</span></p>
     </section>
@@ -269,6 +270,7 @@ await mkdir(resolve(outputRoot, "ja"), { recursive: true });
 await mkdir(resolve(outputRoot, "ar"), { recursive: true });
 await mkdir(resolve(outputRoot, "fr"), { recursive: true });
 await mkdir(resolve(outputRoot, "hi"), { recursive: true });
+await mkdir(resolve(outputRoot, "pt"), { recursive: true });
 await Promise.all(
   presentationCopy.de.scenes.map((scene) =>
     copyFile(
@@ -286,4 +288,5 @@ await writeFile(resolve(outputRoot, "ja/index.html"), renderDocument("ja"), "utf
 await writeFile(resolve(outputRoot, "ar/index.html"), renderDocument("ar"), "utf8");
 await writeFile(resolve(outputRoot, "fr/index.html"), renderDocument("fr"), "utf8");
 await writeFile(resolve(outputRoot, "hi/index.html"), renderDocument("hi"), "utf8");
-console.log(`Nine-language standalone presentation written to ${outputRoot}`);
+await writeFile(resolve(outputRoot, "pt/index.html"), renderDocument("pt"), "utf8");
+console.log(`Ten-language standalone presentation written to ${outputRoot}`);

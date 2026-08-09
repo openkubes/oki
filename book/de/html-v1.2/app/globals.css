@@ -480,6 +480,16 @@ button {
   line-height: 1.5;
 }
 
+.cover-dedication {
+  max-width: 38rem;
+  margin: 0.9rem 0 0;
+  color: #1d6a50;
+  font-size: clamp(0.82rem, 0.88vw, 1rem);
+  font-style: italic;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
 .cover-meta {
   display: flex;
   gap: 0.65rem;

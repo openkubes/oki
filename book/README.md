@@ -47,3 +47,7 @@ Arabic, French and Hindi HTML v1.0 RC1 review candidates are available at
 identifiers stay isolated left-to-right. Hindi uses Devanagari and child-friendly
 modern Standard Hindi. Native-language approval and localized illustration
 lettering remain open for all three editions.
+
+The Brazilian-Portuguese HTML v1.0 RC1 review candidate is available at
+`/pt/`. Its cover carries a Portuguese dedication to Emily. Native-language
+approval and localized illustration lettering remain open.

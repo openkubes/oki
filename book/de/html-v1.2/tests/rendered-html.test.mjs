@@ -27,6 +27,7 @@ test("renders the Oki presentation shell and release metadata", async () => {
   assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
   assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /Folienübersicht/);
+  assert.doesNotMatch(html, /Para a Emily/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 
@@ -124,6 +125,18 @@ test("renders the Hindi review edition at /hi", async () => {
   assert.match(html, /OpenKubes के बारे में बच्चों की चित्रमय मार्गदर्शिका/);
   assert.match(html, /स्लाइड सूची खोलें/);
   assert.match(html, /<main[^>]+lang="hi"[^>]+dir="ltr"/);
+});
+
+test("renders the Portuguese review edition and Emily dedication at /pt", async () => {
+  const response = await render("/pt");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Oki e as muitas ilhas/);
+  assert.match(html, /Prévia HTML em português/);
+  assert.match(html, /O guia infantil ilustrado de OpenKubes/);
+  assert.match(html, /Para a Emily, que em breve chegará ao mundo\. 💚/);
+  assert.match(html, /<main[^>]+lang="pt"[^>]+dir="ltr"/);
 });
 
 test("keeps all canonical scene assets in the public build", async () => {
@@ -240,6 +253,18 @@ test("exports a directly openable Hindi standalone presentation", async () => {
   assert.match(html, /ओकी और बहुत-से द्वीप/);
   assert.match(html, /जन्म लेना तैयार होना नहीं है/);
   assert.match(html, /href="\.\.\/ar\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Portuguese standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/pt/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="pt" dir="ltr"/);
+  assert.match(html, /Oki e as muitas ilhas/);
+  assert.match(html, /Nascer não é o mesmo que estar pronto/);
+  assert.match(html, /Para a Emily, que em breve chegará ao mundo\. 💚/);
+  assert.match(html, /href="\.\.\/hi\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
   assert.doesNotMatch(html, /src="\/scenes\//);
 });

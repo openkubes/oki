@@ -121,6 +121,7 @@ function CoverSlide({ copy }: { copy: PresentationCopy }) {
         <div className="orange-rule" aria-hidden="true" />
         <p className="subtitle">{copy.subtitle}</p>
         <p className="cover-intro">{copy.coverIntro}</p>
+        {copy.dedication ? <p className="cover-dedication">{copy.dedication}</p> : null}
         <div className="cover-meta">
           <span>{copy.sceneCount}</span>
           <span aria-hidden="true">·</span>

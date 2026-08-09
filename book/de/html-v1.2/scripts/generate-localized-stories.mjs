@@ -215,6 +215,32 @@ const configurations = [
       "शाम को ओकी, मियो और आइया चमकते हुए अलग-अलग द्वीपों के परिवार को देखते हैं।",
     ],
   },
+  {
+    locale: "pt",
+    exportName: "portugueseScenes",
+    manuscript: "story/pt/manuscript-v1.0-rc1.md",
+    heading: /^## Cena (\d+) - (.+)$/gm,
+    altTexts: [
+      "Pessoas conversam sobre um projeto entre computadores, cabos e máquinas.",
+      "Oki aparece como uma figura amigável azul e verde em uma nova ilha com prefeitura.",
+      "Oki e a equipe observam na oficina um grande ovo de cluster brilhante com sua primeira rachadura.",
+      "Uma ilha menor, com limites e prefeitura próprios, fica sobre a grande ilha de Oki ao lado da figura azul de Mio.",
+      "Mio está diante de sua própria prefeitura enquanto Oki e a construtora recebem a jovem ilha.",
+      "Oki mostra a Mio um grande livro chamado Contratos: o que precisa funcionar?",
+      "Os quatro sensores Scout, Meter, Check e Proof carregam binóculos, um medidor, uma prancheta e um sinal verde.",
+      "Uma equipe independente constrói uma nova ilha ao longe enquanto Oki e Mio observam da costa.",
+      "A equipe apresenta a Mio uma ilha que já existe, e uma conexão segura e consciente aparece no mapa.",
+      "A equipe conserta caminhos e portas; depois, os sensores verificam o resultado e Proof mostra o sinal verde.",
+      "Um farol alto ilumina várias ilhas e revela um ponto escuro em uma ponte.",
+      "Aia chega em uma pequena aeronave com uma mochila roxa cheia de projetos e ideias, recebida por Oki e Mio.",
+      "Aia, Oki e os sensores estão diante do portão enquanto a construtora humana segura a chave da decisão.",
+      "Oki, Mio e Aia observam uma família variada de ilhas de serviços compartilhados, IA, robótica e IoT.",
+      "Oki, Aia e crianças exploram em um notebook um pequeno mundo de ilhas para aprender e experimentar.",
+      "Após a tempestade, as pessoas reconstroem a prefeitura e os caminhos essenciais de Mio a partir de projetos protegidos, enquanto as outras ilhas continuam acesas.",
+      "As pessoas, Oki e Mio estudam um projeto de objetivo claramente marcado Amanhã para um futuro ciclo de vida de cluster.",
+      "Oki, Mio e Aia contemplam ao anoitecer uma família diversa de ilhas brilhantes.",
+    ],
+  },
 ];
 
 for (const configuration of configurations) {

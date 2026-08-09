@@ -1,4 +1,4 @@
-# Oki – neunsprachige HTML-Präsentation
+# Oki – zehnsprachige HTML-Präsentation
 
 Published at:
 
@@ -11,17 +11,19 @@ Published at:
 - المعاينة العربية: <https://oki.openkubes.org/ar/>
 - Aperçu en français: <https://oki.openkubes.org/fr/>
 - हिन्दी समीक्षा-पूर्वावलोकन: <https://oki.openkubes.org/hi/>
+- Prévia em português: <https://oki.openkubes.org/pt/>
 
 Interaktive deutsche Präsentationsfassung des illustrierten Kinderführers zu
 OpenKubes. Die 18 Szenen stammen aus dem eingefrorenen Manuskript v1.2; die
 Bilder sind unveränderte Kopien der kanonischen deutschen Szenenauswahl v1.1.
 
-Die Routen `/en/`, `/es/`, `/fa/`, `/zh/`, `/ja/`, `/ar/`, `/fr/` und `/hi/` sind natürliche Adaptionen des
+Die Routen `/en/`, `/es/`, `/fa/`, `/zh/`, `/ja/`, `/ar/`, `/fr/`, `/hi/` und `/pt/` sind natürliche Adaptionen des
 freigegebenen deutschen Manuskripts in amerikanischem Englisch,
 internationalem Spanisch, Persisch, vereinfachtem Chinesisch, Japanisch,
-modernem Hocharabisch, internationalem Französisch und kindgerechtem Hindi. Bis
+modernem Hocharabisch, internationalem Französisch, kindgerechtem Hindi und
+brasilianischem Portugiesisch. Bis
 zur jeweiligen menschlichen Sprachfreigabe tragen sie den Status **v1.0 RC1 /
-Review Preview**. Alle neun
+Review Preview**. Alle zehn
 Ausgaben verwenden dieselben byte-identischen kanonischen Illustrationen und
 werden über ein kompaktes gemeinsames Sprachmenü verbunden. Die persische und
 arabische Ausgabe werden von rechts nach links gesetzt; technische Kennungen
@@ -56,7 +58,7 @@ This starter does not use `wrangler.jsonc`.
 `standalone/es/index.html`, `standalone/fa/index.html`,
 `standalone/zh/index.html`, `standalone/ja/index.html`,
 `standalone/ar/index.html`, `standalone/fr/index.html` und
-`standalone/hi/index.html` können direkt im
+`standalone/hi/index.html` sowie `standalone/pt/index.html` können direkt im
 Browser geöffnet werden. Alle Texte,
 Styles und Steuerungen liegen in dieser Datei; die 18 Bilder befinden sich im
 benachbarten Verzeichnis `standalone/scenes/`.
@@ -69,6 +71,6 @@ Die HTML-Präsentation ist ein Derivat. Quelle der Geschichte ist
 
 `npm run qa` vergleicht alle 18 deutschen Szenentexte mit dem eingefrorenen
 Manuskript v1.2 und alle englischen, spanischen, persischen, chinesischen,
-japanischen, arabischen, französischen und Hindi-Szenentexte mit ihren
+japanischen, arabischen, französischen, Hindi- und portugiesischen Szenentexte mit ihren
 RC1-Manuskripten. Zusätzlich prüft es die Bilddateien aller Web- und
 Offline-Ausgaben gegen das kanonische SHA-256-Manifest.

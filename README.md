@@ -21,13 +21,15 @@ The Arabic RTL, French and Hindi v1.0 RC1 review previews are available at
 **[oki.openkubes.org/ar](https://oki.openkubes.org/ar/)**,
 **[oki.openkubes.org/fr](https://oki.openkubes.org/fr/)** and
 **[oki.openkubes.org/hi](https://oki.openkubes.org/hi/)**.
+The Portuguese v1.0 RC1 review preview, dedicated to Emily, is available at
+**[oki.openkubes.org/pt](https://oki.openkubes.org/pt/)**.
 
 Every deployment rebuilds the presentation, compares all 18 scenes with the
 frozen German v1.2 manuscript and verifies every published illustration against
 the canonical SHA-256 manifest. A failed integrity check prevents publication.
 The same deployment also verifies the complete English, Spanish, Persian,
 Simplified Chinese, Japanese, Arabic, French and Hindi RC1 texts against their
-review manuscripts and exposes a compact nine-language menu.
+review manuscripts and exposes a compact ten-language menu.
 
 The canonical German children's-book title is **Oki und die vielen Inseln**,
 with the subtitle **Der illustrierte Kinderführer zu OpenKubes**.
@@ -105,6 +107,8 @@ They are not visual sources of truth and may be migrated only after review.
 - **Gate 5C FR HTML - French web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
 - **Gate HI-2A - Hindi manuscript:** REVIEW CANDIDATE, v1.0 RC1
 - **Gate 5C HI HTML - Hindi web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
+- **Gate PT-2A - Portuguese manuscript:** REVIEW CANDIDATE, v1.0 RC1
+- **Gate 5C PT HTML - Portuguese web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
 
 ## Contribution rule
 

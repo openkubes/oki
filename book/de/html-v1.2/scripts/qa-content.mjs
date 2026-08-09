@@ -12,6 +12,7 @@ import { japaneseScenes } from "../app/story.ja.ts";
 import { arabicScenes } from "../app/story.ar.ts";
 import { frenchScenes } from "../app/story.fr.ts";
 import { hindiScenes } from "../app/story.hi.ts";
+import { portugueseScenes } from "../app/story.pt.ts";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const okiRoot = resolve(projectRoot, "../../..");
@@ -85,6 +86,12 @@ const editions = [
     scenes: hindiScenes,
     manuscript: "story/hi/manuscript-v1.0-rc1.md",
     heading: /^## दृश्य (\d+) - (.+)$/gm,
+  },
+  {
+    label: "PT v1.0 RC1",
+    scenes: portugueseScenes,
+    manuscript: "story/pt/manuscript-v1.0-rc1.md",
+    heading: /^## Cena (\d+) - (.+)$/gm,
   },
 ];
 
@@ -194,6 +201,27 @@ const hindiStandalone = await readFile(
   resolve(projectRoot, "standalone/hi/index.html"),
   "utf8",
 );
+const portugueseStandalone = await readFile(
+  resolve(projectRoot, "standalone/pt/index.html"),
+  "utf8",
+);
+for (const editionWithoutDedication of [
+  standalone,
+  englishStandalone,
+  spanishStandalone,
+  persianStandalone,
+  chineseStandalone,
+  japaneseStandalone,
+  arabicStandalone,
+  frenchStandalone,
+  hindiStandalone,
+]) {
+  assert.doesNotMatch(
+    editionWithoutDedication,
+    /Para a Emily/,
+    "The Emily dedication must remain exclusive to the Portuguese cover.",
+  );
+}
 assert.match(standalone, /In einer Familie darf jeder anders sein\./);
 assert.match(standalone, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
 assert.match(standalone, /data-slide="21"/);
@@ -247,7 +275,14 @@ assert.match(hindiStandalone, /लेकिन वह कब केवल मौ
 assert.match(hindiStandalone, /data-slide="21"/);
 assert.match(hindiStandalone, /<html lang="hi" dir="ltr">/);
 assert.match(hindiStandalone, /href="\.\.\/ar\/"/);
+assert.match(portugueseStandalone, /Oki e as muitas ilhas/);
+assert.match(portugueseStandalone, /Em uma família, cada um pode ser diferente\./);
+assert.match(portugueseStandalone, /Mas quando ela não está apenas presente, e sim verdadeiramente confiável\?/);
+assert.match(portugueseStandalone, /Para a Emily, que em breve chegará ao mundo\. 💚/);
+assert.match(portugueseStandalone, /data-slide="21"/);
+assert.match(portugueseStandalone, /<html lang="pt" dir="ltr">/);
+assert.match(portugueseStandalone, /href="\.\.\/hi\/"/);
 
 console.log(
-  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA/AR/FR/HI v1.0 RC1, 18 canonical images and all standalone editions agree.",
+  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA/AR/FR/HI/PT v1.0 RC1, 18 canonical images and all standalone editions agree.",
 );

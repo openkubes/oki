@@ -1,7 +1,7 @@
 {
   "name": "oki-html-presentation-de",
   "version": "1.2.0",
-  "description": "Oki – neunsprachige interaktive HTML-Präsentation in Deutsch, Englisch, Spanisch, Persisch, Chinesisch, Japanisch, Arabisch, Französisch und Hindi",
+  "description": "Oki – zehnsprachige interaktive HTML-Präsentation in Deutsch, Englisch, Spanisch, Persisch, Chinesisch, Japanisch, Arabisch, Französisch, Hindi und Portugiesisch",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
