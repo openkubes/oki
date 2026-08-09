@@ -5,11 +5,11 @@
 **Version:** 1.0  
 **Status:** APPROVED  
 **Approved:** 2026-08-08 - Gate 1, human approval  
-**Last reviewed:** 2026-08-09 - German digital-title and release rules recorded  
+**Last reviewed:** 2026-08-09 - global children's-book title recorded through CA-002
 **Purpose:** Gemeinsame Source of Truth für Kinderbuch, Illustrated Technical Guide, Präsentationen, Videos, Website und weitere Oki-Medien.  
 **Source prototype:** `Oki-und-die-Inseln-der-vielen-Cluster-DE-v1.pptx`
 
-**Approved amendment:** [`CA-001 - Mio personifiziert ok-mgmt`](amendments/CA-001-mio-ok-mgmt-personification.md) ist seit 2026-08-09 normativ.
+**Approved amendments:** [`CA-001 - Mio personifiziert ok-mgmt`](amendments/CA-001-mio-ok-mgmt-personification.md) und [`CA-002 - Globaler Kinderbuchtitel`](amendments/CA-002-global-book-title.md) sind seit 2026-08-09 normativ.
 
 ## 1. Grundregel
 
@@ -27,14 +27,14 @@ Alle Formate entstehen aus demselben Kanon, aber mit unterschiedlicher technisch
 
 **Ziel:** Geschichte verstehen und Figuren lieben.
 
-**Kanonischer deutscher Buchtitel:** **Oki und die vielen Inseln**  
+**Kanonischer deutscher Buchtitel:** **Oki und das Geheimnis der Inseln**
 **Kanonischer Untertitel:** **Der illustrierte Kinderführer zu OpenKubes**
 
-Der frühere Arbeitstitel **Oki und die Inseln der vielen Cluster** bleibt nur in
-historischen Prototypdateien erhalten. Die Titelentscheidung wurde im Gate 5A
-vom menschlichen Project Owner freigegeben und am 9. August 2026 im Canon
-dokumentiert. Sie ändert weder den eingefrorenen Storybogen noch die Bedeutung
-von Inseln als Kubernetes-Cluster.
+Die früheren Titel **Oki und die Inseln der vielen Cluster** und **Oki und die
+vielen Inseln** bleiben nur in historischen Freigabe- und Release-Artefakten
+erhalten. Der aktuelle globale Titel wurde durch CA-002 am 9. August 2026 vom
+menschlichen Project Owner freigegeben. Die Entscheidung ändert weder den
+eingefrorenen Storybogen noch die Bedeutung von Inseln als Kubernetes-Cluster.
 
 Enthält Oki, Aia, Inseln, Eier, Rathäuser, Sensoren, Leuchtturm, Tor und Abenteuer. Technische Begriffe werden sparsam eingeführt. Es gibt keine langen Architektur-Erklärungen in der Haupthandlung.
 

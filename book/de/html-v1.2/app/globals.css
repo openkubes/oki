@@ -459,8 +459,8 @@ button {
 }
 
 .cover-copy h1 {
-  max-width: 10ch;
-  font-size: clamp(3rem, 5.3vw, 6.8rem);
+  max-width: 11ch;
+  font-size: clamp(2.75rem, 4.8vw, 6.1rem);
 }
 
 .subtitle {

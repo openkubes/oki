@@ -1,4 +1,4 @@
-# Oki e as muitas ilhas
+# Oki e o segredo das ilhas
 
 ## Manuscrito infantil em português v1.0 RC1 - Adaptação em linguagem natural
 

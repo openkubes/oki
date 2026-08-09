@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Presentation } from "../Presentation";
 
 export const metadata: Metadata = {
-  title: "اوکی و جزیره‌های بسیار · ارائهٔ HTML",
+  title: "اوکی و راز جزیره‌ها · ارائهٔ HTML",
   description:
     "راهنمای مصور کودکان برای OpenKubes به شکل یک ارائهٔ تعاملی فارسی.",
   authors: [{ name: "OpenKubes Community" }],

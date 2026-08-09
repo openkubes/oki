@@ -31,7 +31,7 @@ The same deployment also verifies the complete English, Spanish, Persian,
 Simplified Chinese, Japanese, Arabic, French and Hindi RC1 texts against their
 review manuscripts and exposes a compact ten-language menu.
 
-The canonical German children's-book title is **Oki und die vielen Inseln**,
+The canonical German children's-book title is **Oki und das Geheimnis der Inseln**,
 with the subtitle **Der illustrierte Kinderführer zu OpenKubes**.
 
 > **See it. Understand it. Build it.**
@@ -85,6 +85,7 @@ They are not visual sources of truth and may be migrated only after review.
 - **Gate 5A - German layout system:** APPROVED
 - **Gate 5B - Full German book:** APPROVED, 2026-08-08
 - **CA-001 - Mio / `ok-mgmt` personification:** APPROVED, 2026-08-09
+- **CA-002 - Global children's-book title:** APPROVED, 10 LANGUAGES, 2026-08-09
 - **Gate 2A.1 - Mio story delta:** APPROVED, v1.1 CONTENT FROZEN, 2026-08-09
 - **Gate 2A.2 - Editorial clarity delta:** APPROVED, v1.2 CONTENT FROZEN, 2026-08-09
 - **Gate 2B.1 - Mio character asset:** APPROVED, CANONICAL, 2026-08-09

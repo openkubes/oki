@@ -20,7 +20,7 @@ test("renders the Oki presentation shell and release metadata", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Oki und die vielen Inseln/);
+  assert.match(html, /Oki und das Geheimnis der Inseln/);
   assert.match(html, /Digitale HTML-Ausgabe/);
   assert.match(html, /v1\.2/);
   assert.match(html, /Der illustrierte Kinderführer zu OpenKubes/);
@@ -36,7 +36,7 @@ test("renders the English review edition at /en", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Oki and the Many Islands/);
+  assert.match(html, /Oki and the Secret of the Islands/);
   assert.match(html, /English HTML Preview/);
   assert.match(html, /The Illustrated Children/);
   assert.match(html, /slide overview/i);
@@ -47,7 +47,7 @@ test("renders the Spanish review edition at /es", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Oki y las muchas islas/);
+  assert.match(html, /Oki y el secreto de las islas/);
   assert.match(html, /Vista previa HTML en español/);
   assert.match(html, /La guía infantil ilustrada de OpenKubes/);
   assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
@@ -59,7 +59,7 @@ test("renders the Persian review edition at /fa with RTL content", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /اوکی و جزیره‌های بسیار/);
+  assert.match(html, /اوکی و راز جزیره‌ها/);
   assert.match(html, /پیش‌نمایش HTML فارسی/);
   assert.match(html, /راهنمای مصور کودکان برای OpenKubes/);
   assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
@@ -72,7 +72,7 @@ test("renders the Simplified Chinese review edition at /zh", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /奥奇和许许多多的岛屿/);
+  assert.match(html, /奥奇与群岛的秘密/);
   assert.match(html, /简体中文 HTML 审校预览/);
   assert.match(html, /OpenKubes 儿童图解指南/);
   assert.match(html, /打开幻灯片目录/);
@@ -84,7 +84,7 @@ test("renders the Japanese review edition at /ja", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /オキとたくさんの島々/);
+  assert.match(html, /オキと島々の秘密/);
   assert.match(html, /日本語 HTML レビュー版/);
   assert.match(html, /OpenKubes の子ども向けイラストガイド/);
   assert.match(html, /スライド一覧を開く/);
@@ -96,7 +96,7 @@ test("renders the Arabic review edition at /ar with RTL content", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /أوكي والجزر الكثيرة/);
+  assert.match(html, /أوكي وسرّ الجزر/);
   assert.match(html, /معاينة HTML العربية/);
   assert.match(html, /دليل الأطفال المصوّر إلى OpenKubes/);
   assert.match(html, /فتح فهرس الشرائح/);
@@ -108,7 +108,7 @@ test("renders the French review edition at /fr", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Oki et les nombreuses îles/);
+  assert.match(html, /Oki et le secret des îles/);
   assert.match(html, /Aperçu HTML en français/);
   assert.match(html, /Le guide illustré d&#x27;OpenKubes pour les enfants/);
   assert.match(html, /Ouvrir le sommaire des diapositives/);
@@ -120,7 +120,7 @@ test("renders the Hindi review edition at /hi", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /ओकी और बहुत-से द्वीप/);
+  assert.match(html, /ओकी और द्वीपों का रहस्य/);
   assert.match(html, /हिन्दी HTML समीक्षा-पूर्वावलोकन/);
   assert.match(html, /OpenKubes के बारे में बच्चों की चित्रमय मार्गदर्शिका/);
   assert.match(html, /स्लाइड सूची खोलें/);
@@ -132,7 +132,7 @@ test("renders the Portuguese review edition and Emily dedication at /pt", async 
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Oki e as muitas ilhas/);
+  assert.match(html, /Oki e o segredo das ilhas/);
   assert.match(html, /Prévia HTML em português/);
   assert.match(html, /O guia infantil ilustrado de OpenKubes/);
   assert.match(html, /Para a Emily, que em breve chegará ao mundo\. 💚/);
@@ -153,6 +153,7 @@ test("keeps all canonical scene assets in the public build", async () => {
 test("exports a directly openable standalone presentation", async () => {
   const html = await readFile(new URL("../standalone/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /Oki und das Geheimnis der Inseln/);
   assert.match(html, /data-slide="21"/);
   assert.match(html, /Mio und ihr eigenes Rathaus/);
   assert.match(html, /href="https:\/\/kubernauts\.de\/"/);
@@ -170,7 +171,7 @@ test("exports a directly openable English standalone presentation", async () => 
   const html = await readFile(new URL("../standalone/en/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="en"/);
-  assert.match(html, /Oki and the Many Islands/);
+  assert.match(html, /Oki and the Secret of the Islands/);
   assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /Being Born Is Not the Same as Being Ready/);
   assert.match(html, /href="\.\.\/"/);
@@ -182,7 +183,7 @@ test("exports a directly openable Spanish standalone presentation", async () => 
   const html = await readFile(new URL("../standalone/es/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="es" dir="ltr"/);
-  assert.match(html, /Oki y las muchas islas/);
+  assert.match(html, /Oki y el secreto de las islas/);
   assert.match(html, /href="https:\/\/kubernauts\.de\/"/);
   assert.match(html, /Nacer no es lo mismo que estar listo/);
   assert.match(html, /href="\.\.\/fa\/"/);
@@ -194,7 +195,7 @@ test("exports a directly openable Persian standalone presentation", async () => 
   const html = await readFile(new URL("../standalone/fa/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="fa" dir="rtl"/);
-  assert.match(html, /اوکی و جزیره‌های بسیار/);
+  assert.match(html, /اوکی و راز جزیره‌ها/);
   assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /به دنیا آمدن، همان آماده بودن نیست/);
   assert.match(html, /href="\.\.\/es\/"/);
@@ -206,7 +207,7 @@ test("exports a directly openable Simplified Chinese standalone presentation", a
   const html = await readFile(new URL("../standalone/zh/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="zh" dir="ltr"/);
-  assert.match(html, /奥奇和许许多多的岛屿/);
+  assert.match(html, /奥奇与群岛的秘密/);
   assert.match(html, /诞生不等于准备就绪/);
   assert.match(html, /href="\.\.\/ja\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -217,7 +218,7 @@ test("exports a directly openable Japanese standalone presentation", async () =>
   const html = await readFile(new URL("../standalone/ja/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="ja" dir="ltr"/);
-  assert.match(html, /オキとたくさんの島々/);
+  assert.match(html, /オキと島々の秘密/);
   assert.match(html, /生まれたことと、準備ができたことは違う/);
   assert.match(html, /href="\.\.\/zh\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -228,7 +229,7 @@ test("exports a directly openable Arabic standalone presentation", async () => {
   const html = await readFile(new URL("../standalone/ar/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="ar" dir="rtl"/);
-  assert.match(html, /أوكي والجزر الكثيرة/);
+  assert.match(html, /أوكي وسرّ الجزر/);
   assert.match(html, /الولادة لا تعني الجاهزية/);
   assert.match(html, /href="\.\.\/fr\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -239,7 +240,7 @@ test("exports a directly openable French standalone presentation", async () => {
   const html = await readFile(new URL("../standalone/fr/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="fr" dir="ltr"/);
-  assert.match(html, /Oki et les nombreuses îles/);
+  assert.match(html, /Oki et le secret des îles/);
   assert.match(html, /Naître ne veut pas dire être prêt/);
   assert.match(html, /href="\.\.\/hi\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -250,7 +251,7 @@ test("exports a directly openable Hindi standalone presentation", async () => {
   const html = await readFile(new URL("../standalone/hi/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="hi" dir="ltr"/);
-  assert.match(html, /ओकी और बहुत-से द्वीप/);
+  assert.match(html, /ओकी और द्वीपों का रहस्य/);
   assert.match(html, /जन्म लेना तैयार होना नहीं है/);
   assert.match(html, /href="\.\.\/ar\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -261,7 +262,7 @@ test("exports a directly openable Portuguese standalone presentation", async () 
   const html = await readFile(new URL("../standalone/pt/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="pt" dir="ltr"/);
-  assert.match(html, /Oki e as muitas ilhas/);
+  assert.match(html, /Oki e o segredo das ilhas/);
   assert.match(html, /Nascer não é o mesmo que estar pronto/);
   assert.match(html, /Para a Emily, que em breve chegará ao mundo\. 💚/);
   assert.match(html, /href="\.\.\/hi\/"/);

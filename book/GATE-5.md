@@ -53,6 +53,11 @@ Candidate v0.1:
 
 **Status:** OPEN - DIGITAL v1.2 CANDIDATE READY FOR REVIEW; PRINT TARGET DECISION REQUIRED
 
+CA-002 establishes **Oki und das Geheimnis der Inseln** and its nine natural
+localized equivalents as the current global title. Historical PDF, PPTX and
+video release artifacts keep their original titles; all current HTML routes
+and newly generated derivatives use CA-002.
+
 Validate editorial fidelity, accessibility, image resolution, trim/bleed decisions, fonts, links, licensing, PDF rendering and printer requirements before release.
 
 Preflight artifacts:

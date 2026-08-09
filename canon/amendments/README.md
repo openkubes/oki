@@ -8,3 +8,4 @@ scoped delta gates pass.
 | Amendment | Subject | Status |
 | --- | --- | --- |
 | [`CA-001`](CA-001-mio-ok-mgmt-personification.md) | Mio personifies `ok-mgmt` | APPROVED, 2026-08-09 |
+| [`CA-002`](CA-002-global-book-title.md) | Global children's-book title: *The Secret of the Islands* | APPROVED, 2026-08-09 |

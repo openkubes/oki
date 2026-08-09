@@ -1,4 +1,4 @@
-# Oki und die vielen Inseln
+# Oki und das Geheimnis der Inseln
 
 ## Deutsches Kindermanuskript v1.2 - Editorial Clarity Amendment
 

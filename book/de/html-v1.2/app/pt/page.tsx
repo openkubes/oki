@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Presentation } from "../Presentation";
 
 export const metadata: Metadata = {
-  title: "Oki e as muitas ilhas · Apresentação HTML",
+  title: "Oki e o segredo das ilhas · Apresentação HTML",
   description:
     "O guia infantil ilustrado de OpenKubes como apresentação HTML interativa em português.",
   authors: [{ name: "OpenKubes Community" }],

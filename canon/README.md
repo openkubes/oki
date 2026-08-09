@@ -2,7 +2,7 @@
 
 Dieser Ordner ist ab v2 die verbindliche Source of Truth für das OpenKubes Illustrated Universe. Canon v1.0 wurde am 8. August 2026 im menschlichen Gate-1-Review als `APPROVED` freigegeben.
 
-Der kanonische deutsche Kinderbuchtitel lautet **Oki und die vielen Inseln**;
+Der kanonische deutsche Kinderbuchtitel lautet **Oki und das Geheimnis der Inseln**;
 der Untertitel lautet **Der illustrierte Kinderführer zu OpenKubes**. Die
 Gate-5A-Entscheidung wurde am 9. August 2026 im Canon dokumentiert.
 
@@ -15,6 +15,7 @@ Gate-5A-Entscheidung wurde am 9. August 2026 im Canon dokumentiert.
 - `architecture-sources.md` - Quellenregister und Statusregeln
 - `current-vs-target.md` - kurze, harte Grenze zwischen belegtem Current und Zielbild
 - `amendments/CA-001-mio-ok-mgmt-personification.md` - freigegebenes Amendment für Mio als Personifikation von `ok-mgmt`
+- `amendments/CA-002-global-book-title.md` - freigegebener globaler Kinderbuchtitel in zehn Sprachen
 
 ## Produktionsreihenfolge
 
@@ -35,3 +36,7 @@ Die bestehende v1-Präsentation bleibt Concept Prototype und ist keine visuelle 
 CA-001 setzt **Mio – Okis erste Insel und das Herz der Inselfamilie** als
 Personifikation von `ok-mgmt` fest. Das Amendment ist seit 2026-08-09 normativ.
 Gate 5C bleibt bis zum Abschluss der daraus folgenden Delta-Gates auf Hold.
+
+CA-002 setzt **Oki und das Geheimnis der Inseln** und die natürlich lokalisierten
+Titel aller zehn aktuellen Sprachfassungen als normativ fest. Alte Release-
+Artefakte bleiben als historische Nachweise unverändert.

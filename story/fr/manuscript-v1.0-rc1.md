@@ -1,4 +1,4 @@
-# Oki et les nombreuses îles
+# Oki et le secret des îles
 
 ## Manuscrit jeunesse français v1.0 RC1 - Adaptation en langage naturel
 

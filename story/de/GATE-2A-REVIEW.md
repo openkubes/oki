@@ -40,6 +40,11 @@ change only: all 18 approved scene titles and story paragraphs remain
 unchanged. The manuscript checksum was regenerated after this explicit title
 decision.
 
+This historical title record was superseded on 2026-08-09 by the explicitly
+approved [`CA-002`](../../canon/amendments/CA-002-global-book-title.md). CA-002
+changes only current title metadata to **Oki und das Geheimnis der Inseln**;
+the frozen 18-scene story remains unchanged.
+
 ## Incorporated review deltas
 
 - [x] Scene 9 makes the child-level sequence introduction, care and verification explicit.

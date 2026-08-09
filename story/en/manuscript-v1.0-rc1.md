@@ -1,4 +1,4 @@
-# Oki and the Many Islands
+# Oki and the Secret of the Islands
 
 ## English Children's Manuscript v1.0 RC1 - Natural-Language Adaptation
 
