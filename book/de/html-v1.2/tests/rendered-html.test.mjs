@@ -39,6 +39,29 @@ test("renders the English review edition at /en", async () => {
   assert.match(html, /slide overview/i);
 });
 
+test("renders the Spanish review edition at /es", async () => {
+  const response = await render("/es");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Oki y las muchas islas/);
+  assert.match(html, /Vista previa HTML en español/);
+  assert.match(html, /La guía infantil ilustrada de OpenKubes/);
+  assert.match(html, /Abrir el índice de diapositivas/);
+});
+
+test("renders the Persian review edition at /fa with RTL content", async () => {
+  const response = await render("/fa");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /اوکی و جزیره‌های بسیار/);
+  assert.match(html, /پیش‌نمایش HTML فارسی/);
+  assert.match(html, /راهنمای مصور کودکان برای OpenKubes/);
+  assert.match(html, /باز کردن فهرست اسلایدها/);
+  assert.match(html, /<main[^>]+dir="rtl"/);
+});
+
 test("keeps all canonical scene assets in the public build", async () => {
   const manifest = await readFile(
     new URL("../app/story.ts", import.meta.url),
@@ -72,6 +95,28 @@ test("exports a directly openable English standalone presentation", async () => 
   assert.match(html, /Oki and the Many Islands/);
   assert.match(html, /Being Born Is Not the Same as Being Ready/);
   assert.match(html, /href="\.\.\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Spanish standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/es/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="es" dir="ltr"/);
+  assert.match(html, /Oki y las muchas islas/);
+  assert.match(html, /Nacer no es lo mismo que estar listo/);
+  assert.match(html, /href="\.\.\/fa\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Persian standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/fa/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="fa" dir="rtl"/);
+  assert.match(html, /اوکی و جزیره‌های بسیار/);
+  assert.match(html, /به دنیا آمدن، همان آماده بودن نیست/);
+  assert.match(html, /href="\.\.\/es\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
   assert.doesNotMatch(html, /src="\/scenes\//);
 });

@@ -1,7 +1,10 @@
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { presentationCopy } from "../app/presentation-copy.ts";
+import {
+  languageOptions,
+  presentationCopy,
+} from "../app/presentation-copy.ts";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outputRoot = resolve(projectRoot, "standalone");
@@ -28,7 +31,17 @@ function inlineMarkup(value) {
 function renderDocument(locale) {
   const copy = presentationCopy[locale];
   const assetPrefix = locale === "de" ? "." : "..";
-  const languageHref = locale === "de" ? "./en/" : "../";
+  const languageMarkup = languageOptions
+    .map((option) => {
+      const href = locale === "de"
+        ? option.locale === "de" ? "./" : `./${option.locale}/`
+        : option.locale === "de" ? "../" : `../${option.locale}/`;
+      const active = option.locale === locale
+        ? ' class="active" aria-current="page"'
+        : "";
+      return `<a href="${href}" lang="${option.locale}" dir="${option.locale === "fa" ? "rtl" : "ltr"}" aria-label="${escapeHtml(option.label)}"${active}>${option.code}</a>`;
+    })
+    .join("");
 
   function storyFigure(scene, eager = false) {
     return `<figure class="story-figure">
@@ -194,7 +207,7 @@ function renderDocument(locale) {
   })();`;
 
   return `<!doctype html>
-  <html lang="${copy.locale}">
+  <html lang="${copy.locale}" dir="${copy.direction}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -204,10 +217,10 @@ function renderDocument(locale) {
     <style>${sharedCss}</style>
   </head>
   <body>
-    <main class="presentation-shell" aria-label="${escapeHtml(copy.presentationAria)}">
+    <main class="presentation-shell" lang="${copy.locale}" dir="${copy.direction}" aria-label="${escapeHtml(copy.presentationAria)}">
       <div class="progress-track" aria-hidden="true"><span></span></div>
       <div class="brand-mark" aria-hidden="true">Oki Universe</div>
-      <a class="language-switch" href="${languageHref}" aria-label="${escapeHtml(copy.languageLabel)}">${copy.languageCode}</a>
+      <nav class="language-switcher" aria-label="${escapeHtml(copy.languageMenuLabel)}">${languageMarkup}</nav>
       ${slidesMarkup}
       <div class="sr-only" aria-live="polite" aria-atomic="true"></div>
       <nav class="presentation-controls" aria-label="${escapeHtml(copy.menuAria)}">
@@ -244,6 +257,8 @@ const sharedCss = (await readFile(resolve(projectRoot, "app/globals.css"), "utf8
 
 await mkdir(resolve(outputRoot, "scenes"), { recursive: true });
 await mkdir(resolve(outputRoot, "en"), { recursive: true });
+await mkdir(resolve(outputRoot, "es"), { recursive: true });
+await mkdir(resolve(outputRoot, "fa"), { recursive: true });
 await Promise.all(
   presentationCopy.de.scenes.map((scene) =>
     copyFile(
@@ -254,4 +269,6 @@ await Promise.all(
 );
 await writeFile(resolve(outputRoot, "index.html"), renderDocument("de"), "utf8");
 await writeFile(resolve(outputRoot, "en/index.html"), renderDocument("en"), "utf8");
-console.log(`Bilingual standalone presentation written to ${outputRoot}`);
+await writeFile(resolve(outputRoot, "es/index.html"), renderDocument("es"), "utf8");
+await writeFile(resolve(outputRoot, "fa/index.html"), renderDocument("fa"), "utf8");
+console.log(`Four-language standalone presentation written to ${outputRoot}`);

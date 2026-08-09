@@ -5,14 +5,11 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { scenes } from "../app/story.ts";
 import { englishScenes } from "../app/story.en.ts";
+import { spanishScenes } from "../app/story.es.ts";
+import { persianScenes } from "../app/story.fa.ts";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const okiRoot = resolve(projectRoot, "../../..");
-const manuscriptPath = resolve(okiRoot, "story/de/manuscript-v1.2.md");
-const englishManuscriptPath = resolve(
-  okiRoot,
-  "story/en/manuscript-v1.0-rc1.md",
-);
 const imageManifestPath = resolve(
   okiRoot,
   "art/canonical/scenes/de/CANONICAL-SCENES-DE-v1.1.sha256",
@@ -29,84 +26,78 @@ const normalize = (value) =>
 const sha256 = async (path) =>
   createHash("sha256").update(await readFile(path)).digest("hex");
 
-const manuscript = await readFile(manuscriptPath, "utf8");
-const sceneHeadings = [
-  ...manuscript.matchAll(/^## Szene (\d+) - (.+)$/gm),
+const editions = [
+  {
+    label: "DE v1.2",
+    scenes,
+    manuscript: "story/de/manuscript-v1.2.md",
+    heading: /^## Szene (\d+) - (.+)$/gm,
+  },
+  {
+    label: "EN v1.0 RC1",
+    scenes: englishScenes,
+    manuscript: "story/en/manuscript-v1.0-rc1.md",
+    heading: /^## Scene (\d+) - (.+)$/gm,
+  },
+  {
+    label: "ES v1.0 RC1",
+    scenes: spanishScenes,
+    manuscript: "story/es/manuscript-v1.0-rc1.md",
+    heading: /^## Escena (\d+) - (.+)$/gm,
+  },
+  {
+    label: "FA v1.0 RC1",
+    scenes: persianScenes,
+    manuscript: "story/fa/manuscript-v1.0-rc1.md",
+    heading: /^## صحنه (\d+) - (.+)$/gm,
+  },
 ];
-const manuscriptScenes = sceneHeadings.map((heading, index) => {
-  const bodyStart = (heading.index ?? 0) + heading[0].length;
-  const bodyEnd = sceneHeadings[index + 1]?.index ?? manuscript.length;
-  const body = manuscript
-    .slice(bodyStart, bodyEnd)
-    .replace(/\n---\s*$/, "")
-    .trim();
 
-  return {
-    number: Number(heading[1]),
-    title: heading[2].trim(),
-    text: normalize(body),
-  };
-});
+for (const edition of editions) {
+  const manuscript = await readFile(resolve(okiRoot, edition.manuscript), "utf8");
+  const headings = [...manuscript.matchAll(edition.heading)];
+  const manuscriptScenes = headings.map((heading, index) => {
+    const bodyStart = (heading.index ?? 0) + heading[0].length;
+    const bodyEnd = headings[index + 1]?.index ?? manuscript.length;
+    const body = manuscript
+      .slice(bodyStart, bodyEnd)
+      .replace(/\n---\s*$/, "")
+      .trim();
 
-assert.equal(scenes.length, 18, "Die Webfassung muss genau 18 Szenen enthalten.");
-assert.equal(
-  manuscriptScenes.length,
-  18,
-  "Das eingefrorene Manuskript muss genau 18 Szenen enthalten.",
-);
+    return {
+      number: Number(heading[1]),
+      title: heading[2].trim(),
+      text: normalize(body),
+    };
+  });
 
-for (const scene of scenes) {
-  const source = manuscriptScenes.find((candidate) => candidate.number === scene.number);
-  assert.ok(source, `Szene ${scene.number} fehlt im Manuskript.`);
-  assert.equal(scene.title, source.title, `Titelabweichung in Szene ${scene.number}.`);
   assert.equal(
-    normalize(scene.paragraphs.join("\n\n")),
-    source.text,
-    `Textabweichung in Szene ${scene.number}.`,
+    edition.scenes.length,
+    18,
+    `${edition.label}: the web edition must contain exactly 18 scenes.`,
   );
-}
-
-const englishManuscript = await readFile(englishManuscriptPath, "utf8");
-const englishHeadings = [
-  ...englishManuscript.matchAll(/^## Scene (\d+) - (.+)$/gm),
-];
-const englishManuscriptScenes = englishHeadings.map((heading, index) => {
-  const bodyStart = (heading.index ?? 0) + heading[0].length;
-  const bodyEnd = englishHeadings[index + 1]?.index ?? englishManuscript.length;
-  const body = englishManuscript
-    .slice(bodyStart, bodyEnd)
-    .replace(/\n---\s*$/, "")
-    .trim();
-
-  return {
-    number: Number(heading[1]),
-    title: heading[2].trim(),
-    text: normalize(body),
-  };
-});
-
-assert.equal(
-  englishScenes.length,
-  18,
-  "The English web edition must contain exactly 18 scenes.",
-);
-assert.equal(
-  englishManuscriptScenes.length,
-  18,
-  "The English review manuscript must contain exactly 18 scenes.",
-);
-
-for (const scene of englishScenes) {
-  const source = englishManuscriptScenes.find(
-    (candidate) => candidate.number === scene.number,
-  );
-  assert.ok(source, `Scene ${scene.number} is missing from the English manuscript.`);
-  assert.equal(scene.title, source.title, `English title mismatch in scene ${scene.number}.`);
   assert.equal(
-    normalize(scene.paragraphs.join("\n\n")),
-    source.text,
-    `English text mismatch in scene ${scene.number}.`,
+    manuscriptScenes.length,
+    18,
+    `${edition.label}: the manuscript must contain exactly 18 scenes.`,
   );
+
+  for (const scene of edition.scenes) {
+    const source = manuscriptScenes.find(
+      (candidate) => candidate.number === scene.number,
+    );
+    assert.ok(source, `${edition.label}: scene ${scene.number} is missing.`);
+    assert.equal(
+      scene.title,
+      source.title,
+      `${edition.label}: title mismatch in scene ${scene.number}.`,
+    );
+    assert.equal(
+      normalize(scene.paragraphs.join("\n\n")),
+      source.text,
+      `${edition.label}: text mismatch in scene ${scene.number}.`,
+    );
+  }
 }
 
 const imageManifest = await readFile(imageManifestPath, "utf8");
@@ -140,6 +131,14 @@ const englishStandalone = await readFile(
   resolve(projectRoot, "standalone/en/index.html"),
   "utf8",
 );
+const spanishStandalone = await readFile(
+  resolve(projectRoot, "standalone/es/index.html"),
+  "utf8",
+);
+const persianStandalone = await readFile(
+  resolve(projectRoot, "standalone/fa/index.html"),
+  "utf8",
+);
 assert.match(standalone, /In einer Familie darf jeder anders sein\./);
 assert.match(standalone, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
 assert.match(standalone, /data-slide="21"/);
@@ -149,7 +148,18 @@ assert.match(englishStandalone, /Everyone in a family can be different\./);
 assert.match(englishStandalone, /But when is it not merely there, but truly reliable\?/);
 assert.match(englishStandalone, /data-slide="21"/);
 assert.match(englishStandalone, /href="\.\.\/"/);
+assert.match(spanishStandalone, /Oki y las muchas islas/);
+assert.match(spanishStandalone, /En una familia, cada uno puede ser diferente\./);
+assert.match(spanishStandalone, /Pero ¿cuándo deja de estar simplemente ahí y se vuelve realmente confiable\?/);
+assert.match(spanishStandalone, /data-slide="21"/);
+assert.match(spanishStandalone, /href="\.\.\/fa\/"/);
+assert.match(persianStandalone, /اوکی و جزیره‌های بسیار/);
+assert.match(persianStandalone, /در یک خانواده هرکس می‌تواند متفاوت باشد\./);
+assert.match(persianStandalone, /اما چه زمانی فقط آنجا نیست و واقعاً قابل اعتماد است؟/);
+assert.match(persianStandalone, /data-slide="21"/);
+assert.match(persianStandalone, /<html lang="fa" dir="rtl">/);
+assert.match(persianStandalone, /href="\.\.\/es\/"/);
 
 console.log(
-  "PASS: DE v1.2, EN v1.0 RC1, 18 canonical images and both standalone editions agree.",
+  "PASS: DE v1.2 plus EN/ES/FA v1.0 RC1, 18 canonical images and all standalone editions agree.",
 );

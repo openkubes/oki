@@ -1,6 +1,8 @@
 # Book derivatives
 
-Publication-ready German and English books are generated from the approved manuscript and canonical scene illustrations. Source story and art must not be edited only inside a layout file.
+Publication-ready book derivatives are generated from reviewed manuscripts and
+canonical scene illustrations. Source story and art must not be edited only
+inside a layout file.
 
 ## Gate 5
 
@@ -26,3 +28,10 @@ natural American-English manuscript adaptation and language-specific interface
 pass automated text, build and asset-integrity QA. Human language approval and
 English-lettered variants of the two illustrations containing German text
 remain open.
+
+Spanish and Persian HTML v1.0 RC1 review candidates are available at `/es/`
+and `/fa/`. Both are natural adaptations rather than literal machine
+translations. The Persian edition uses a right-to-left reading layout while
+canonical technical identifiers remain left-to-right and unbroken. Human
+language approval and localized variants of the two illustrations containing
+German text remain open for both editions.

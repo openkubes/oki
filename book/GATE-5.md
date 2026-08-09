@@ -72,6 +72,10 @@ Preflight artifacts:
 - `book/de/GATE-5C-HTML-V1.2-REVIEW.md`
 - `story/en/manuscript-v1.0-rc1.md` - natural American-English review adaptation
 - `book/en/GATE-5C-HTML-EN-V1.0-REVIEW.md`
+- `story/es/manuscript-v1.0-rc1.md` - natural international-Spanish review adaptation
+- `book/es/GATE-5C-HTML-ES-V1.0-REVIEW.md`
+- `story/fa/manuscript-v1.0-rc1.md` - natural Persian RTL review adaptation
+- `book/fa/GATE-5C-HTML-FA-V1.0-REVIEW.md`
 - `video/de/Oki-und-die-vielen-Inseln-DE-video-recording-v1.0.pptx`
 - `video/de/Oki-und-die-vielen-Inseln-DE-recording-guide-v1.0.md`
 
@@ -81,10 +85,12 @@ v1.2 PPTX, PDF, HTML presentation and checksums are the current publication
 candidates. The project owner approved the HTML derivative for public GitHub
 Pages publication on 2026-08-09. It passed automated manuscript,
 image-integrity, build, test and offline-export QA before deployment.
-The bilingual HTML build now also exports an English v1.0 RC1 review route at
-`/en/` and verifies its 18 scene texts against the English review manuscript.
-The English language gate and the two English-lettered illustration deltas
-remain open.
+The four-language HTML build exports English, Spanish and Persian v1.0 RC1
+review routes at `/en/`, `/es/` and `/fa/` and verifies every set of 18 scene
+texts against its review manuscript. The Persian route uses RTL presentation
+semantics while preserving canonical technical identifiers as isolated LTR
+content. The three language gates and localized illustration deltas remain
+open.
 The PDF and PPTX still await explicit final release approval.
 The v1.1 artifacts remain the Mio-layout
 baseline. The print track remains open until trim, binding and printer

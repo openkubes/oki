@@ -10,12 +10,16 @@ The German illustrated story is available as an accessible, keyboard- and
 touch-friendly presentation at **[oki.openkubes.org](https://oki.openkubes.org/)**.
 The English v1.0 RC1 review preview is available at
 **[oki.openkubes.org/en](https://oki.openkubes.org/en/)**.
+The Spanish v1.0 RC1 review preview is available at
+**[oki.openkubes.org/es](https://oki.openkubes.org/es/)**, and the Persian RTL
+v1.0 RC1 review preview at
+**[oki.openkubes.org/fa](https://oki.openkubes.org/fa/)**.
 
 Every deployment rebuilds the presentation, compares all 18 scenes with the
 frozen German v1.2 manuscript and verifies every published illustration against
 the canonical SHA-256 manifest. A failed integrity check prevents publication.
-The same deployment also verifies the complete English RC1 text against its
-review manuscript and exposes a DE/EN language switch.
+The same deployment also verifies the complete English, Spanish and Persian
+RC1 texts against their review manuscripts and exposes a four-language menu.
 
 The canonical German children's-book title is **Oki und die vielen Inseln**,
 with the subtitle **Der illustrierte Kinderführer zu OpenKubes**.
@@ -79,6 +83,10 @@ They are not visual sources of truth and may be migrated only after review.
 - **Gate 5C - Release QA:** OPEN, DIGITAL v1.2 CANDIDATE READY FOR REVIEW; PRINT TARGET DECISION REQUIRED
 - **Gate EN-2A - English manuscript:** REVIEW CANDIDATE, v1.0 RC1
 - **Gate 5C EN HTML - English web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
+- **Gate ES-2A - Spanish manuscript:** REVIEW CANDIDATE, v1.0 RC1
+- **Gate 5C ES HTML - Spanish web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
+- **Gate FA-2A - Persian manuscript:** REVIEW CANDIDATE, v1.0 RC1
+- **Gate 5C FA HTML - Persian RTL web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
 
 ## Contribution rule
 

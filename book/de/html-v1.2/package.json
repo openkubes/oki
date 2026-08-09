@@ -1,14 +1,14 @@
 {
   "name": "oki-html-presentation-de",
   "version": "1.2.0",
-  "description": "Oki – bilinguale interaktive HTML-Präsentation in Deutsch und Englisch",
+  "description": "Oki – viersprachige interaktive HTML-Präsentation in Deutsch, Englisch, Spanisch und Persisch",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
-    "generate:en": "node scripts/generate-english-story.mjs",
+    "generate:locales": "node scripts/generate-localized-stories.mjs",
     "offline": "node scripts/export-standalone.mjs",
     "build": "npm run offline && WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
     "qa": "node scripts/qa-content.mjs",

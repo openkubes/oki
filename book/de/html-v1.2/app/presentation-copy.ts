@@ -1,11 +1,26 @@
 import { englishScenes } from "./story.en.ts";
+import { spanishScenes } from "./story.es.ts";
+import { persianScenes } from "./story.fa.ts";
 import { scenes as germanScenes } from "./story.ts";
 
-export type PresentationLocale = "de" | "en";
+export type PresentationLocale = "de" | "en" | "es" | "fa";
+
+export const languageOptions: Array<{
+  locale: PresentationLocale;
+  code: string;
+  label: string;
+  href: string;
+}> = [
+  { locale: "de", code: "DE", label: "Deutsch", href: "/" },
+  { locale: "en", code: "EN", label: "English", href: "/en/" },
+  { locale: "es", code: "ES", label: "Español", href: "/es/" },
+  { locale: "fa", code: "فا", label: "فارسی", href: "/fa/" },
+];
 
 export const presentationCopy = {
   de: {
     locale: "de",
+    direction: "ltr",
     scenes: germanScenes,
     title: "Oki und die vielen Inseln",
     subtitle: "Der illustrierte Kinderführer zu OpenKubes",
@@ -14,9 +29,7 @@ export const presentationCopy = {
       "Eine Geschichte über klare Versprechen, ehrliche Beweise und Menschen, die Verantwortung übernehmen.",
     sceneCount: "18 Szenen",
     language: "Deutsch",
-    languageCode: "EN",
-    languageHref: "/en/",
-    languageLabel: "Englische Ausgabe öffnen",
+    languageMenuLabel: "Sprache wählen",
     sceneLabel: "Szene",
     canonicalIllustration: "Kanonische Illustration",
     quoteEyebrow: "Der Leitgedanke",
@@ -56,6 +69,7 @@ export const presentationCopy = {
   },
   en: {
     locale: "en",
+    direction: "ltr",
     scenes: englishScenes,
     title: "Oki and the Many Islands",
     subtitle: "The Illustrated Children’s Guide to OpenKubes",
@@ -64,9 +78,7 @@ export const presentationCopy = {
       "A story about clear promises, honest evidence, and people who take responsibility.",
     sceneCount: "18 scenes",
     language: "English",
-    languageCode: "DE",
-    languageHref: "/",
-    languageLabel: "Open the German edition",
+    languageMenuLabel: "Choose language",
     sceneLabel: "Scene",
     canonicalIllustration: "Canonical illustration",
     quoteEyebrow: "The central idea",
@@ -103,6 +115,104 @@ export const presentationCopy = {
     fullscreen: "Fullscreen",
     window: "Window",
     keyboardHint: "← → navigate · M overview · F fullscreen",
+  },
+  es: {
+    locale: "es",
+    direction: "ltr",
+    scenes: spanishScenes,
+    title: "Oki y las muchas islas",
+    subtitle: "La guía infantil ilustrada de OpenKubes",
+    edition: "Vista previa HTML en español · v1.0 RC1",
+    coverIntro:
+      "Una historia sobre promesas claras, evidencia honesta y personas que asumen responsabilidades.",
+    sceneCount: "18 escenas",
+    language: "Español",
+    languageMenuLabel: "Elegir idioma",
+    sceneLabel: "Escena",
+    canonicalIllustration: "Ilustración canónica",
+    quoteEyebrow: "La idea central",
+    quoteTitle: "En una familia, cada uno puede ser diferente.",
+    quoteBody: "La familia permanece unida porque todos pueden confiar unos en otros.",
+    quoteNote:
+      "Las islas están conectadas por promesas que comprenden juntas, no por una herramienta concreta.",
+    finaleEyebrow: "¿Qué es OpenKubes?",
+    finaleTitle: "Una buena manera de construir islas confiables una y otra vez.",
+    finaleRhythm: "Construye. Conecta. Comprueba. Aprende. Crece.",
+    finaleSmall:
+      "No es una sola isla. Es un método compartido para muchas plataformas diferentes.",
+    aboutEyebrow: "Sigue explorando",
+    aboutTitle: "Aparece una isla. Después, otra.",
+    aboutQuestion: "Pero ¿cuándo deja de estar simplemente ahí y se vuelve realmente confiable?",
+    license:
+      "Texto y concepto: OpenKubes Community. Ilustraciones: CC BY 4.0; se excluyen los nombres, logotipos y marcas de OpenKubes/Oki.",
+    startLabel: "Inicio",
+    quoteLabel: "Idea central",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "Sigue explorando",
+    presentationAria: "Oki y las muchas islas – presentación HTML",
+    slideAnnouncement: "Diapositiva",
+    of: "de",
+    menu: "Índice",
+    menuOpen: "Abrir el índice de diapositivas",
+    menuClose: "Cerrar el índice de diapositivas",
+    menuTitle: "Índice de diapositivas",
+    menuAria: "Controles de la presentación",
+    previous: "Diapositiva anterior",
+    next: "Diapositiva siguiente",
+    fullscreenStart: "Activar pantalla completa",
+    fullscreenEnd: "Salir de pantalla completa",
+    fullscreen: "Pantalla completa",
+    window: "Ventana",
+    keyboardHint: "← → navegar · M índice · F pantalla completa",
+  },
+  fa: {
+    locale: "fa",
+    direction: "rtl",
+    scenes: persianScenes,
+    title: "اوکی و جزیره‌های بسیار",
+    subtitle: "راهنمای مصور کودکان برای OpenKubes",
+    edition: "پیش‌نمایش HTML فارسی · v1.0 RC1",
+    coverIntro:
+      "داستانی دربارهٔ قول‌های روشن، مدرک‌های صادقانه و انسان‌هایی که مسئولیت می‌پذیرند.",
+    sceneCount: "۱۸ صحنه",
+    language: "فارسی",
+    languageMenuLabel: "انتخاب زبان",
+    sceneLabel: "صحنه",
+    canonicalIllustration: "تصویر رسمی",
+    quoteEyebrow: "اندیشهٔ اصلی",
+    quoteTitle: "در یک خانواده هرکس می‌تواند متفاوت باشد.",
+    quoteBody: "خانواده کنار هم می‌ماند، چون همه می‌توانند به یکدیگر اعتماد کنند.",
+    quoteNote:
+      "جزیره‌ها با قول‌هایی که همه با هم می‌فهمند پیوند دارند، نه با یک ابزار مشخص.",
+    finaleEyebrow: "OpenKubes چیست؟",
+    finaleTitle: "راهی خوب برای ساختن دوباره و دوبارهٔ جزیره‌های قابل اعتماد.",
+    finaleRhythm: "بساز. پیوند بده. بررسی کن. یاد بگیر. رشد کن.",
+    finaleSmall:
+      "نه یک جزیرهٔ تنها؛ روشی مشترک برای پلتفرم‌های گوناگون.",
+    aboutEyebrow: "بیشتر بدانید",
+    aboutTitle: "یک جزیره پدیدار می‌شود. سپس یکی دیگر.",
+    aboutQuestion: "اما چه زمانی فقط آنجا نیست و واقعاً قابل اعتماد است؟",
+    license:
+      "متن و ایده: OpenKubes Community. تصاویر: CC BY 4.0؛ نام‌ها، نشان‌ها و علامت‌های تجاری OpenKubes/Oki مستثنا هستند.",
+    startLabel: "آغاز",
+    quoteLabel: "اندیشهٔ اصلی",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "بیشتر بدانید",
+    presentationAria: "اوکی و جزیره‌های بسیار – ارائهٔ HTML",
+    slideAnnouncement: "اسلاید",
+    of: "از",
+    menu: "فهرست",
+    menuOpen: "باز کردن فهرست اسلایدها",
+    menuClose: "بستن فهرست اسلایدها",
+    menuTitle: "فهرست اسلایدها",
+    menuAria: "کنترل‌های ارائه",
+    previous: "اسلاید پیشین",
+    next: "اسلاید بعدی",
+    fullscreenStart: "ورود به تمام‌صفحه",
+    fullscreenEnd: "خروج از تمام‌صفحه",
+    fullscreen: "تمام‌صفحه",
+    window: "پنجره",
+    keyboardHint: "برای جابه‌جایی ← → · M فهرست · F تمام‌صفحه",
   },
 } as const;
 

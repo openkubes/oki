@@ -79,33 +79,49 @@ button {
   text-transform: uppercase;
 }
 
-.language-switch {
+.language-switcher {
   position: fixed;
   z-index: 26;
-  top: 16px;
+  top: 14px;
   right: 142px;
   display: inline-flex;
-  min-width: 2.8rem;
-  min-height: 2.25rem;
   align-items: center;
-  justify-content: center;
+  gap: 0.22rem;
+  padding: 0.26rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   background: rgba(9, 29, 43, 0.68);
+  direction: ltr;
+  backdrop-filter: blur(14px);
+}
+
+.language-switcher a {
+  display: inline-flex;
+  min-width: 2.35rem;
+  min-height: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
   color: var(--white);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-decoration: none;
-  backdrop-filter: blur(14px);
   transition:
     background 150ms ease,
     transform 150ms ease;
 }
 
-.language-switch:hover {
+.language-switcher a:hover,
+.language-switcher a.active {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-1px);
+}
+
+.language-switcher a.active {
+  background: var(--white);
+  color: var(--navy-deep);
+  transform: none;
 }
 
 .slide-stage {
@@ -213,6 +229,50 @@ button {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.9em;
   white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.presentation-shell[lang="fa"] {
+  font-family: Tahoma, "Noto Sans Arabic", Arial, Helvetica, sans-serif;
+}
+
+.presentation-shell[dir="rtl"] .text-panel {
+  box-shadow: -18px 0 48px rgba(8, 26, 38, 0.18);
+  text-align: right;
+}
+
+.presentation-shell[dir="rtl"] .text-panel::before {
+  inset: 0 0 0 auto;
+}
+
+.presentation-shell[dir="rtl"] .orange-rule {
+  align-self: flex-start;
+}
+
+.presentation-shell[dir="rtl"] .story-figure figcaption {
+  text-align: left;
+}
+
+.presentation-shell[dir="rtl"] .presentation-controls,
+.presentation-shell[dir="rtl"] .language-switcher {
+  direction: ltr;
+}
+
+.presentation-shell[dir="rtl"] .control-text {
+  direction: rtl;
+}
+
+.presentation-shell[dir="rtl"] .menu-backdrop {
+  justify-content: flex-start;
+}
+
+.presentation-shell[dir="rtl"] .slide-menu {
+  box-shadow: 18px 0 50px rgba(4, 18, 28, 0.3);
+}
+
+.presentation-shell[dir="rtl"] .menu-list button {
+  text-align: right;
 }
 
 .scene-slide.dense .scene-copy {
@@ -481,7 +541,7 @@ button {
 .menu-close:focus-visible,
 .menu-list button:focus-visible,
 .link-stack a:focus-visible,
-.language-switch:focus-visible {
+.language-switcher a:focus-visible {
   outline: 3px solid #ffb26e;
   outline-offset: 3px;
 }
@@ -745,9 +805,17 @@ button {
     color: var(--muted);
   }
 
-  .language-switch {
-    top: 10px;
-    right: 112px;
+  .language-switcher {
+    top: 8px;
+    right: 102px;
+    gap: 0.08rem;
+    padding: 0.2rem;
+  }
+
+  .language-switcher a {
+    min-width: 2rem;
+    min-height: 1.8rem;
+    font-size: 0.64rem;
   }
 
   .edition-pill {
@@ -843,7 +911,7 @@ button {
   .presentation-controls,
   .keyboard-hint,
   .brand-mark,
-  .language-switch,
+  .language-switcher,
   .progress-track {
     display: none !important;
   }

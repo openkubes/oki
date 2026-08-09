@@ -1,5 +1,5 @@
 // Generated from story/en/manuscript-v1.0-rc1.md.
-// Run npm run generate:en after editing the English manuscript.
+// Run npm run generate:locales after editing a localized manuscript.
 
 import type { StoryScene } from "./story";
 

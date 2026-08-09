@@ -1,19 +1,24 @@
-# Oki – bilinguale HTML-Präsentation
+# Oki – viersprachige HTML-Präsentation
 
 Published at:
 
 - Deutsch: <https://oki.openkubes.org/>
 - English review preview: <https://oki.openkubes.org/en/>
+- Vista previa en español: <https://oki.openkubes.org/es/>
+- پیش‌نمایش فارسی: <https://oki.openkubes.org/fa/>
 
 Interaktive deutsche Präsentationsfassung des illustrierten Kinderführers zu
 OpenKubes. Die 18 Szenen stammen aus dem eingefrorenen Manuskript v1.2; die
 Bilder sind unveränderte Kopien der kanonischen deutschen Szenenauswahl v1.1.
 
-Die englische Route `/en/` ist eine natürliche amerikanisch-englische Adaption
-des freigegebenen deutschen Manuskripts. Bis zur menschlichen Sprachfreigabe
-trägt sie den Status **v1.0 RC1 / Review Preview**. Beide Ausgaben verwenden
-dieselben byte-identischen kanonischen Illustrationen und sind über den
-Sprachschalter `DE`/`EN` verbunden.
+Die Routen `/en/`, `/es/` und `/fa/` sind natürliche Adaptionen des
+freigegebenen deutschen Manuskripts in amerikanischem Englisch,
+internationalem Spanisch und Persisch. Bis zur jeweiligen menschlichen
+Sprachfreigabe tragen sie den Status **v1.0 RC1 / Review Preview**. Alle vier
+Ausgaben verwenden dieselben byte-identischen kanonischen Illustrationen und
+sind über ein gemeinsames Sprachmenü verbunden. Die persische Ausgabe wird von
+rechts nach links gesetzt; technische Kennungen bleiben isoliert von links nach
+rechts lesbar.
 
 ## Prerequisites
 
@@ -40,8 +45,9 @@ This starter does not use `wrangler.jsonc`.
 
 ## Offline-Ausgabe
 
-`standalone/index.html` und `standalone/en/index.html` können direkt im Browser
-geöffnet werden. Alle Texte,
+`standalone/index.html`, `standalone/en/index.html`,
+`standalone/es/index.html` und `standalone/fa/index.html` können direkt im
+Browser geöffnet werden. Alle Texte,
 Styles und Steuerungen liegen in dieser Datei; die 18 Bilder befinden sich im
 benachbarten Verzeichnis `standalone/scenes/`.
 
@@ -52,6 +58,6 @@ Die HTML-Präsentation ist ein Derivat. Quelle der Geschichte ist
 `art/canonical/scenes/de/CANONICAL-SCENES-DE-v1.1.sha256`.
 
 `npm run qa` vergleicht alle 18 deutschen Szenentexte mit dem eingefrorenen
-Manuskript v1.2, alle 18 englischen Szenentexte mit dem RC1-Manuskript und prüft
-die Bilddateien beider Web- und Offline-Ausgaben gegen das kanonische
-SHA-256-Manifest.
+Manuskript v1.2 und alle englischen, spanischen und persischen Szenentexte mit
+ihren RC1-Manuskripten. Zusätzlich prüft es die Bilddateien aller Web- und
+Offline-Ausgaben gegen das kanonische SHA-256-Manifest.
