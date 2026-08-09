@@ -14,12 +14,16 @@ The Spanish v1.0 RC1 review preview is available at
 **[oki.openkubes.org/es](https://oki.openkubes.org/es/)**, and the Persian RTL
 v1.0 RC1 review preview at
 **[oki.openkubes.org/fa](https://oki.openkubes.org/fa/)**.
+The Simplified Chinese and Japanese v1.0 RC1 review previews are available at
+**[oki.openkubes.org/zh](https://oki.openkubes.org/zh/)** and
+**[oki.openkubes.org/ja](https://oki.openkubes.org/ja/)**.
 
 Every deployment rebuilds the presentation, compares all 18 scenes with the
 frozen German v1.2 manuscript and verifies every published illustration against
 the canonical SHA-256 manifest. A failed integrity check prevents publication.
-The same deployment also verifies the complete English, Spanish and Persian
-RC1 texts against their review manuscripts and exposes a four-language menu.
+The same deployment also verifies the complete English, Spanish, Persian,
+Simplified Chinese and Japanese RC1 texts against their review manuscripts and
+exposes a compact six-language menu.
 
 The canonical German children's-book title is **Oki und die vielen Inseln**,
 with the subtitle **Der illustrierte Kinderführer zu OpenKubes**.
@@ -87,6 +91,10 @@ They are not visual sources of truth and may be migrated only after review.
 - **Gate 5C ES HTML - Spanish web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
 - **Gate FA-2A - Persian manuscript:** REVIEW CANDIDATE, v1.0 RC1
 - **Gate 5C FA HTML - Persian RTL web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
+- **Gate ZH-2A - Simplified Chinese manuscript:** REVIEW CANDIDATE, v1.0 RC1
+- **Gate 5C ZH HTML - Simplified Chinese web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
+- **Gate JA-2A - Japanese manuscript:** REVIEW CANDIDATE, v1.0 RC1
+- **Gate 5C JA HTML - Japanese web edition:** REVIEW CANDIDATE, AUTOMATED QA PASS
 
 ## Contribution rule
 

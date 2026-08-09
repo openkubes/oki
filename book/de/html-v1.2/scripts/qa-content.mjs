@@ -7,6 +7,8 @@ import { scenes } from "../app/story.ts";
 import { englishScenes } from "../app/story.en.ts";
 import { spanishScenes } from "../app/story.es.ts";
 import { persianScenes } from "../app/story.fa.ts";
+import { chineseScenes } from "../app/story.zh.ts";
+import { japaneseScenes } from "../app/story.ja.ts";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const okiRoot = resolve(projectRoot, "../../..");
@@ -50,6 +52,18 @@ const editions = [
     scenes: persianScenes,
     manuscript: "story/fa/manuscript-v1.0-rc1.md",
     heading: /^## صحنه (\d+) - (.+)$/gm,
+  },
+  {
+    label: "ZH v1.0 RC1",
+    scenes: chineseScenes,
+    manuscript: "story/zh/manuscript-v1.0-rc1.md",
+    heading: /^## 场景 (\d+) - (.+)$/gm,
+  },
+  {
+    label: "JA v1.0 RC1",
+    scenes: japaneseScenes,
+    manuscript: "story/ja/manuscript-v1.0-rc1.md",
+    heading: /^## シーン (\d+) - (.+)$/gm,
   },
 ];
 
@@ -139,6 +153,14 @@ const persianStandalone = await readFile(
   resolve(projectRoot, "standalone/fa/index.html"),
   "utf8",
 );
+const chineseStandalone = await readFile(
+  resolve(projectRoot, "standalone/zh/index.html"),
+  "utf8",
+);
+const japaneseStandalone = await readFile(
+  resolve(projectRoot, "standalone/ja/index.html"),
+  "utf8",
+);
 assert.match(standalone, /In einer Familie darf jeder anders sein\./);
 assert.match(standalone, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
 assert.match(standalone, /data-slide="21"/);
@@ -162,7 +184,19 @@ assert.match(persianStandalone, /اما چه زمانی فقط آنجا نیست
 assert.match(persianStandalone, /data-slide="21"/);
 assert.match(persianStandalone, /<html lang="fa" dir="rtl">/);
 assert.match(persianStandalone, /href="\.\.\/es\/"/);
+assert.match(chineseStandalone, /奥奇和许许多多的岛屿/);
+assert.match(chineseStandalone, /一家人可以各不相同。/);
+assert.match(chineseStandalone, /可它什么时候才不只是存在，而是真正可靠呢？/);
+assert.match(chineseStandalone, /data-slide="21"/);
+assert.match(chineseStandalone, /<html lang="zh" dir="ltr">/);
+assert.match(chineseStandalone, /href="\.\.\/ja\/"/);
+assert.match(japaneseStandalone, /オキとたくさんの島々/);
+assert.match(japaneseStandalone, /家族は、みんな違っていていい。/);
+assert.match(japaneseStandalone, /でも、ただそこにあるだけでなく、本当に信頼できるのはいつ？/);
+assert.match(japaneseStandalone, /data-slide="21"/);
+assert.match(japaneseStandalone, /<html lang="ja" dir="ltr">/);
+assert.match(japaneseStandalone, /href="\.\.\/zh\/"/);
 
 console.log(
-  "PASS: DE v1.2 plus EN/ES/FA v1.0 RC1, 18 canonical images and all standalone editions agree.",
+  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA v1.0 RC1, 18 canonical images and all standalone editions agree.",
 );

@@ -66,6 +66,30 @@ test("renders the Persian review edition at /fa with RTL content", async () => {
   assert.match(html, /<main[^>]+dir="rtl"/);
 });
 
+test("renders the Simplified Chinese review edition at /zh", async () => {
+  const response = await render("/zh");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /奥奇和许许多多的岛屿/);
+  assert.match(html, /简体中文 HTML 审校预览/);
+  assert.match(html, /OpenKubes 儿童图解指南/);
+  assert.match(html, /打开幻灯片目录/);
+  assert.match(html, /<main[^>]+lang="zh"[^>]+dir="ltr"/);
+});
+
+test("renders the Japanese review edition at /ja", async () => {
+  const response = await render("/ja");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /オキとたくさんの島々/);
+  assert.match(html, /日本語 HTML レビュー版/);
+  assert.match(html, /OpenKubes の子ども向けイラストガイド/);
+  assert.match(html, /スライド一覧を開く/);
+  assert.match(html, /<main[^>]+lang="ja"[^>]+dir="ltr"/);
+});
+
 test("keeps all canonical scene assets in the public build", async () => {
   const manifest = await readFile(
     new URL("../app/story.ts", import.meta.url),
@@ -125,6 +149,28 @@ test("exports a directly openable Persian standalone presentation", async () => 
   assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /به دنیا آمدن، همان آماده بودن نیست/);
   assert.match(html, /href="\.\.\/es\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Simplified Chinese standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/zh/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="zh" dir="ltr"/);
+  assert.match(html, /奥奇和许许多多的岛屿/);
+  assert.match(html, /诞生不等于准备就绪/);
+  assert.match(html, /href="\.\.\/ja\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
+});
+
+test("exports a directly openable Japanese standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/ja/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="ja" dir="ltr"/);
+  assert.match(html, /オキとたくさんの島々/);
+  assert.match(html, /生まれたことと、準備ができたことは違う/);
+  assert.match(html, /href="\.\.\/zh\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
   assert.doesNotMatch(html, /src="\/scenes\//);
 });

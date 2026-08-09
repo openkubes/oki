@@ -39,7 +39,7 @@ function renderDocument(locale) {
       const active = option.locale === locale
         ? ' class="active" aria-current="page"'
         : "";
-      return `<a href="${href}" lang="${option.locale}" dir="${option.locale === "fa" ? "rtl" : "ltr"}" aria-label="${escapeHtml(option.label)}"${active}>${option.code}</a>`;
+      return `<a href="${href}" lang="${option.locale}" dir="${option.locale === "fa" ? "rtl" : "ltr"}"${active}><span class="language-code">${option.code}</span><span class="language-name">${escapeHtml(option.label)}</span></a>`;
     })
     .join("");
 
@@ -222,7 +222,10 @@ function renderDocument(locale) {
     <main class="presentation-shell" lang="${copy.locale}" dir="${copy.direction}" aria-label="${escapeHtml(copy.presentationAria)}">
       <div class="progress-track" aria-hidden="true"><span></span></div>
       <div class="brand-mark" aria-hidden="true">Oki Universe</div>
-      <nav class="language-switcher" aria-label="${escapeHtml(copy.languageMenuLabel)}">${languageMarkup}</nav>
+      <details class="language-switcher">
+        <summary aria-label="${escapeHtml(copy.languageMenuLabel)}"><span aria-hidden="true">◎</span><span>${languageOptions.find((option) => option.locale === locale)?.code}</span></summary>
+        <nav class="language-options" aria-label="${escapeHtml(copy.languageMenuLabel)}">${languageMarkup}</nav>
+      </details>
       ${slidesMarkup}
       <div class="sr-only" aria-live="polite" aria-atomic="true"></div>
       <nav class="presentation-controls" aria-label="${escapeHtml(copy.menuAria)}">
@@ -261,6 +264,8 @@ await mkdir(resolve(outputRoot, "scenes"), { recursive: true });
 await mkdir(resolve(outputRoot, "en"), { recursive: true });
 await mkdir(resolve(outputRoot, "es"), { recursive: true });
 await mkdir(resolve(outputRoot, "fa"), { recursive: true });
+await mkdir(resolve(outputRoot, "zh"), { recursive: true });
+await mkdir(resolve(outputRoot, "ja"), { recursive: true });
 await Promise.all(
   presentationCopy.de.scenes.map((scene) =>
     copyFile(
@@ -273,4 +278,6 @@ await writeFile(resolve(outputRoot, "index.html"), renderDocument("de"), "utf8")
 await writeFile(resolve(outputRoot, "en/index.html"), renderDocument("en"), "utf8");
 await writeFile(resolve(outputRoot, "es/index.html"), renderDocument("es"), "utf8");
 await writeFile(resolve(outputRoot, "fa/index.html"), renderDocument("fa"), "utf8");
-console.log(`Four-language standalone presentation written to ${outputRoot}`);
+await writeFile(resolve(outputRoot, "zh/index.html"), renderDocument("zh"), "utf8");
+await writeFile(resolve(outputRoot, "ja/index.html"), renderDocument("ja"), "utf8");
+console.log(`Six-language standalone presentation written to ${outputRoot}`);

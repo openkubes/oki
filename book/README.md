@@ -35,3 +35,9 @@ translations. The Persian edition uses a right-to-left reading layout while
 canonical technical identifiers remain left-to-right and unbroken. Human
 language approval and localized variants of the two illustrations containing
 German text remain open for both editions.
+
+Simplified Chinese and Japanese HTML v1.0 RC1 review candidates are available
+at `/zh/` and `/ja/`. Character names are introduced with localized phonetic
+forms while canonical Latin names remain visible on first introduction.
+Japanese readings are added selectively for difficult terms. Native-language
+approval and localized illustration lettering remain open.

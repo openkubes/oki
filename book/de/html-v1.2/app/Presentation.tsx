@@ -229,6 +229,7 @@ function slideLabel(slide: DeckSlide, copy: PresentationCopy) {
 
 export function Presentation({ locale = "de" }: { locale?: PresentationLocale }) {
   const copy = presentationCopy[locale];
+  const currentLanguage = languageOptions.find((option) => option.locale === locale);
   const deck = useMemo(() => makeDeck(copy), [copy]);
   const [current, setCurrent] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -342,21 +343,27 @@ export function Presentation({ locale = "de" }: { locale?: PresentationLocale })
       </div>
 
       <div className="brand-mark" aria-hidden="true">Oki Universe</div>
-      <nav className="language-switcher" aria-label={copy.languageMenuLabel}>
-        {languageOptions.map((option) => (
-          <a
-            key={option.locale}
-            href={option.href}
-            lang={option.locale}
-            dir={option.locale === "fa" ? "rtl" : "ltr"}
-            aria-label={option.label}
-            aria-current={option.locale === locale ? "page" : undefined}
-            className={option.locale === locale ? "active" : undefined}
-          >
-            {option.code}
-          </a>
-        ))}
-      </nav>
+      <details className="language-switcher">
+        <summary aria-label={copy.languageMenuLabel}>
+          <span aria-hidden="true">◎</span>
+          <span>{currentLanguage?.code}</span>
+        </summary>
+        <nav className="language-options" aria-label={copy.languageMenuLabel}>
+          {languageOptions.map((option) => (
+            <a
+              key={option.locale}
+              href={option.href}
+              lang={option.locale}
+              dir={option.locale === "fa" ? "rtl" : "ltr"}
+              aria-current={option.locale === locale ? "page" : undefined}
+              className={option.locale === locale ? "active" : undefined}
+            >
+              <span className="language-code">{option.code}</span>
+              <span className="language-name">{option.label}</span>
+            </a>
+          ))}
+        </nav>
+      </details>
 
       <div className="slide-stage" key={`${locale}-${activeSlide.id}`}>
         <SlideContent slide={activeSlide} copy={copy} />

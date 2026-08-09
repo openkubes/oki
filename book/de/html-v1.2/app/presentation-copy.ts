@@ -1,9 +1,11 @@
 import { englishScenes } from "./story.en.ts";
 import { spanishScenes } from "./story.es.ts";
 import { persianScenes } from "./story.fa.ts";
+import { chineseScenes } from "./story.zh.ts";
+import { japaneseScenes } from "./story.ja.ts";
 import { scenes as germanScenes } from "./story.ts";
 
-export type PresentationLocale = "de" | "en" | "es" | "fa";
+export type PresentationLocale = "de" | "en" | "es" | "fa" | "zh" | "ja";
 
 export const languageOptions: Array<{
   locale: PresentationLocale;
@@ -15,6 +17,8 @@ export const languageOptions: Array<{
   { locale: "en", code: "EN", label: "English", href: "/en/" },
   { locale: "es", code: "ES", label: "Español", href: "/es/" },
   { locale: "fa", code: "فا", label: "فارسی", href: "/fa/" },
+  { locale: "zh", code: "中文", label: "简体中文", href: "/zh/" },
+  { locale: "ja", code: "日本語", label: "日本語", href: "/ja/" },
 ];
 
 const creationCredit = {
@@ -222,6 +226,106 @@ export const presentationCopy = {
     fullscreen: "تمام‌صفحه",
     window: "پنجره",
     keyboardHint: "برای جابه‌جایی ← → · M فهرست · F تمام‌صفحه",
+  },
+  zh: {
+    locale: "zh",
+    direction: "ltr",
+    scenes: chineseScenes,
+    title: "奥奇和许许多多的岛屿",
+    subtitle: "OpenKubes 儿童图解指南",
+    edition: "简体中文 HTML 审校预览 · v1.0 RC1",
+    coverIntro:
+      "一个关于清楚的承诺、诚实的证据，以及勇于承担责任的人们的故事。",
+    creationCredit,
+    sceneCount: "18 个场景",
+    language: "简体中文",
+    languageMenuLabel: "选择语言",
+    sceneLabel: "场景",
+    canonicalIllustration: "正式插图",
+    quoteEyebrow: "核心想法",
+    quoteTitle: "一家人可以各不相同。",
+    quoteBody: "大家能够彼此依靠，所以始终在一起。",
+    quoteNote:
+      "连接岛屿的不是某一种工具，而是大家共同理解的承诺。",
+    finaleEyebrow: "什么是 OpenKubes？",
+    finaleTitle: "一种能一次又一次建造可靠岛屿的好办法。",
+    finaleRhythm: "建造。连接。验证。学习。成长。",
+    finaleSmall:
+      "它不是某一座岛，而是许多不同平台共同使用的一种方法。",
+    aboutEyebrow: "继续探索",
+    aboutTitle: "一座岛出现了，接着又出现一座。",
+    aboutQuestion: "可它什么时候才不只是存在，而是真正可靠呢？",
+    license:
+      "文字与构思：OpenKubes Community。插图：CC BY 4.0；OpenKubes/Oki 的名称、标志和商标除外。",
+    startLabel: "开始",
+    quoteLabel: "核心想法",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "继续探索",
+    presentationAria: "奥奇和许许多多的岛屿 – HTML 演示",
+    slideAnnouncement: "幻灯片",
+    of: "共",
+    menu: "目录",
+    menuOpen: "打开幻灯片目录",
+    menuClose: "关闭幻灯片目录",
+    menuTitle: "幻灯片目录",
+    menuAria: "演示控制",
+    previous: "上一张幻灯片",
+    next: "下一张幻灯片",
+    fullscreenStart: "进入全屏",
+    fullscreenEnd: "退出全屏",
+    fullscreen: "全屏",
+    window: "窗口",
+    keyboardHint: "← → 翻页 · M 目录 · F 全屏",
+  },
+  ja: {
+    locale: "ja",
+    direction: "ltr",
+    scenes: japaneseScenes,
+    title: "オキとたくさんの島々",
+    subtitle: "OpenKubes の子ども向けイラストガイド",
+    edition: "日本語 HTML レビュー版 · v1.0 RC1",
+    coverIntro:
+      "分かりやすい約束、正直な証拠、そして責任を引き受ける人々の物語。",
+    creationCredit,
+    sceneCount: "18 シーン",
+    language: "日本語",
+    languageMenuLabel: "言語を選ぶ",
+    sceneLabel: "シーン",
+    canonicalIllustration: "公式イラスト",
+    quoteEyebrow: "大切な考え",
+    quoteTitle: "家族は、みんな違っていていい。",
+    quoteBody: "おたがいを頼りにできるから、一緒にいられます。",
+    quoteNote:
+      "島々をつなぐのは特定の道具ではなく、みんなで理解する約束です。",
+    finaleEyebrow: "OpenKubes とは？",
+    finaleTitle: "信頼できる島を何度でも作るための、よい方法。",
+    finaleRhythm: "作る。つなぐ。確かめる。学ぶ。育つ。",
+    finaleSmall:
+      "ひとつの島ではありません。さまざまなプラットフォームのための共通の方法です。",
+    aboutEyebrow: "もっと知ろう",
+    aboutTitle: "ひとつの島が生まれ、また次の島が生まれる。",
+    aboutQuestion: "でも、ただそこにあるだけでなく、本当に信頼できるのはいつ？",
+    license:
+      "文章と構想：OpenKubes Community。イラスト：CC BY 4.0。OpenKubes/Oki の名称、ロゴ、商標は対象外です。",
+    startLabel: "スタート",
+    quoteLabel: "大切な考え",
+    finaleLabel: "OpenKubes",
+    aboutLabel: "もっと知ろう",
+    presentationAria: "オキとたくさんの島々 – HTML プレゼンテーション",
+    slideAnnouncement: "スライド",
+    of: "中",
+    menu: "一覧",
+    menuOpen: "スライド一覧を開く",
+    menuClose: "スライド一覧を閉じる",
+    menuTitle: "スライド一覧",
+    menuAria: "プレゼンテーション操作",
+    previous: "前のスライド",
+    next: "次のスライド",
+    fullscreenStart: "全画面にする",
+    fullscreenEnd: "全画面を終了",
+    fullscreen: "全画面",
+    window: "ウィンドウ",
+    keyboardHint: "← → 移動 · M 一覧 · F 全画面",
   },
 } as const;
 
