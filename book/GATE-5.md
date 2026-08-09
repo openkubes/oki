@@ -1,6 +1,6 @@
 # Gate 5 - German book production
 
-**Status:** OPEN  
+**Status:** OPEN - HTML v1.2 PUBLISHED; DIGITAL BOOK RELEASE AND PRINT TRACK REMAIN OPEN  
 **Opened:** 2026-08-08 after Gate 4 approval
 
 ## Goal
@@ -76,8 +76,10 @@ Preflight artifacts:
 The German digital v1.0 candidate remains the verified pre-amendment baseline.
 Gate 2A.1, Gate 2A.2, Gate 2B.1, Gate 3.1 and Gate 4.1 are closed. The rebuilt
 v1.2 PPTX, PDF, HTML presentation and checksums are the current publication
-candidates and await explicit human/GPT release approval. The HTML derivative
-has passed automated manuscript, image-integrity, build and offline-export QA.
+candidates. The project owner approved the HTML derivative for public GitHub
+Pages publication on 2026-08-09. It passed automated manuscript,
+image-integrity, build, test and offline-export QA before deployment.
+The PDF and PPTX still await explicit final release approval.
 The v1.1 artifacts remain the Mio-layout
 baseline. The print track remains open until trim, binding and printer
 requirements are selected.

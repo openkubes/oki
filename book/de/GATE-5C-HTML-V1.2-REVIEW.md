@@ -1,7 +1,9 @@
 # Gate 5C - German HTML presentation v1.2
 
-**Status:** CANDIDATE READY FOR HUMAN REVIEW  
+**Status:** APPROVED - PUBLISHED TO GITHUB PAGES  
 **Prepared:** 2026-08-09  
+**Approved:** project owner, 2026-08-09  
+**Public URL:** `https://oki.openkubes.org/` - custom DNS activation pending  
 **Source manuscript:** `story/de/manuscript-v1.2.md`  
 **Canonical art manifest:** `art/canonical/scenes/de/CANONICAL-SCENES-DE-v1.1.sha256`
 
@@ -24,11 +26,12 @@
 - [x] responsive and print styles are present
 - [x] image alternative texts are present
 
-Automated result: **PASS**
+Automated result: **PASS**  
+GitHub Actions publication result: **PASS**
 
 ## Governance note
 
 This is a presentation derivative. The manuscript and canonical scene manifest
 remain the sources of truth. No story or illustration approval is changed by
-this derivative. Human approval is still required before changing the status
-from candidate to released.
+this derivative. The project owner approved public publication through GitHub
+Pages on 2026-08-09.
