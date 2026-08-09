@@ -128,6 +128,10 @@ function CoverSlide({ copy }: { copy: PresentationCopy }) {
           <span aria-hidden="true">·</span>
           <span>2026</span>
         </div>
+        <p className="creation-credit">
+          <span>{copy.creationCredit.creator}</span>
+          <span>{copy.creationCredit.assistance}</span>
+        </p>
       </section>
       <section className="image-panel cover-image">
         <StoryImage scene={copy.scenes[17]} copy={copy} eager />
@@ -184,6 +188,9 @@ function AboutSlide({ copy }: { copy: PresentationCopy }) {
           </a>
           <a href="https://github.com/openkubes/oki" target="_blank" rel="noreferrer">
             github.com/openkubes/oki <span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://kubernauts.de/" target="_blank" rel="noreferrer">
+            kubernauts.de <span aria-hidden="true">↗</span>
           </a>
         </div>
         <p className="license-note">{copy.license}</p>

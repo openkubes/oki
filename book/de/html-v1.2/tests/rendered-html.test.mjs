@@ -24,6 +24,8 @@ test("renders the Oki presentation shell and release metadata", async () => {
   assert.match(html, /Digitale HTML-Ausgabe/);
   assert.match(html, /v1\.2/);
   assert.match(html, /Der illustrierte Kinderführer zu OpenKubes/);
+  assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
+  assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /Folienübersicht/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
@@ -47,6 +49,7 @@ test("renders the Spanish review edition at /es", async () => {
   assert.match(html, /Oki y las muchas islas/);
   assert.match(html, /Vista previa HTML en español/);
   assert.match(html, /La guía infantil ilustrada de OpenKubes/);
+  assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
   assert.match(html, /Abrir el índice de diapositivas/);
 });
 
@@ -58,6 +61,7 @@ test("renders the Persian review edition at /fa with RTL content", async () => {
   assert.match(html, /اوکی و جزیره‌های بسیار/);
   assert.match(html, /پیش‌نمایش HTML فارسی/);
   assert.match(html, /راهنمای مصور کودکان برای OpenKubes/);
+  assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
   assert.match(html, /باز کردن فهرست اسلایدها/);
   assert.match(html, /<main[^>]+dir="rtl"/);
 });
@@ -78,6 +82,7 @@ test("exports a directly openable standalone presentation", async () => {
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /data-slide="21"/);
   assert.match(html, /Mio und ihr eigenes Rathaus/);
+  assert.match(html, /href="https:\/\/kubernauts\.de\/"/);
   assert.match(html, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
   assert.doesNotMatch(html, /src="\/scenes\//);
 
@@ -93,6 +98,7 @@ test("exports a directly openable English standalone presentation", async () => 
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="en"/);
   assert.match(html, /Oki and the Many Islands/);
+  assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /Being Born Is Not the Same as Being Ready/);
   assert.match(html, /href="\.\.\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -104,6 +110,7 @@ test("exports a directly openable Spanish standalone presentation", async () => 
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="es" dir="ltr"/);
   assert.match(html, /Oki y las muchas islas/);
+  assert.match(html, /href="https:\/\/kubernauts\.de\/"/);
   assert.match(html, /Nacer no es lo mismo que estar listo/);
   assert.match(html, /href="\.\.\/fa\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
@@ -115,6 +122,7 @@ test("exports a directly openable Persian standalone presentation", async () => 
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /lang="fa" dir="rtl"/);
   assert.match(html, /اوکی و جزیره‌های بسیار/);
+  assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /به دنیا آمدن، همان آماده بودن نیست/);
   assert.match(html, /href="\.\.\/es\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);

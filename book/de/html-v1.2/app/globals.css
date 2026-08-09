@@ -419,6 +419,23 @@ button {
   text-transform: uppercase;
 }
 
+.creation-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  margin: clamp(1.25rem, 2.2vh, 2rem) 0 0;
+  color: rgba(86, 98, 114, 0.78);
+  font-size: clamp(0.64rem, 0.66vw, 0.76rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.4;
+}
+
+.presentation-shell[dir="rtl"] .creation-credit {
+  direction: ltr;
+  text-align: left;
+}
+
 .cover-image .story-figure figcaption {
   display: none;
 }

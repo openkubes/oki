@@ -17,6 +17,11 @@ export const languageOptions: Array<{
   { locale: "fa", code: "فا", label: "فارسی", href: "/fa/" },
 ];
 
+const creationCredit = {
+  creator: "Created by Arash Kaffamanesh for Kubernauts",
+  assistance: "with assistance from ChatGPT and Codex",
+} as const;
+
 export const presentationCopy = {
   de: {
     locale: "de",
@@ -27,6 +32,7 @@ export const presentationCopy = {
     edition: "Digitale HTML-Ausgabe · v1.2",
     coverIntro:
       "Eine Geschichte über klare Versprechen, ehrliche Beweise und Menschen, die Verantwortung übernehmen.",
+    creationCredit,
     sceneCount: "18 Szenen",
     language: "Deutsch",
     languageMenuLabel: "Sprache wählen",
@@ -76,6 +82,7 @@ export const presentationCopy = {
     edition: "English HTML Preview · v1.0 RC1",
     coverIntro:
       "A story about clear promises, honest evidence, and people who take responsibility.",
+    creationCredit,
     sceneCount: "18 scenes",
     language: "English",
     languageMenuLabel: "Choose language",
@@ -125,6 +132,7 @@ export const presentationCopy = {
     edition: "Vista previa HTML en español · v1.0 RC1",
     coverIntro:
       "Una historia sobre promesas claras, evidencia honesta y personas que asumen responsabilidades.",
+    creationCredit,
     sceneCount: "18 escenas",
     language: "Español",
     languageMenuLabel: "Elegir idioma",
@@ -174,6 +182,7 @@ export const presentationCopy = {
     edition: "پیش‌نمایش HTML فارسی · v1.0 RC1",
     coverIntro:
       "داستانی دربارهٔ قول‌های روشن، مدرک‌های صادقانه و انسان‌هایی که مسئولیت می‌پذیرند.",
+    creationCredit,
     sceneCount: "۱۸ صحنه",
     language: "فارسی",
     languageMenuLabel: "انتخاب زبان",

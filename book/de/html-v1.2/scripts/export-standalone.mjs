@@ -73,6 +73,7 @@ function renderDocument(locale) {
       <p class="subtitle">${escapeHtml(copy.subtitle)}</p>
       <p class="cover-intro">${escapeHtml(copy.coverIntro)}</p>
       <div class="cover-meta"><span>${escapeHtml(copy.sceneCount)}</span><span aria-hidden="true">·</span><span>${escapeHtml(copy.language)}</span><span aria-hidden="true">·</span><span>2026</span></div>
+      <p class="creation-credit"><span>${escapeHtml(copy.creationCredit.creator)}</span><span>${escapeHtml(copy.creationCredit.assistance)}</span></p>
     </section>
     <section class="image-panel cover-image">${storyFigure(copy.scenes[17], true)}</section>
   </article>`;
@@ -108,6 +109,7 @@ function renderDocument(locale) {
       <div class="link-stack">
         <a href="https://openkubes.org/" target="_blank" rel="noreferrer">openkubes.org <span aria-hidden="true">↗</span></a>
         <a href="https://github.com/openkubes/oki" target="_blank" rel="noreferrer">github.com/openkubes/oki <span aria-hidden="true">↗</span></a>
+        <a href="https://kubernauts.de/" target="_blank" rel="noreferrer">kubernauts.de <span aria-hidden="true">↗</span></a>
       </div>
       <p class="license-note">${escapeHtml(copy.license)}</p>
     </section>
