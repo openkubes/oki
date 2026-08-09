@@ -8,6 +8,7 @@ import { frenchScenes } from "./story.fr.ts";
 import { hindiScenes } from "./story.hi.ts";
 import { portugueseScenes } from "./story.pt.ts";
 import { scenes as germanScenes } from "./story.ts";
+import { epilogueCopy } from "./epilogue-copy.ts";
 
 export type PresentationLocale =
   | "de"
@@ -50,6 +51,7 @@ export const presentationCopy = {
     locale: "de",
     direction: "ltr",
     scenes: germanScenes,
+    epilogues: epilogueCopy.de,
     title: "Oki und das Geheimnis der Inseln",
     subtitle: "Der illustrierte Kinderführer zu OpenKubes",
     edition: "Digitale HTML-Ausgabe · v1.2",
@@ -100,6 +102,7 @@ export const presentationCopy = {
     locale: "en",
     direction: "ltr",
     scenes: englishScenes,
+    epilogues: epilogueCopy.en,
     title: "Oki and the Secret of the Islands",
     subtitle: "The Illustrated Children’s Guide to OpenKubes",
     edition: "English HTML Preview · v1.0 RC1",
@@ -150,6 +153,7 @@ export const presentationCopy = {
     locale: "es",
     direction: "ltr",
     scenes: spanishScenes,
+    epilogues: epilogueCopy.es,
     title: "Oki y el secreto de las islas",
     subtitle: "La guía infantil ilustrada de OpenKubes",
     edition: "Vista previa HTML en español · v1.0 RC1",
@@ -200,6 +204,7 @@ export const presentationCopy = {
     locale: "fa",
     direction: "rtl",
     scenes: persianScenes,
+    epilogues: epilogueCopy.fa,
     title: "اوکی و راز جزیره‌ها",
     subtitle: "راهنمای مصور کودکان برای OpenKubes",
     edition: "پیش‌نمایش HTML فارسی · v1.0 RC1",
@@ -250,6 +255,7 @@ export const presentationCopy = {
     locale: "zh",
     direction: "ltr",
     scenes: chineseScenes,
+    epilogues: epilogueCopy.zh,
     title: "奥奇与群岛的秘密",
     subtitle: "OpenKubes 儿童图解指南",
     edition: "简体中文 HTML 审校预览 · v1.0 RC1",
@@ -300,6 +306,7 @@ export const presentationCopy = {
     locale: "ja",
     direction: "ltr",
     scenes: japaneseScenes,
+    epilogues: epilogueCopy.ja,
     title: "オキと島々の秘密",
     subtitle: "OpenKubes の子ども向けイラストガイド",
     edition: "日本語 HTML レビュー版 · v1.0 RC1",
@@ -350,6 +357,7 @@ export const presentationCopy = {
     locale: "ar",
     direction: "rtl",
     scenes: arabicScenes,
+    epilogues: epilogueCopy.ar,
     title: "أوكي وسرّ الجزر",
     subtitle: "دليل الأطفال المصوّر إلى OpenKubes",
     edition: "معاينة HTML العربية · v1.0 RC1",
@@ -400,6 +408,7 @@ export const presentationCopy = {
     locale: "fr",
     direction: "ltr",
     scenes: frenchScenes,
+    epilogues: epilogueCopy.fr,
     title: "Oki et le secret des îles",
     subtitle: "Le guide illustré d'OpenKubes pour les enfants",
     edition: "Aperçu HTML en français · v1.0 RC1",
@@ -450,6 +459,7 @@ export const presentationCopy = {
     locale: "hi",
     direction: "ltr",
     scenes: hindiScenes,
+    epilogues: epilogueCopy.hi,
     title: "ओकी और द्वीपों का रहस्य",
     subtitle: "OpenKubes के बारे में बच्चों की चित्रमय मार्गदर्शिका",
     edition: "हिन्दी HTML समीक्षा-पूर्वावलोकन · v1.0 RC1",
@@ -500,6 +510,7 @@ export const presentationCopy = {
     locale: "pt",
     direction: "ltr",
     scenes: portugueseScenes,
+    epilogues: epilogueCopy.pt,
     title: "Oki e o segredo das ilhas",
     subtitle: "O guia infantil ilustrado de OpenKubes",
     edition: "Prévia HTML em português · v1.0 RC1",

@@ -64,6 +64,24 @@ function renderDocument(locale) {
     </article>`;
   }
 
+  function epilogueFigure(page) {
+    return `<figure class="story-figure epilogue-figure">
+      <img src="${assetPrefix}${page.image}" alt="${escapeHtml(page.alt)}" loading="lazy" decoding="async">
+    </figure>`;
+  }
+
+  function epilogueSlide(page) {
+    return `<article class="slide epilogue-slide epilogue-${page.id}" aria-labelledby="offline-title-${page.id}">
+      <section class="text-panel">
+        <div class="eyebrow">${escapeHtml(page.eyebrow)}</div>
+        <h1 id="offline-title-${page.id}">${escapeHtml(page.title)}</h1>
+        <div class="orange-rule" aria-hidden="true"></div>
+        <div class="scene-copy epilogue-copy">${page.paragraphs.map((paragraph) => `<p>${inlineMarkup(paragraph)}</p>`).join("")}</div>
+      </section>
+      <section class="image-panel">${epilogueFigure(page)}</section>
+    </article>`;
+  }
+
   const cover = `<article class="slide cover-slide" aria-labelledby="offline-cover-title">
     <section class="text-panel cover-copy">
       <div class="edition-pill">${escapeHtml(copy.edition)}</div>
@@ -124,6 +142,11 @@ function renderDocument(locale) {
       id: scene.slug,
       label: `${String(scene.number).padStart(2, "0")} · ${scene.title}`,
       html: sceneSlide(scene),
+    })),
+    ...copy.epilogues.map((page) => ({
+      id: page.id,
+      label: page.title,
+      html: epilogueSlide(page),
     })),
     { id: "schluss", label: copy.finaleLabel, html: finale },
     { id: "entdecken", label: copy.aboutLabel, html: about },
@@ -262,6 +285,7 @@ const sharedCss = (await readFile(resolve(projectRoot, "app/globals.css"), "utf8
   `);
 
 await mkdir(resolve(outputRoot, "scenes"), { recursive: true });
+await mkdir(resolve(outputRoot, "epilogue"), { recursive: true });
 await mkdir(resolve(outputRoot, "en"), { recursive: true });
 await mkdir(resolve(outputRoot, "es"), { recursive: true });
 await mkdir(resolve(outputRoot, "fa"), { recursive: true });
@@ -276,6 +300,14 @@ await Promise.all(
     copyFile(
       resolve(projectRoot, "public", scene.image.slice(1)),
       resolve(outputRoot, scene.image.slice(1)),
+    ),
+  ),
+);
+await Promise.all(
+  presentationCopy.de.epilogues.map((page) =>
+    copyFile(
+      resolve(projectRoot, "public", page.image.slice(1)),
+      resolve(outputRoot, page.image.slice(1)),
     ),
   ),
 );

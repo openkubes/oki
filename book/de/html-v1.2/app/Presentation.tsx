@@ -15,12 +15,14 @@ import {
   type PresentationCopy,
   type PresentationLocale,
 } from "./presentation-copy";
+import type { EpiloguePage } from "./epilogue-copy";
 import type { StoryScene } from "./story";
 
 type DeckSlide =
   | { id: "start"; kind: "cover" }
   | { id: "leitgedanke"; kind: "quote" }
   | { id: string; kind: "scene"; scene: StoryScene }
+  | { id: string; kind: "epilogue"; page: EpiloguePage }
   | { id: "schluss"; kind: "finale" }
   | { id: "entdecken"; kind: "about" };
 
@@ -28,6 +30,7 @@ const makeDeck = (copy: PresentationCopy): DeckSlide[] => [
   { id: "start", kind: "cover" },
   { id: "leitgedanke", kind: "quote" },
   ...copy.scenes.map((scene) => ({ id: scene.slug, kind: "scene" as const, scene })),
+  ...copy.epilogues.map((page) => ({ id: page.id, kind: "epilogue" as const, page })),
   { id: "schluss", kind: "finale" },
   { id: "entdecken", kind: "about" },
 ];
@@ -106,6 +109,40 @@ function SceneSlide({ scene, copy }: { scene: StoryScene; copy: PresentationCopy
       </section>
       <section className="image-panel">
         <StoryImage scene={scene} copy={copy} />
+      </section>
+    </article>
+  );
+}
+
+function EpilogueImage({ page }: { page: EpiloguePage }) {
+  return (
+    <figure className="story-figure epilogue-figure">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={page.image} alt={page.alt} loading="lazy" decoding="async" />
+    </figure>
+  );
+}
+
+function EpilogueSlide({ page }: { page: EpiloguePage }) {
+  return (
+    <article
+      className={`slide epilogue-slide epilogue-${page.id}`}
+      aria-labelledby={`title-${page.id}`}
+    >
+      <section className="text-panel">
+        <div className="eyebrow">{page.eyebrow}</div>
+        <h1 id={`title-${page.id}`}>{page.title}</h1>
+        <div className="orange-rule" aria-hidden="true" />
+        <div className="scene-copy epilogue-copy">
+          {page.paragraphs.map((paragraph, index) => (
+            <p key={index}>
+              <InlineMarkup>{paragraph}</InlineMarkup>
+            </p>
+          ))}
+        </div>
+      </section>
+      <section className="image-panel">
+        <EpilogueImage page={page} />
       </section>
     </article>
   );
@@ -211,6 +248,8 @@ function SlideContent({ slide, copy }: { slide: DeckSlide; copy: PresentationCop
       return <QuoteSlide copy={copy} />;
     case "scene":
       return <SceneSlide scene={slide.scene} copy={copy} />;
+    case "epilogue":
+      return <EpilogueSlide page={slide.page} />;
     case "finale":
       return <FinaleSlide copy={copy} />;
     case "about":
@@ -222,6 +261,7 @@ function slideLabel(slide: DeckSlide, copy: PresentationCopy) {
   if (slide.kind === "scene") {
     return `${String(slide.scene.number).padStart(2, "0")} · ${slide.scene.title}`;
   }
+  if (slide.kind === "epilogue") return slide.page.title;
   if (slide.kind === "cover") return copy.startLabel;
   if (slide.kind === "quote") return copy.quoteLabel;
   if (slide.kind === "finale") return copy.finaleLabel;

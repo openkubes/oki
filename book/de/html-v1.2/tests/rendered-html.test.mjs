@@ -27,6 +27,7 @@ test("renders the Oki presentation shell and release metadata", async () => {
   assert.match(html, /Created by Arash Kaffamanesh for Kubernauts/);
   assert.match(html, /with assistance from ChatGPT and Codex/);
   assert.match(html, /Folienübersicht/);
+  assert.match(html, /01<!-- --> \/ <!-- -->24/);
   assert.doesNotMatch(html, /Para a Emily/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
@@ -40,6 +41,7 @@ test("renders the English review edition at /en", async () => {
   assert.match(html, /English HTML Preview/);
   assert.match(html, /The Illustrated Children/);
   assert.match(html, /slide overview/i);
+  assert.match(html, /01<!-- --> \/ <!-- -->24/);
 });
 
 test("renders the Spanish review edition at /es", async () => {
@@ -150,15 +152,36 @@ test("keeps all canonical scene assets in the public build", async () => {
   }
 });
 
+test("keeps both epilogue illustrations in the public build", async () => {
+  await access(new URL("../public/epilogue/earth-island.png", import.meta.url));
+  await access(new URL("../public/epilogue/solar-family.png", import.meta.url));
+});
+
+test("provides two localized epilogue pages in every edition", async () => {
+  const { epilogueCopy } = await import("../app/epilogue-copy.ts");
+  assert.deepEqual(Object.keys(epilogueCopy), ["de", "en", "es", "fa", "zh", "ja", "ar", "fr", "hi", "pt"]);
+  for (const pages of Object.values(epilogueCopy)) {
+    assert.equal(pages.length, 2);
+    assert.equal(pages[0].id, "earth-island");
+    assert.equal(pages[1].id, "solar-family");
+  }
+  assert.equal(epilogueCopy.de[0].title, "Auch unsere Erde ist eine Insel.");
+  assert.equal(epilogueCopy.en[1].title, "No island is ever completely alone.");
+});
+
 test("exports a directly openable standalone presentation", async () => {
   const html = await readFile(new URL("../standalone/index.html", import.meta.url), "utf8");
   assert.match(html, /^<!doctype html>/i);
   assert.match(html, /Oki und das Geheimnis der Inseln/);
-  assert.match(html, /data-slide="21"/);
+  assert.match(html, /data-slide="23"/);
   assert.match(html, /Mio und ihr eigenes Rathaus/);
   assert.match(html, /href="https:\/\/kubernauts\.de\/"/);
   assert.match(html, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
   assert.doesNotMatch(html, /src="\/scenes\//);
+  assert.match(html, /src="\.\/epilogue\/earth-island\.png"/);
+  assert.match(html, /src="\.\/epilogue\/solar-family\.png"/);
+  await access(new URL("../standalone/epilogue/earth-island.png", import.meta.url));
+  await access(new URL("../standalone/epilogue/solar-family.png", import.meta.url));
 
   for (let scene = 1; scene <= 18; scene += 1) {
     const filename = `scene-${String(scene).padStart(2, "0")}.png`;
@@ -176,6 +199,8 @@ test("exports a directly openable English standalone presentation", async () => 
   assert.match(html, /Being Born Is Not the Same as Being Ready/);
   assert.match(html, /href="\.\.\/"/);
   assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.match(html, /src="\.\.\/epilogue\/earth-island\.png"/);
+  assert.match(html, /src="\.\.\/epilogue\/solar-family\.png"/);
   assert.doesNotMatch(html, /src="\/scenes\//);
 });
 

@@ -183,6 +183,31 @@ for (const scene of scenes) {
   );
 }
 
+const epilogueAssets = [
+  {
+    filename: "earth-island.png",
+    source: "art/keyframes/OKI-EPILOGUE-EARTH-001-v1-C01.png",
+  },
+  {
+    filename: "solar-family.png",
+    source: "art/keyframes/OKI-EPILOGUE-SOLAR-FAMILY-001-v1-C01.png",
+  },
+];
+
+for (const asset of epilogueAssets) {
+  const expected = await sha256(resolve(okiRoot, asset.source));
+  assert.equal(
+    await sha256(resolve(projectRoot, "public/epilogue", asset.filename)),
+    expected,
+    `Public-Epilogbild ${asset.filename} stimmt nicht mit dem Quellbild überein.`,
+  );
+  assert.equal(
+    await sha256(resolve(projectRoot, "standalone/epilogue", asset.filename)),
+    expected,
+    `Offline-Epilogbild ${asset.filename} stimmt nicht mit dem Quellbild überein.`,
+  );
+}
+
 const standalone = await readFile(resolve(projectRoot, "standalone/index.html"), "utf8");
 const englishStandalone = await readFile(
   resolve(projectRoot, "standalone/en/index.html"),
@@ -240,7 +265,9 @@ for (const editionWithoutDedication of [
 assert.match(standalone, /In einer Familie darf jeder anders sein\./);
 assert.match(standalone, /Oki und das Geheimnis der Inseln/);
 assert.match(standalone, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
-assert.match(standalone, /data-slide="21"/);
+assert.match(standalone, /data-slide="23"/);
+assert.match(standalone, /Auch unsere Erde ist eine Insel\./);
+assert.match(standalone, /Keine Insel ist ganz allein\./);
 assert.match(standalone, /href="\.\/en\/"/);
 assert.match(standalone, /Created by Arash Kaffamanesh for Kubernauts/);
 assert.match(standalone, /with assistance from ChatGPT and Codex/);
@@ -248,57 +275,59 @@ assert.match(standalone, /href="https:\/\/kubernauts\.de\/"/);
 assert.match(englishStandalone, /Oki and the Secret of the Islands/);
 assert.match(englishStandalone, /Everyone in a family can be different\./);
 assert.match(englishStandalone, /But when is it not merely there, but truly reliable\?/);
-assert.match(englishStandalone, /data-slide="21"/);
+assert.match(englishStandalone, /data-slide="23"/);
+assert.match(englishStandalone, /Our Earth is an island, too\./);
+assert.match(englishStandalone, /No island is ever completely alone\./);
 assert.match(englishStandalone, /href="\.\.\/"/);
 assert.match(spanishStandalone, /Oki y el secreto de las islas/);
 assert.match(spanishStandalone, /En una familia, cada uno puede ser diferente\./);
 assert.match(spanishStandalone, /Pero ¿cuándo deja de estar simplemente ahí y se vuelve realmente confiable\?/);
-assert.match(spanishStandalone, /data-slide="21"/);
+assert.match(spanishStandalone, /data-slide="23"/);
 assert.match(spanishStandalone, /href="\.\.\/fa\/"/);
 assert.match(persianStandalone, /اوکی و راز جزیره‌ها/);
 assert.match(persianStandalone, /در یک خانواده هرکس می‌تواند متفاوت باشد\./);
 assert.match(persianStandalone, /اما چه زمانی فقط آنجا نیست و واقعاً قابل اعتماد است؟/);
-assert.match(persianStandalone, /data-slide="21"/);
+assert.match(persianStandalone, /data-slide="23"/);
 assert.match(persianStandalone, /<html lang="fa" dir="rtl">/);
 assert.match(persianStandalone, /href="\.\.\/es\/"/);
 assert.match(chineseStandalone, /奥奇与群岛的秘密/);
 assert.match(chineseStandalone, /一家人可以各不相同。/);
 assert.match(chineseStandalone, /可它什么时候才不只是存在，而是真正可靠呢？/);
-assert.match(chineseStandalone, /data-slide="21"/);
+assert.match(chineseStandalone, /data-slide="23"/);
 assert.match(chineseStandalone, /<html lang="zh" dir="ltr">/);
 assert.match(chineseStandalone, /href="\.\.\/ja\/"/);
 assert.match(japaneseStandalone, /オキと島々の秘密/);
 assert.match(japaneseStandalone, /家族は、みんな違っていていい。/);
 assert.match(japaneseStandalone, /でも、ただそこにあるだけでなく、本当に信頼できるのはいつ？/);
-assert.match(japaneseStandalone, /data-slide="21"/);
+assert.match(japaneseStandalone, /data-slide="23"/);
 assert.match(japaneseStandalone, /<html lang="ja" dir="ltr">/);
 assert.match(japaneseStandalone, /href="\.\.\/zh\/"/);
 assert.match(arabicStandalone, /أوكي وسرّ الجزر/);
 assert.match(arabicStandalone, /في العائلة يمكن لكل فرد أن يكون مختلفًا\./);
 assert.match(arabicStandalone, /لكن متى لا تكون موجودة فحسب، بل موثوقة حقًا؟/);
-assert.match(arabicStandalone, /data-slide="21"/);
+assert.match(arabicStandalone, /data-slide="23"/);
 assert.match(arabicStandalone, /<html lang="ar" dir="rtl">/);
 assert.match(arabicStandalone, /href="\.\.\/fr\/"/);
 assert.match(frenchStandalone, /Oki et le secret des îles/);
 assert.match(frenchStandalone, /Dans une famille, chacun peut être différent\./);
 assert.match(frenchStandalone, /Mais quand est-elle vraiment fiable, et pas seulement présente ?/);
-assert.match(frenchStandalone, /data-slide="21"/);
+assert.match(frenchStandalone, /data-slide="23"/);
 assert.match(frenchStandalone, /<html lang="fr" dir="ltr">/);
 assert.match(frenchStandalone, /href="\.\.\/hi\/"/);
 assert.match(hindiStandalone, /ओकी और द्वीपों का रहस्य/);
 assert.match(hindiStandalone, /परिवार में हर कोई अलग हो सकता है।/);
 assert.match(hindiStandalone, /लेकिन वह कब केवल मौजूद नहीं, बल्कि सचमुच भरोसेमंद होता है\?/);
-assert.match(hindiStandalone, /data-slide="21"/);
+assert.match(hindiStandalone, /data-slide="23"/);
 assert.match(hindiStandalone, /<html lang="hi" dir="ltr">/);
 assert.match(hindiStandalone, /href="\.\.\/ar\/"/);
 assert.match(portugueseStandalone, /Oki e o segredo das ilhas/);
 assert.match(portugueseStandalone, /Em uma família, cada um pode ser diferente\./);
 assert.match(portugueseStandalone, /Mas quando ela não está apenas presente, e sim verdadeiramente confiável\?/);
 assert.match(portugueseStandalone, /Para a Emily, que em breve chegará ao mundo\. 💚/);
-assert.match(portugueseStandalone, /data-slide="21"/);
+assert.match(portugueseStandalone, /data-slide="23"/);
 assert.match(portugueseStandalone, /<html lang="pt" dir="ltr">/);
 assert.match(portugueseStandalone, /href="\.\.\/hi\/"/);
 
 console.log(
-  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA/AR/FR/HI/PT v1.0 RC1, 18 canonical images and all standalone editions agree.",
+  "PASS: DE v1.2 plus EN/ES/FA/ZH/JA/AR/FR/HI/PT v1.0 RC1, 18 canonical scenes, 2 localized epilogue pages and all standalone editions agree.",
 );

@@ -1,0 +1,87 @@
+asset_id: OKI-EPILOGUE-SOLAR-FAMILY-001-v1-C01
+asset_version: 0.1.0
+title: "The family of worlds"
+status: CANDIDATE
+canon_version: "1.0 + CA-001 + CA-002"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKI-EPILOGUE-EARTH-001-v1-C01
+
+purpose:
+  product: "Oki Universe multilingual HTML presentation"
+  scene: "Epilogue page 2 - the solar family"
+  narrative_job: "Extend the idea of distinct but connected islands toward a poetic family of worlds sharing one solar home"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen generation; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/keyframes/EPILOGUE-SOLAR-FAMILY-v1-C01.md"
+  prompt_file: "art/prompts/keyframes/EPILOGUE-SOLAR-FAMILY-v1-C01.md"
+  seed: "not exposed"
+  generation_id: "exec-5354f891-c996-4879-bdbf-3f884e9fbaf3"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "523d1c826418108cd1ecfba636a879eac7395fc12fd27008dec3e308c75c82d2"
+  prompt_sha256: "7516676d2619cc380460358d4f9c88778ee1edc3331bab6a4bda5c67777a5564"
+
+references:
+  - asset_id_or_path: "art/keyframes/OKI-EPILOGUE-EARTH-001-v1-C01.png"
+    owner_or_source: "OpenKubes epilogue candidate"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Cosmic palette, luminous Earth rendering and visual continuity"
+  - asset_id_or_path: "art/canonical/scenes/de/OKI-SCENE-DE-18-v2.png"
+    owner_or_source: "OpenKubes canonical Scene 18"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Painterly style and gentle handcrafted finish"
+
+editing:
+  source_file: "art/keyframes/OKI-EPILOGUE-SOLAR-FAMILY-001-v1-C01.png"
+  steps:
+    - "Generated from the OpenKubes epilogue and canonical scene style references"
+    - "Copied byte-identically into the multilingual HTML presentation"
+  editor: "OpenAI built-in image generation directed by Codex"
+
+exports:
+  - path: "art/keyframes/OKI-EPILOGUE-SOLAR-FAMILY-001-v1-C01.png"
+    format: "PNG"
+    dimensions: "1672x941"
+    color_profile: "embedded/default"
+  - path: "book/de/html-v1.2/public/epilogue/solar-family.png"
+    format: "PNG"
+    dimensions: "1672x941"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from owned OpenKubes references"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki names, logos and marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-09"
+
+conformance:
+  checklist_file: ""
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: false
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-09"
+  release_notes: "Approved for use as multilingual HTML epilogue page; canonical promotion remains a separate gate"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true
