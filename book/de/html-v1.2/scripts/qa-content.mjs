@@ -4,10 +4,15 @@ import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { scenes } from "../app/story.ts";
+import { englishScenes } from "../app/story.en.ts";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const okiRoot = resolve(projectRoot, "../../..");
 const manuscriptPath = resolve(okiRoot, "story/de/manuscript-v1.2.md");
+const englishManuscriptPath = resolve(
+  okiRoot,
+  "story/en/manuscript-v1.0-rc1.md",
+);
 const imageManifestPath = resolve(
   okiRoot,
   "art/canonical/scenes/de/CANONICAL-SCENES-DE-v1.1.sha256",
@@ -61,6 +66,49 @@ for (const scene of scenes) {
   );
 }
 
+const englishManuscript = await readFile(englishManuscriptPath, "utf8");
+const englishHeadings = [
+  ...englishManuscript.matchAll(/^## Scene (\d+) - (.+)$/gm),
+];
+const englishManuscriptScenes = englishHeadings.map((heading, index) => {
+  const bodyStart = (heading.index ?? 0) + heading[0].length;
+  const bodyEnd = englishHeadings[index + 1]?.index ?? englishManuscript.length;
+  const body = englishManuscript
+    .slice(bodyStart, bodyEnd)
+    .replace(/\n---\s*$/, "")
+    .trim();
+
+  return {
+    number: Number(heading[1]),
+    title: heading[2].trim(),
+    text: normalize(body),
+  };
+});
+
+assert.equal(
+  englishScenes.length,
+  18,
+  "The English web edition must contain exactly 18 scenes.",
+);
+assert.equal(
+  englishManuscriptScenes.length,
+  18,
+  "The English review manuscript must contain exactly 18 scenes.",
+);
+
+for (const scene of englishScenes) {
+  const source = englishManuscriptScenes.find(
+    (candidate) => candidate.number === scene.number,
+  );
+  assert.ok(source, `Scene ${scene.number} is missing from the English manuscript.`);
+  assert.equal(scene.title, source.title, `English title mismatch in scene ${scene.number}.`);
+  assert.equal(
+    normalize(scene.paragraphs.join("\n\n")),
+    source.text,
+    `English text mismatch in scene ${scene.number}.`,
+  );
+}
+
 const imageManifest = await readFile(imageManifestPath, "utf8");
 const expectedImages = new Map();
 
@@ -88,8 +136,20 @@ for (const scene of scenes) {
 }
 
 const standalone = await readFile(resolve(projectRoot, "standalone/index.html"), "utf8");
+const englishStandalone = await readFile(
+  resolve(projectRoot, "standalone/en/index.html"),
+  "utf8",
+);
 assert.match(standalone, /In einer Familie darf jeder anders sein\./);
 assert.match(standalone, /Aber wann ist sie nicht nur da, sondern wirklich verlässlich\?/);
 assert.match(standalone, /data-slide="21"/);
+assert.match(standalone, /href="\.\/en\/"/);
+assert.match(englishStandalone, /Oki and the Many Islands/);
+assert.match(englishStandalone, /Everyone in a family can be different\./);
+assert.match(englishStandalone, /But when is it not merely there, but truly reliable\?/);
+assert.match(englishStandalone, /data-slide="21"/);
+assert.match(englishStandalone, /href="\.\.\/"/);
 
-console.log("PASS: Manuskript v1.2, 18 kanonische Bilder und Offline-Ausgabe stimmen überein.");
+console.log(
+  "PASS: DE v1.2, EN v1.0 RC1, 18 canonical images and both standalone editions agree.",
+);

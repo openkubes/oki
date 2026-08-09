@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -26,6 +26,17 @@ test("renders the Oki presentation shell and release metadata", async () => {
   assert.match(html, /Der illustrierte Kinderführer zu OpenKubes/);
   assert.match(html, /Folienübersicht/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
+});
+
+test("renders the English review edition at /en", async () => {
+  const response = await render("/en");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Oki and the Many Islands/);
+  assert.match(html, /English HTML Preview/);
+  assert.match(html, /The Illustrated Children/);
+  assert.match(html, /slide overview/i);
 });
 
 test("keeps all canonical scene assets in the public build", async () => {
@@ -52,4 +63,15 @@ test("exports a directly openable standalone presentation", async () => {
     await access(new URL(`../standalone/scenes/${filename}`, import.meta.url));
     assert.match(html, new RegExp(`src="\\./scenes/${filename}"`));
   }
+});
+
+test("exports a directly openable English standalone presentation", async () => {
+  const html = await readFile(new URL("../standalone/en/index.html", import.meta.url), "utf8");
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /lang="en"/);
+  assert.match(html, /Oki and the Many Islands/);
+  assert.match(html, /Being Born Is Not the Same as Being Ready/);
+  assert.match(html, /href="\.\.\/"/);
+  assert.match(html, /src="\.\.\/scenes\/scene-18\.png"/);
+  assert.doesNotMatch(html, /src="\/scenes\//);
 });

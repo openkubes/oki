@@ -70,6 +70,8 @@ Preflight artifacts:
 - `book/de/Oki-und-die-vielen-Inseln-DE-digital-v1.2.pdf`
 - `book/de/html-v1.2/` - interactive and offline-capable HTML presentation
 - `book/de/GATE-5C-HTML-V1.2-REVIEW.md`
+- `story/en/manuscript-v1.0-rc1.md` - natural American-English review adaptation
+- `book/en/GATE-5C-HTML-EN-V1.0-REVIEW.md`
 - `video/de/Oki-und-die-vielen-Inseln-DE-video-recording-v1.0.pptx`
 - `video/de/Oki-und-die-vielen-Inseln-DE-recording-guide-v1.0.md`
 
@@ -79,6 +81,10 @@ v1.2 PPTX, PDF, HTML presentation and checksums are the current publication
 candidates. The project owner approved the HTML derivative for public GitHub
 Pages publication on 2026-08-09. It passed automated manuscript,
 image-integrity, build, test and offline-export QA before deployment.
+The bilingual HTML build now also exports an English v1.0 RC1 review route at
+`/en/` and verifies its 18 scene texts against the English review manuscript.
+The English language gate and the two English-lettered illustration deltas
+remain open.
 The PDF and PPTX still await explicit final release approval.
 The v1.1 artifacts remain the Mio-layout
 baseline. The print track remains open until trim, binding and printer

@@ -9,7 +9,12 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { scenes, type StoryScene } from "./story";
+import {
+  presentationCopy,
+  type PresentationCopy,
+  type PresentationLocale,
+} from "./presentation-copy";
+import type { StoryScene } from "./story";
 
 type DeckSlide =
   | { id: "start"; kind: "cover" }
@@ -18,10 +23,10 @@ type DeckSlide =
   | { id: "schluss"; kind: "finale" }
   | { id: "entdecken"; kind: "about" };
 
-const deck: DeckSlide[] = [
+const makeDeck = (copy: PresentationCopy): DeckSlide[] => [
   { id: "start", kind: "cover" },
   { id: "leitgedanke", kind: "quote" },
-  ...scenes.map((scene) => ({ id: scene.slug, kind: "scene" as const, scene })),
+  ...copy.scenes.map((scene) => ({ id: scene.slug, kind: "scene" as const, scene })),
   { id: "schluss", kind: "finale" },
   { id: "entdecken", kind: "about" },
 ];
@@ -52,7 +57,15 @@ function InlineMarkup({ children }: { children: string }) {
   ));
 }
 
-function StoryImage({ scene, eager = false }: { scene: StoryScene; eager?: boolean }) {
+function StoryImage({
+  scene,
+  copy,
+  eager = false,
+}: {
+  scene: StoryScene;
+  copy: PresentationCopy;
+  eager?: boolean;
+}) {
   return (
     <figure className="story-figure">
       {/* Canonical artwork is preserved byte-for-byte; framework image rewriting is intentionally disabled. */}
@@ -64,20 +77,22 @@ function StoryImage({ scene, eager = false }: { scene: StoryScene; eager?: boole
         decoding="async"
       />
       <figcaption>
-        Kanonische Illustration · Szene {String(scene.number).padStart(2, "0")}
+        {copy.canonicalIllustration} · {copy.sceneLabel} {String(scene.number).padStart(2, "0")}
       </figcaption>
     </figure>
   );
 }
 
-function SceneSlide({ scene }: { scene: StoryScene }) {
+function SceneSlide({ scene, copy }: { scene: StoryScene; copy: PresentationCopy }) {
   const textLength = scene.paragraphs.join(" ").length;
   const density = textLength > 1250 ? "very-dense" : textLength > 900 ? "dense" : "regular";
 
   return (
     <article className={`slide scene-slide ${density}`} aria-labelledby={`title-${scene.slug}`}>
       <section className="text-panel">
-        <div className="eyebrow">Szene {String(scene.number).padStart(2, "0")}</div>
+        <div className="eyebrow">
+          {copy.sceneLabel} {String(scene.number).padStart(2, "0")}
+        </div>
         <h1 id={`title-${scene.slug}`}>{scene.title}</h1>
         <div className="orange-rule" aria-hidden="true" />
         <div className="scene-copy">
@@ -89,148 +104,124 @@ function SceneSlide({ scene }: { scene: StoryScene }) {
         </div>
       </section>
       <section className="image-panel">
-        <StoryImage scene={scene} />
+        <StoryImage scene={scene} copy={copy} />
       </section>
     </article>
   );
 }
 
-function CoverSlide() {
+function CoverSlide({ copy }: { copy: PresentationCopy }) {
   return (
     <article className="slide cover-slide" aria-labelledby="cover-title">
       <section className="text-panel cover-copy">
-        <div className="edition-pill">Digitale HTML-Ausgabe · v1.2</div>
+        <div className="edition-pill">{copy.edition}</div>
         <p className="brand-kicker">Oki Universe</p>
-        <h1 id="cover-title">Oki und die vielen Inseln</h1>
+        <h1 id="cover-title">{copy.title}</h1>
         <div className="orange-rule" aria-hidden="true" />
-        <p className="subtitle">Der illustrierte Kinderführer zu OpenKubes</p>
-        <p className="cover-intro">
-          Eine Geschichte über klare Versprechen, ehrliche Beweise und Menschen,
-          die Verantwortung übernehmen.
-        </p>
+        <p className="subtitle">{copy.subtitle}</p>
+        <p className="cover-intro">{copy.coverIntro}</p>
         <div className="cover-meta">
-          <span>18 Szenen</span>
+          <span>{copy.sceneCount}</span>
           <span aria-hidden="true">·</span>
-          <span>Deutsch</span>
+          <span>{copy.language}</span>
           <span aria-hidden="true">·</span>
           <span>2026</span>
         </div>
       </section>
       <section className="image-panel cover-image">
-        <StoryImage scene={scenes[17]} eager />
+        <StoryImage scene={copy.scenes[17]} copy={copy} eager />
       </section>
     </article>
   );
 }
 
-function QuoteSlide() {
+function QuoteSlide({ copy }: { copy: PresentationCopy }) {
   return (
     <article className="slide quote-slide" aria-labelledby="quote-title">
       <section className="text-panel quote-copy">
-        <div className="eyebrow">Der Leitgedanke</div>
-        <h1 id="quote-title">
-          In einer Familie darf jeder anders sein.
-        </h1>
+        <div className="eyebrow">{copy.quoteEyebrow}</div>
+        <h1 id="quote-title">{copy.quoteTitle}</h1>
         <div className="orange-rule" aria-hidden="true" />
-        <blockquote>
-          Sie hält zusammen, weil sich alle aufeinander verlassen können.
-        </blockquote>
-        <p className="quote-note">
-          Nicht ein bestimmtes Werkzeug verbindet die Inseln, sondern gemeinsam
-          verstandene Versprechen.
-        </p>
+        <blockquote>{copy.quoteBody}</blockquote>
+        <p className="quote-note">{copy.quoteNote}</p>
       </section>
       <section className="image-panel">
-        <StoryImage scene={scenes[13]} />
+        <StoryImage scene={copy.scenes[13]} copy={copy} />
       </section>
     </article>
   );
 }
 
-function FinaleSlide() {
+function FinaleSlide({ copy }: { copy: PresentationCopy }) {
   return (
     <article className="slide finale-slide" aria-labelledby="finale-title">
       <section className="text-panel finale-copy">
-        <div className="eyebrow">Was ist OpenKubes?</div>
-        <h1 id="finale-title">
-          Eine gute Art, immer wieder verlässliche Inseln zu bauen.
-        </h1>
+        <div className="eyebrow">{copy.finaleEyebrow}</div>
+        <h1 id="finale-title">{copy.finaleTitle}</h1>
         <div className="orange-rule" aria-hidden="true" />
-        <p className="finale-rhythm">Baue. Verbinde. Prüfe. Lerne. Wachse.</p>
-        <p className="finale-small">
-          Nicht eine einzige Insel. Eine gemeinsame Methode für viele
-          unterschiedliche Plattformen.
-        </p>
+        <p className="finale-rhythm">{copy.finaleRhythm}</p>
+        <p className="finale-small">{copy.finaleSmall}</p>
       </section>
       <section className="image-panel">
-        <StoryImage scene={scenes[17]} />
+        <StoryImage scene={copy.scenes[17]} copy={copy} />
       </section>
     </article>
   );
 }
 
-function AboutSlide() {
+function AboutSlide({ copy }: { copy: PresentationCopy }) {
   return (
     <article className="slide about-slide" aria-labelledby="about-title">
       <section className="text-panel about-copy">
-        <div className="eyebrow">Weiter entdecken</div>
-        <h1 id="about-title">
-          Eine Insel entsteht. Dann noch eine.
-        </h1>
+        <div className="eyebrow">{copy.aboutEyebrow}</div>
+        <h1 id="about-title">{copy.aboutTitle}</h1>
         <div className="orange-rule" aria-hidden="true" />
-        <p className="about-question">
-          Aber wann ist sie nicht nur da, sondern wirklich verlässlich?
-        </p>
+        <p className="about-question">{copy.aboutQuestion}</p>
         <div className="link-stack">
           <a href="https://openkubes.org/" target="_blank" rel="noreferrer">
             openkubes.org <span aria-hidden="true">↗</span>
           </a>
-          <a
-            href="https://github.com/openkubes/oki"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/openkubes/oki" target="_blank" rel="noreferrer">
             github.com/openkubes/oki <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <p className="license-note">
-          Text und Konzept: OpenKubes Community. Illustrationen: CC BY 4.0;
-          OpenKubes/Oki-Namen, Logos und Marken ausgenommen.
-        </p>
+        <p className="license-note">{copy.license}</p>
       </section>
       <section className="image-panel">
-        <StoryImage scene={scenes[0]} />
+        <StoryImage scene={copy.scenes[0]} copy={copy} />
       </section>
     </article>
   );
 }
 
-function SlideContent({ slide }: { slide: DeckSlide }) {
+function SlideContent({ slide, copy }: { slide: DeckSlide; copy: PresentationCopy }) {
   switch (slide.kind) {
     case "cover":
-      return <CoverSlide />;
+      return <CoverSlide copy={copy} />;
     case "quote":
-      return <QuoteSlide />;
+      return <QuoteSlide copy={copy} />;
     case "scene":
-      return <SceneSlide scene={slide.scene} />;
+      return <SceneSlide scene={slide.scene} copy={copy} />;
     case "finale":
-      return <FinaleSlide />;
+      return <FinaleSlide copy={copy} />;
     case "about":
-      return <AboutSlide />;
+      return <AboutSlide copy={copy} />;
   }
 }
 
-function slideLabel(slide: DeckSlide) {
+function slideLabel(slide: DeckSlide, copy: PresentationCopy) {
   if (slide.kind === "scene") {
     return `${String(slide.scene.number).padStart(2, "0")} · ${slide.scene.title}`;
   }
-  if (slide.kind === "cover") return "Start";
-  if (slide.kind === "quote") return "Leitgedanke";
-  if (slide.kind === "finale") return "OpenKubes";
-  return "Weiter entdecken";
+  if (slide.kind === "cover") return copy.startLabel;
+  if (slide.kind === "quote") return copy.quoteLabel;
+  if (slide.kind === "finale") return copy.finaleLabel;
+  return copy.aboutLabel;
 }
 
-export function Presentation() {
+export function Presentation({ locale = "de" }: { locale?: PresentationLocale }) {
+  const copy = presentationCopy[locale];
+  const deck = useMemo(() => makeDeck(copy), [copy]);
   const [current, setCurrent] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -242,19 +233,20 @@ export function Presentation() {
     const bounded = Math.max(0, Math.min(deck.length - 1, next));
     setCurrent(bounded);
     setMenuOpen(false);
-  }, []);
+  }, [deck.length]);
 
   const next = useCallback(() => goTo(current + 1), [current, goTo]);
   const previous = useCallback(() => goTo(current - 1), [current, goTo]);
 
   useEffect(() => {
+    document.documentElement.lang = copy.locale;
     const id = window.location.hash.slice(1);
     const index = deck.findIndex((slide) => slide.id === id);
     const frame = window.requestAnimationFrame(() => {
       if (index >= 0) setCurrent(index);
     });
     return () => window.cancelAnimationFrame(frame);
-  }, []);
+  }, [copy.locale, deck]);
 
   useEffect(() => {
     if (menuOpen) menuCloseButton.current?.focus();
@@ -262,8 +254,8 @@ export function Presentation() {
 
   useEffect(() => {
     window.history.replaceState(null, "", `#${activeSlide.id}`);
-    document.title = `${slideLabel(activeSlide)} · Oki und die vielen Inseln`;
-  }, [activeSlide]);
+    document.title = `${slideLabel(activeSlide, copy)} · ${copy.title}`;
+  }, [activeSlide, copy]);
 
   useEffect(() => {
     const onFullscreen = () => setIsFullscreen(Boolean(document.fullscreenElement));
@@ -315,14 +307,14 @@ export function Presentation() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [goTo, menuOpen, next, previous, toggleFullscreen]);
+  }, [deck.length, goTo, menuOpen, next, previous, toggleFullscreen]);
 
-  const progress = useMemo(() => ((current + 1) / deck.length) * 100, [current]);
+  const progress = useMemo(() => ((current + 1) / deck.length) * 100, [current, deck.length]);
 
   return (
     <main
       className="presentation-shell"
-      aria-label="Oki und die vielen Inseln – HTML-Präsentation"
+      aria-label={copy.presentationAria}
       onTouchStart={(event) => {
         touchStart.current = event.changedTouches[0]?.clientX ?? null;
       }}
@@ -338,28 +330,29 @@ export function Presentation() {
         <span style={{ width: `${progress}%` }} />
       </div>
 
-      <div className="brand-mark" aria-hidden="true">
-        Oki Universe
-      </div>
+      <div className="brand-mark" aria-hidden="true">Oki Universe</div>
+      <a className="language-switch" href={copy.languageHref} aria-label={copy.languageLabel}>
+        {copy.languageCode}
+      </a>
 
-      <div className="slide-stage" key={activeSlide.id}>
-        <SlideContent slide={activeSlide} />
+      <div className="slide-stage" key={`${locale}-${activeSlide.id}`}>
+        <SlideContent slide={activeSlide} copy={copy} />
       </div>
 
       <div className="sr-only" aria-live="polite" aria-atomic="true">
-        Folie {current + 1} von {deck.length}: {slideLabel(activeSlide)}
+        {copy.slideAnnouncement} {current + 1} {copy.of} {deck.length}: {slideLabel(activeSlide, copy)}
       </div>
 
-      <nav className="presentation-controls" aria-label="Präsentationssteuerung">
+      <nav className="presentation-controls" aria-label={copy.menuAria}>
         <button
           type="button"
           className="control-button"
           onClick={() => setMenuOpen(true)}
-          aria-label="Folienübersicht öffnen"
-          title="Übersicht (M)"
+          aria-label={copy.menuOpen}
+          title={`${copy.menu} (M)`}
         >
           <span aria-hidden="true">☰</span>
-          <span className="control-text">Übersicht</span>
+          <span className="control-text">{copy.menu}</span>
         </button>
 
         <div className="navigation-group">
@@ -368,7 +361,7 @@ export function Presentation() {
             className="arrow-button"
             onClick={previous}
             disabled={current === 0}
-            aria-label="Vorherige Folie"
+            aria-label={copy.previous}
           >
             <span aria-hidden="true">←</span>
           </button>
@@ -380,7 +373,7 @@ export function Presentation() {
             className="arrow-button"
             onClick={next}
             disabled={current === deck.length - 1}
-            aria-label="Nächste Folie"
+            aria-label={copy.next}
           >
             <span aria-hidden="true">→</span>
           </button>
@@ -390,36 +383,29 @@ export function Presentation() {
           type="button"
           className="control-button"
           onClick={() => void toggleFullscreen()}
-          aria-label={isFullscreen ? "Vollbild beenden" : "Vollbild starten"}
-          title="Vollbild (F)"
+          aria-label={isFullscreen ? copy.fullscreenEnd : copy.fullscreenStart}
+          title={`${copy.fullscreen} (F)`}
         >
           <span aria-hidden="true">⛶</span>
-          <span className="control-text">{isFullscreen ? "Fenster" : "Vollbild"}</span>
+          <span className="control-text">{isFullscreen ? copy.window : copy.fullscreen}</span>
         </button>
       </nav>
 
-      <div className="keyboard-hint" aria-hidden="true">
-        ← → navigieren · M Übersicht · F Vollbild
-      </div>
+      <div className="keyboard-hint" aria-hidden="true">{copy.keyboardHint}</div>
 
       {menuOpen ? (
         <div className="menu-backdrop">
-          <aside
-            className="slide-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="menu-title"
-          >
+          <aside className="slide-menu" role="dialog" aria-modal="true" aria-labelledby="menu-title">
             <header className="menu-header">
               <div>
                 <p className="eyebrow">Oki Universe</p>
-                <h2 id="menu-title">Folienübersicht</h2>
+                <h2 id="menu-title">{copy.menuTitle}</h2>
               </div>
               <button
                 type="button"
                 className="menu-close"
                 onClick={() => setMenuOpen(false)}
-                aria-label="Folienübersicht schließen"
+                aria-label={copy.menuClose}
                 ref={menuCloseButton}
               >
                 ×
@@ -435,7 +421,7 @@ export function Presentation() {
                     aria-current={index === current ? "page" : undefined}
                   >
                     <span className="menu-number">{String(index + 1).padStart(2, "0")}</span>
-                    <span>{slideLabel(slide)}</span>
+                    <span>{slideLabel(slide, copy)}</span>
                   </button>
                 </li>
               ))}

@@ -20,3 +20,9 @@ build and a directly openable offline edition in `de/html-v1.2/standalone/`.
 The digital v1.1 files remain the frozen Mio-layout baseline;
 v1.0 remains the verified pre-Mio baseline. Print approval remains open until
 the target trim, bleed, binding, color and printer requirements are selected.
+
+The English HTML v1.0 RC1 is available as a review candidate at `/en/`. Its
+natural American-English manuscript adaptation and language-specific interface
+pass automated text, build and asset-integrity QA. Human language approval and
+English-lettered variants of the two illustrations containing German text
+remain open.
