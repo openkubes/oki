@@ -172,7 +172,7 @@ test("provides three localized epilogue pages in every edition", async () => {
   assert.equal(epilogueCopy.de[2].title, "Man ist nie fertig.");
   assert.equal(epilogueCopy.en[2].title, "We are never finished.");
   assert.equal(epilogueCopy.es[2].title, "Nunca terminamos de crecer.");
-  assert.equal(epilogueCopy.fa[2].title, "آدم هیچ‌وقت تمام نمی‌شود.");
+  assert.equal(epilogueCopy.fa[2].title, "هیچ چیزی تمامی ندارد.");
   assert.equal(epilogueCopy.zh[2].title, "人永远不会真正完成。");
   assert.equal(epilogueCopy.ja[2].title, "人は、いつまでも未完成。");
   assert.equal(epilogueCopy.ar[2].title, "نحن لا نكتمل أبدًا.");

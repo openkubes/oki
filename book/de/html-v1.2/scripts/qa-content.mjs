@@ -295,7 +295,7 @@ assert.match(persianStandalone, /اوکی و راز جزیره‌ها/);
 assert.match(persianStandalone, /در یک خانواده هرکس می‌تواند متفاوت باشد\./);
 assert.match(persianStandalone, /اما چه زمانی فقط آنجا نیست و واقعاً قابل اعتماد است؟/);
 assert.match(persianStandalone, /data-slide="24"/);
-assert.match(persianStandalone, /آدم هیچ‌وقت تمام نمی‌شود\./);
+assert.match(persianStandalone, /هیچ چیزی تمامی ندارد\./);
 assert.match(persianStandalone, /<html lang="fa" dir="rtl">/);
 assert.match(persianStandalone, /href="\.\.\/es\/"/);
 assert.match(chineseStandalone, /奥奇与群岛的秘密/);
