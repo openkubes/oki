@@ -1,0 +1,97 @@
+asset_id: OKI-EPILOGUE-NEVER-FINISHED-001-v1-C01
+asset_version: 0.1.0
+title: "Never finished"
+status: APPROVED
+canon_version: "1.0 + CA-001 + CA-002"
+created_at: 2026-08-09
+updated_at: 2026-08-09
+parent_asset_ids:
+  - OKI-CHAR-001-v1
+  - OKMGMT-CHAR-001-v1
+  - AIA-CHAR-001-v1
+
+purpose:
+  product: "Oki Universe multilingual HTML presentation"
+  scene: "Afterword - Man ist nie fertig"
+  narrative_job: "Show unfinished work as a joyful invitation to remain curious, learn and continue together"
+
+creation:
+  tool: "OpenAI built-in image generation"
+  model_or_method: "Built-in ImageGen generation; model identifier not exposed"
+  tool_terms_version_or_date: "2026-08-09"
+  creative_brief_file: "art/prompts/keyframes/EPILOGUE-NEVER-FINISHED-v1-C01.md"
+  prompt_file: "art/prompts/keyframes/EPILOGUE-NEVER-FINISHED-v1-C01.md"
+  seed: "not exposed"
+  generation_id: "exec-e0761364-f193-48e0-b2c0-6887f140501f"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "26c7a595b79841216476a06c1ddbd540ad011e72cebd7a116f64dda700984296"
+  prompt_sha256: "b985841755948e87474bcfef2e725690f825fa0f24b60178272fd1348a1fc58d"
+
+references:
+  - asset_id_or_path: "characters/oki/OKI-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical Oki reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Canonical Oki identity"
+  - asset_id_or_path: "characters/mio/OKMGMT-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical Mio reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Canonical Mio identity and light core"
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "OpenKubes canonical Aia reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Canonical Aia identity"
+  - asset_id_or_path: "art/keyframes/OKI-EPILOGUE-EARTH-001-v1-C01.png"
+    owner_or_source: "OpenKubes canonical Earth epilogue reference"
+    license: "CC BY 4.0; OpenKubes/Oki marks and logos excluded"
+    purpose: "Painterly style, ensemble scale and emotional tone"
+
+editing:
+  source_file: "art/keyframes/OKI-EPILOGUE-NEVER-FINISHED-001-v1-C01.png"
+  steps:
+    - "Generated from canonical OpenKubes character and epilogue references"
+    - "Copied byte-identically into the multilingual HTML presentation"
+  editor: "OpenAI built-in image generation directed by Codex"
+
+exports:
+  - path: "art/keyframes/OKI-EPILOGUE-NEVER-FINISHED-001-v1-C01.png"
+    format: "PNG"
+    dimensions: "1672x941"
+    color_profile: "embedded/default"
+  - path: "book/de/html-v1.2/public/epilogue/never-finished.png"
+    format: "PNG"
+    dimensions: "1672x941"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PASS
+  terms_reference: "OpenAI terms applicable on 2026-08-09"
+  review_notes_file: "LICENSES/AI-IMAGE-RIGHTS-REVIEW.md"
+  third_party_assets: false
+  third_party_details: "Generated only from owned canonical OpenKubes references"
+  attribution_required: true
+  attribution_text: "Oki Universe by the OpenKubes community"
+  approved_openkubes_license: "CC BY 4.0; OpenKubes/Oki names, logos and marks excluded"
+  rights_reviewed_by: "human project owner"
+  rights_reviewed_at: "2026-08-09"
+
+conformance:
+  checklist_file: ""
+  current_vs_target_reviewed: true
+  architecture_reviewed: true
+  character_reviewed: true
+  result: PASS
+
+approval:
+  responsible_person: "human project owner"
+  approved_by: "human project owner"
+  approved_at: "2026-08-09"
+  release_notes: "Approved for use as the localized multilingual afterword illustration"
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: true
+  approval_complete: true

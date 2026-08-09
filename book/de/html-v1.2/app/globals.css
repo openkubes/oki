@@ -231,6 +231,10 @@ button {
   background: linear-gradient(180deg, #7650bd, var(--orange));
 }
 
+.epilogue-never-finished .text-panel::before {
+  background: linear-gradient(180deg, var(--orange), #7650bd, var(--blue));
+}
+
 .eyebrow,
 .brand-kicker {
   margin: 0 0 1rem;
@@ -286,6 +290,29 @@ button {
 
 .epilogue-copy strong {
   color: var(--navy);
+}
+
+.epilogue-never-finished .text-panel {
+  padding-top: clamp(2.8rem, 4vh, 4.2rem);
+  padding-bottom: clamp(2.8rem, 4vh, 4.2rem);
+}
+
+.epilogue-never-finished .text-panel h1 {
+  font-size: clamp(1.9rem, 2.8vw, 3.5rem);
+}
+
+.epilogue-never-finished .orange-rule {
+  margin-top: clamp(0.85rem, 1.4vh, 1.2rem);
+  margin-bottom: clamp(0.85rem, 1.4vh, 1.2rem);
+}
+
+.epilogue-never-finished .epilogue-copy {
+  font-size: clamp(0.78rem, 0.82vw, 0.98rem);
+  line-height: 1.24;
+}
+
+.epilogue-never-finished .epilogue-copy p {
+  margin-bottom: 0.42em;
 }
 
 .scene-copy code {
@@ -452,6 +479,10 @@ button {
 
 .epilogue-figure img {
   background: #07182a;
+}
+
+.epilogue-never-finished .epilogue-figure img {
+  aspect-ratio: 16 / 9;
 }
 
 .cover-copy {

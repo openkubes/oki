@@ -16,8 +16,9 @@ Published at:
 Interaktive deutsche Präsentationsfassung des illustrierten Kinderführers zu
 OpenKubes. Die 18 Szenen stammen aus dem eingefrorenen Manuskript v1.2; die
 Bilder sind unveränderte Kopien der kanonischen deutschen Szenenauswahl v1.1.
-Zwei zusätzliche, sprachneutral illustrierte Epilogseiten öffnen danach den
-Blick von der Inselfamilie auf die gemeinsame Erde und ihre Sonnenfamilie.
+Drei zusätzliche, sprachneutral illustrierte Epilog- und Nachwortseiten öffnen
+danach den Blick von der Inselfamilie auf die gemeinsame Erde, ihre
+Sonnenfamilie und auf die Freude daran, niemals ganz fertig zu sein.
 
 Die Routen `/en/`, `/es/`, `/fa/`, `/zh/`, `/ja/`, `/ar/`, `/fr/`, `/hi/` und `/pt/` sind natürliche Adaptionen des
 freigegebenen deutschen Manuskripts in amerikanischem Englisch,
@@ -63,7 +64,7 @@ This starter does not use `wrangler.jsonc`.
 `standalone/hi/index.html` sowie `standalone/pt/index.html` können direkt im
 Browser geöffnet werden. Alle Texte,
 Styles und Steuerungen liegen in dieser Datei; die 18 Szenenbilder befinden
-sich im benachbarten Verzeichnis `standalone/scenes/`, die zwei Epilogbilder in
+sich im benachbarten Verzeichnis `standalone/scenes/`, die drei Epilog- und Nachwortbilder in
 `standalone/epilogue/`.
 
 ## Governance
@@ -76,6 +77,6 @@ Die HTML-Präsentation ist ein Derivat. Quelle der Geschichte ist
 Manuskript v1.2 und alle englischen, spanischen, persischen, chinesischen,
 japanischen, arabischen, französischen, Hindi- und portugiesischen Szenentexte mit ihren
 RC1-Manuskripten. Zusätzlich prüft es die Bilddateien aller Web- und
-Offline-Ausgaben gegen das kanonische SHA-256-Manifest. Die beiden Epilogseiten
+Offline-Ausgaben gegen das kanonische SHA-256-Manifest. Die drei Epilog- und Nachwortseiten
 sind Präsentationserweiterungen und verändern weder die 18 Szenen noch die
 eingefrorenen Manuskripte.

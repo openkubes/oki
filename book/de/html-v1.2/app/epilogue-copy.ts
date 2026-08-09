@@ -1,5 +1,5 @@
 export type EpiloguePage = {
-  readonly id: "earth-island" | "solar-family";
+  readonly id: "earth-island" | "solar-family" | "never-finished";
   readonly eyebrow: string;
   readonly title: string;
   readonly paragraphs: readonly string[];
@@ -50,6 +50,22 @@ export const epilogueCopy = {
       image: "/epilogue/solar-family.png",
       alt: "Die Sonne leuchtet in der Mitte, während Erde und Mond, Mars, Venus, Jupiter, Saturn und weitere Planeten durch sanfte Lichtbahnen verbunden sind.",
     },
+    {
+      id: "never-finished",
+      eyebrow: "Nachwort",
+      title: "Man ist nie fertig.",
+      paragraphs: [
+        "Dann hat man wieder etwas vergessen.\nDann kommt wieder etwas dazwischen.",
+        "Man macht Pläne und schaut, was schon da ist.\nUnd wenn man denkt, jetzt stimmt alles, stimmt es plötzlich wieder nicht.",
+        "**Man ist nie fertig.**",
+        "Man lernt immer wieder dazu – ob man will oder nicht.\nMan macht Erfahrungen, gute und schlechte.\nMan erlebt Rückschläge.",
+        "Man hält inne und denkt neu.\nMan denkt anders als früher, weil man inzwischen mehr weiß.",
+        "Doch was weiß man wirklich?\nNichts bleibt, wie es ist.",
+        "Auch deshalb ist man nie fertig.\n**Gott sei Dank nicht.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "Oki, Mio und Aia stehen fröhlich und neugierig an einem Tisch und betrachten gemeinsam einen unvollendeten Plan voller Inseln und offener Wege.",
+    },
   ],
   en: [
     {
@@ -80,6 +96,22 @@ export const epilogueCopy = {
       ],
       image: "/epilogue/solar-family.png",
       alt: "The Sun glows at the center while Earth and Moon, Mars, Venus, Jupiter, Saturn, and other planets are connected by gentle paths of light.",
+    },
+    {
+      id: "never-finished",
+      eyebrow: "Afterword",
+      title: "We are never finished.",
+      paragraphs: [
+        "Then we forget something again.\nThen something else gets in the way.",
+        "We make plans and look at what is already there.\nAnd just when we think everything is right, suddenly it is not.",
+        "**We are never finished.**",
+        "We keep learning—whether we want to or not.\nWe have experiences, good and bad.\nWe face setbacks.",
+        "We pause and think again.\nWe think differently than we once did, because now we know more.",
+        "But what do we truly know?\nNothing stays the way it is.",
+        "That, too, is why we are never finished.\n**Thank goodness we are not.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "Oki, Mio, and Aia stand cheerfully and curiously at a table, studying an unfinished plan filled with islands and open paths.",
     },
   ],
   es: [
@@ -112,6 +144,22 @@ export const epilogueCopy = {
       image: "/epilogue/solar-family.png",
       alt: "El Sol brilla en el centro mientras la Tierra y la Luna, Marte, Venus, Júpiter, Saturno y otros planetas están unidos por suaves caminos de luz.",
     },
+    {
+      id: "never-finished",
+      eyebrow: "Palabras finales",
+      title: "Nunca terminamos de crecer.",
+      paragraphs: [
+        "Entonces volvemos a olvidar algo.\nLuego surge otro imprevisto.",
+        "Hacemos planes y miramos lo que ya existe.\nY cuando pensamos que todo está bien, de pronto deja de estarlo.",
+        "**Nunca terminamos de crecer.**",
+        "Aprendemos una y otra vez, queramos o no.\nVivimos experiencias, buenas y malas.\nTambién sufrimos tropiezos.",
+        "Nos detenemos y volvemos a pensar.\nPensamos de otra manera que antes, porque ahora sabemos más.",
+        "Pero ¿qué sabemos de verdad?\nNada permanece tal como está.",
+        "Por eso nunca terminamos de crecer.\n**Y menos mal.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "Oki, Mio y Aia observan con alegría y curiosidad un plan inacabado lleno de islas y caminos abiertos sobre una mesa.",
+    },
   ],
   fa: [
     {
@@ -142,6 +190,22 @@ export const epilogueCopy = {
       ],
       image: "/epilogue/solar-family.png",
       alt: "خورشید در مرکز می‌درخشد و زمین و ماه، مریخ، زهره، مشتری، زحل و سیاره‌های دیگر با مسیرهای نرم نور به هم پیوند خورده‌اند.",
+    },
+    {
+      id: "never-finished",
+      eyebrow: "سخن پایانی",
+      title: "آدم هیچ‌وقت تمام نمی‌شود.",
+      paragraphs: [
+        "باز چیزی را فراموش می‌کنیم.\nباز اتفاقی سر راهمان قرار می‌گیرد.",
+        "برنامه می‌ریزیم و نگاه می‌کنیم چه چیزهایی از قبل وجود دارد.\nو درست وقتی فکر می‌کنیم همه‌چیز درست شده، ناگهان می‌بینیم هنوز نه.",
+        "**آدم هیچ‌وقت تمام نمی‌شود.**",
+        "خواه بخواهیم یا نه، همیشه چیزهای تازه یاد می‌گیریم.\nتجربه‌هایی به دست می‌آوریم؛ خوب و بد.\nگاهی هم با شکست روبه‌رو می‌شویم.",
+        "کمی می‌ایستیم و دوباره فکر می‌کنیم.\nچون حالا بیشتر می‌دانیم، دیگر مثل گذشته فکر نمی‌کنیم.",
+        "اما واقعاً چقدر می‌دانیم؟\nهیچ‌چیز همان‌طور که هست نمی‌ماند.",
+        "برای همین هم آدم هیچ‌وقت تمام نمی‌شود.\n**خدا را شکر که نمی‌شود.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "اوکی، میو و آیا با شادی و کنجکاوی کنار میزی ایستاده‌اند و به نقشه‌ای ناتمام پر از جزیره‌ها و راه‌های باز نگاه می‌کنند.",
     },
   ],
   zh: [
@@ -174,6 +238,22 @@ export const epilogueCopy = {
       image: "/epilogue/solar-family.png",
       alt: "太阳在中央发光，地球和月球、火星、金星、木星、土星与其他行星由柔和的光之轨道相连。",
     },
+    {
+      id: "never-finished",
+      eyebrow: "写在最后",
+      title: "人永远不会真正完成。",
+      paragraphs: [
+        "我们又忘了什么。\n又有事情突然发生。",
+        "我们制订计划，也看看已经有了什么。\n可当我们以为一切都对了，它转眼又不完全对了。",
+        "**人永远不会真正完成。**",
+        "不管愿不愿意，我们总会继续学习。\n我们会经历好事和坏事。\n也会遇到挫折。",
+        "我们停下来，重新思考。\n因为懂得更多了，我们的想法也和从前不同。",
+        "可我们真正知道多少呢？\n没有什么会永远保持原样。",
+        "所以，人永远不会真正完成。\n**幸好如此。**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "奥奇、米奥和艾娅开心又好奇地站在桌旁，一起研究一张画满岛屿和开放道路的未完成计划。",
+    },
   ],
   ja: [
     {
@@ -204,6 +284,22 @@ export const epilogueCopy = {
       ],
       image: "/epilogue/solar-family.png",
       alt: "太陽が中央で輝き、地球と月、火星、金星、木星、土星、ほかの惑星がやわらかな光の道でつながっている。",
+    },
+    {
+      id: "never-finished",
+      eyebrow: "あとがき",
+      title: "人は、いつまでも未完成。",
+      paragraphs: [
+        "また何かを忘れます。\nまた別の何かが起こります。",
+        "計画を立て、今あるものを見つめます。\n全部うまくいったと思ったときに、また違うと気づきます。",
+        "**人は、いつまでも未完成。**",
+        "望んでも望まなくても、何度でも学んでいきます。\nよい経験も、つらい経験もします。\nうまくいかないこともあります。",
+        "立ち止まり、もう一度考えます。\n前より多くを知ったから、前とは違う考え方をします。",
+        "でも、本当に知っていることは、どれくらいでしょう？\n何ひとつ、ずっと同じではありません。",
+        "だから、人はいつまでも未完成。\n**それでいいのです。**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "オキ、ミオ、アイアが楽しそうに、そして好奇心いっぱいにテーブルを囲み、島と開かれた道が描かれた未完成の計画を見つめている。",
     },
   ],
   ar: [
@@ -236,6 +332,22 @@ export const epilogueCopy = {
       image: "/epilogue/solar-family.png",
       alt: "تضيء الشمس في المركز، بينما ترتبط الأرض والقمر والمريخ والزهرة والمشتري وزحل وكواكب أخرى بمسارات لطيفة من الضوء.",
     },
+    {
+      id: "never-finished",
+      eyebrow: "كلمة أخيرة",
+      title: "نحن لا نكتمل أبدًا.",
+      paragraphs: [
+        "ننسى شيئًا من جديد.\nثم يحدث أمر آخر.",
+        "نضع الخطط وننظر إلى ما هو موجود بالفعل.\nوحين نظن أن كل شيء أصبح صحيحًا، نكتشف أنه لم يكتمل بعد.",
+        "**نحن لا نكتمل أبدًا.**",
+        "نتعلم مرة بعد مرة، سواء أردنا أم لم نرد.\nنعيش تجارب جيدة وأخرى صعبة.\nونواجه انتكاسات.",
+        "نتوقف قليلًا ونفكر من جديد.\nنفكر بطريقة مختلفة عن الماضي، لأننا نعرف الآن أكثر.",
+        "لكن ماذا نعرف حقًا؟\nولا شيء يبقى كما هو.",
+        "ولهذا أيضًا، لا نكتمل أبدًا.\n**والحمد لله على ذلك.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "يقف أوكي وميو وآيا بفرح وفضول حول طاولة ويتأملون معًا خطة غير مكتملة مليئة بالجزر والطرق المفتوحة.",
+    },
   ],
   fr: [
     {
@@ -266,6 +378,22 @@ export const epilogueCopy = {
       ],
       image: "/epilogue/solar-family.png",
       alt: "Le Soleil brille au centre tandis que la Terre et la Lune, Mars, Vénus, Jupiter, Saturne et d’autres planètes sont reliés par de doux chemins de lumière.",
+    },
+    {
+      id: "never-finished",
+      eyebrow: "Derniers mots",
+      title: "On n’a jamais fini.",
+      paragraphs: [
+        "Puis on oublie encore quelque chose.\nPuis autre chose vient se mettre en travers.",
+        "On fait des plans et l’on regarde ce qui existe déjà.\nEt au moment où l’on pense que tout est juste, quelque chose ne l’est plus.",
+        "**On n’a jamais fini.**",
+        "On apprend encore et encore, qu’on le veuille ou non.\nOn vit des expériences, bonnes et mauvaises.\nOn essuie des revers.",
+        "On s’arrête et on réfléchit à nouveau.\nOn pense autrement qu’avant, parce qu’entre-temps on en sait davantage.",
+        "Mais que savons-nous vraiment ?\nRien ne reste comme il est.",
+        "C’est aussi pour cela qu’on n’a jamais fini.\n**Dieu merci.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "Oki, Mio et Aia, joyeux et curieux, se tiennent autour d’une table et observent ensemble un plan inachevé rempli d’îles et de chemins ouverts.",
     },
   ],
   hi: [
@@ -298,6 +426,22 @@ export const epilogueCopy = {
       image: "/epilogue/solar-family.png",
       alt: "सूर्य बीच में चमकता है और पृथ्वी व चंद्रमा, मंगल, शुक्र, बृहस्पति, शनि तथा दूसरे ग्रह हल्के प्रकाश-पथों से जुड़े हैं।",
     },
+    {
+      id: "never-finished",
+      eyebrow: "अंतिम शब्द",
+      title: "इंसान कभी पूरा नहीं होता।",
+      paragraphs: [
+        "फिर हम कुछ भूल जाते हैं।\nफिर कुछ और बीच में आ जाता है।",
+        "हम योजनाएँ बनाते हैं और देखते हैं कि पहले से क्या मौजूद है।\nऔर जब हमें लगता है कि अब सब ठीक है, तभी कुछ फिर ठीक नहीं रहता।",
+        "**इंसान कभी पूरा नहीं होता।**",
+        "चाहें या न चाहें, हम बार-बार कुछ नया सीखते हैं।\nहम अच्छे और बुरे अनुभवों से गुजरते हैं।\nहमें असफलताएँ भी मिलती हैं।",
+        "हम रुकते हैं और फिर से सोचते हैं।\nअब हम पहले से अधिक जानते हैं, इसलिए पहले से अलग सोचते हैं।",
+        "लेकिन हम सच में कितना जानते हैं?\nकुछ भी हमेशा वैसा नहीं रहता।",
+        "इसलिए भी इंसान कभी पूरा नहीं होता।\n**शुक्र है कि ऐसा ही है।**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "ओकी, मियो और आइया खुशी और जिज्ञासा के साथ एक मेज़ के चारों ओर खड़े होकर द्वीपों और खुले रास्तों से भरी अधूरी योजना देख रहे हैं।",
+    },
   ],
   pt: [
     {
@@ -329,8 +473,24 @@ export const epilogueCopy = {
       image: "/epilogue/solar-family.png",
       alt: "O Sol brilha no centro enquanto a Terra e a Lua, Marte, Vênus, Júpiter, Saturno e outros planetas são ligados por suaves caminhos de luz.",
     },
+    {
+      id: "never-finished",
+      eyebrow: "Palavras finais",
+      title: "A gente nunca termina de crescer.",
+      paragraphs: [
+        "Então esquecemos alguma coisa de novo.\nAí aparece outra coisa no caminho.",
+        "Fazemos planos e olhamos para o que já existe.\nE, quando pensamos que agora está tudo certo, descobrimos que ainda não.",
+        "**A gente nunca termina de crescer.**",
+        "Aprendemos de novo e de novo, querendo ou não.\nVivemos experiências boas e ruins.\nTambém enfrentamos tropeços.",
+        "Paramos e pensamos outra vez.\nPensamos de um jeito diferente de antes, porque agora sabemos mais.",
+        "Mas o que sabemos de verdade?\nE nada permanece como está.",
+        "Por isso também a gente nunca termina de crescer.\n**Ainda bem.**",
+      ],
+      image: "/epilogue/never-finished.png",
+      alt: "Oki, Mio e Aia observam com alegria e curiosidade um plano inacabado, cheio de ilhas e caminhos abertos, sobre uma mesa.",
+    },
   ],
 } as const satisfies Record<
   EpilogueLocale,
-  readonly [EpiloguePage, EpiloguePage]
+  readonly [EpiloguePage, EpiloguePage, EpiloguePage]
 >;
