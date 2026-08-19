@@ -1,0 +1,83 @@
+asset_id: CROSSPLANE-CHAR-001-v1-concept-01
+asset_version: 0.1.0
+title: "Cops — Crossplane character concept"
+status: CONCEPT
+canon_version: "1.0"
+created_at: 2026-08-18
+updated_at: 2026-08-18
+parent_asset_ids: []
+
+purpose:
+  product: "Illustrated Technical Guide"
+  scene: "Character sheet"
+  narrative_job: "Personify Crossplane Composition without implying policy authority"
+
+creation:
+  tool: "Codex built-in ImageGen"
+  model_or_method: "built-in image generation with canonical image references"
+  tool_terms_version_or_date: "2026-08-18"
+  creative_brief_file: "aia/story/de/Aia-Captain-Cops-Drehbuch-v0.1.md"
+  prompt_file: "aia/art/prompts/AIA-CAPTAIN-COPS-v0.1.md"
+  seed: ""
+  generation_id: "exec-96d6fc23-1d6b-4157-a11a-45d3fc40bc1a"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "bcee6f5a8a75535520f4b073dda6c2642916d54cc0f7f426212e23f17a89d04f"
+  prompt_sha256: "65fdb6b72f344e121fd1532f8641b684b397a1b2c3ff2f36577554bf3e22e5d2"
+
+references:
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "Oki Universe"
+    license: "project canonical asset"
+    purpose: "style, proportion and finish reference"
+  - asset_id_or_path: "characters/sensors/OKI-SENSOR-SET-001-v1.png"
+    owner_or_source: "Oki Universe"
+    license: "project canonical asset"
+    purpose: "shared creature scale and material reference"
+  - asset_id_or_path: "aia/characters/captain/CAPI-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "guide fidelity and relative scale reference"
+
+editing:
+  source_file: "aia/characters/cops/CROSSPLANE-CHAR-001-v1-concept-01.png"
+  steps:
+    - "Generated from the recorded prompt and canonical references"
+  editor: "Codex"
+
+exports:
+  - path: "aia/characters/cops/CROSSPLANE-CHAR-001-v1-concept-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  third_party_assets: false
+  third_party_details: ""
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "canon/templates/illustration-conformance-checklist.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING
+
+approval:
+  responsible_person: ""
+  approved_by: ""
+  approved_at: ""
+  release_notes: ""
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: false
+  approval_complete: false

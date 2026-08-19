@@ -1,0 +1,90 @@
+asset_id: OKI-AIA-CAPI-XP-SCENE-05-v0.1
+asset_version: 0.1.0
+title: "Aia, Cops and Captain at the harbor shipyard"
+status: CONCEPT
+canon_version: "1.0"
+created_at: 2026-08-18
+updated_at: 2026-08-18
+parent_asset_ids:
+  - AIA-CHAR-001-v1
+  - CAPI-CHAR-001-v1-concept-01
+  - CROSSPLANE-CHAR-001-v1-concept-01
+
+purpose:
+  product: "Illustrated Technical Guide"
+  scene: "Scene 05 — Cops brings the building blocks together"
+  narrative_job: "Show proposal, composition and cluster lifecycle as distinct responsibilities"
+
+creation:
+  tool: "Codex built-in ImageGen"
+  model_or_method: "built-in image generation with canonical and concept references"
+  tool_terms_version_or_date: "2026-08-18"
+  creative_brief_file: "aia/story/de/Aia-Captain-Cops-Drehbuch-v0.1.md"
+  prompt_file: "aia/art/prompts/AIA-CAPTAIN-COPS-v0.1.md"
+  seed: ""
+  generation_id: "exec-cb2e8c2d-7ec4-42bf-a089-1346a59bbe01"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "60d58cceafee5e30baa24a42c2a31ed2c17cbc0a62b75d0244b21d7d5a6291eb"
+  prompt_sha256: "65fdb6b72f344e121fd1532f8641b684b397a1b2c3ff2f36577554bf3e22e5d2"
+
+references:
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "Oki Universe"
+    license: "project canonical asset"
+    purpose: "Aia identity"
+  - asset_id_or_path: "aia/characters/captain/CAPI-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "Captain identity"
+  - asset_id_or_path: "aia/characters/cops/CROSSPLANE-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "Cops identity"
+  - asset_id_or_path: "art/canonical/scenes/de/OKI-SCENE-DE-12-v1.png"
+    owner_or_source: "Oki Universe"
+    license: "project canonical asset"
+    purpose: "harbor scene style, architecture and lighting"
+
+editing:
+  source_file: "aia/art/concepts/aia-captain-cops/OKI-AIA-CAPI-XP-SCENE-05-v0.1.png"
+  steps:
+    - "Generated from the recorded prompt and project references"
+  editor: "Codex"
+
+exports:
+  - path: "aia/art/concepts/aia-captain-cops/OKI-AIA-CAPI-XP-SCENE-05-v0.1.png"
+    format: "PNG"
+    dimensions: "1586x992"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  third_party_assets: false
+  third_party_details: ""
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "canon/templates/illustration-conformance-checklist.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING
+
+approval:
+  responsible_person: ""
+  approved_by: ""
+  approved_at: ""
+  release_notes: ""
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: false
+  approval_complete: false

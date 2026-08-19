@@ -1,0 +1,86 @@
+asset_id: AIA-SITE-OG-v0.1
+asset_version: 0.1.0
+title: "Aia Illustrated Guide social preview"
+status: CONCEPT
+canon_version: "1.0"
+created_at: 2026-08-18
+updated_at: 2026-08-18
+parent_asset_ids:
+  - AIA-CHAR-001-v1
+  - CAPI-CHAR-001-v1-concept-01
+  - CROSSPLANE-CHAR-001-v1-concept-01
+
+purpose:
+  product: "Aia Illustrated Guide website"
+  scene: "Social preview"
+  narrative_job: "Introduce Aia, Captain and Cops in a single shareable editorial image"
+
+creation:
+  tool: "Codex built-in ImageGen"
+  model_or_method: "built-in image generation with concept references"
+  tool_terms_version_or_date: "2026-08-18"
+  creative_brief_file: "aia/site/app/page.tsx"
+  prompt_file: "aia/art/prompts/AIA-RECOVERY-AND-SITE-v0.1.md"
+  seed: ""
+  generation_id: "exec-ab7b3c56-e109-4a1f-beeb-e56d540ffd7e"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "215eb53366f33cc2314b83549656d1526fd7d2fcefcd25b3f588f973adea3501"
+  prompt_sha256: "00274ccff7294d7d6413c43846803aa4ca0d35683e131b4d3953e61004b29d2f"
+
+references:
+  - asset_id_or_path: "aia/art/concepts/aia-captain-cops/OKI-AIA-CAPI-XP-SCENE-05-v0.1.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "visual language and trio composition"
+  - asset_id_or_path: "aia/characters/captain/CAPI-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "Captain identity"
+  - asset_id_or_path: "aia/characters/cops/CROSSPLANE-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "Cops identity"
+
+editing:
+  source_file: "aia/site/public/og.png"
+  steps:
+    - "Generated from the recorded social-preview prompt and project references"
+  editor: "Codex"
+
+exports:
+  - path: "aia/site/public/og.png"
+    format: "PNG"
+    dimensions: "1731x909"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  third_party_assets: false
+  third_party_details: ""
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "canon/templates/illustration-conformance-checklist.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING
+
+approval:
+  responsible_person: ""
+  approved_by: ""
+  approved_at: ""
+  release_notes: ""
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: false
+  approval_complete: false

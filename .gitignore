@@ -4,6 +4,8 @@
 tmp/
 .local-backups/
 **/.openai/
+!aia/site/.openai/
+!aia/site/.openai/hosting.json
 
 # Early concept packages kept locally until separately reviewed
 /Oki_Finalpaket_DE_v1.0.docx

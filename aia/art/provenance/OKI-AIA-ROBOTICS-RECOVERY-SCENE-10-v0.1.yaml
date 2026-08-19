@@ -1,0 +1,99 @@
+asset_id: OKI-AIA-ROBOTICS-RECOVERY-SCENE-10-v0.1
+asset_version: 0.1.0
+title: "Aia robotics-assisted platform recovery"
+status: CONCEPT
+canon_version: "1.0"
+created_at: 2026-08-18
+updated_at: 2026-08-18
+parent_asset_ids:
+  - AIA-CHAR-001-v1
+  - CAPI-CHAR-001-v1-concept-01
+  - CROSSPLANE-CHAR-001-v1-concept-01
+
+purpose:
+  product: "Illustrated Technical Guide"
+  scene: "Scene 10 — Aia robots recover, verify and transport"
+  narrative_job: "Show robotics-assisted recovery from a failed platform ship to a fresh one"
+
+creation:
+  tool: "Codex built-in ImageGen"
+  model_or_method: "built-in image generation with canonical, concept and supplied references"
+  tool_terms_version_or_date: "2026-08-18"
+  creative_brief_file: "aia/story/de/Aia-Captain-Cops-Drehbuch-v0.1.md"
+  prompt_file: "aia/art/prompts/AIA-RECOVERY-AND-SITE-v0.1.md"
+  seed: ""
+  generation_id: "exec-91dc36d6-14c6-47fe-9ca4-e60c6c9ef5d7"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "bef09895ba9cebb79f168b155df4b7cbf049ef710568ecef07a32c74179f8ca5"
+  prompt_sha256: "00274ccff7294d7d6413c43846803aa4ca0d35683e131b4d3953e61004b29d2f"
+
+references:
+  - asset_id_or_path: "characters/aia/AIA-CHAR-001-v1.png"
+    owner_or_source: "Oki Universe"
+    license: "project canonical asset"
+    purpose: "Aia identity"
+  - asset_id_or_path: "aia/characters/captain/CAPI-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "Captain identity"
+  - asset_id_or_path: "aia/characters/cops/CROSSPLANE-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe concept"
+    license: "project concept asset"
+    purpose: "Cops identity"
+  - asset_id_or_path: "aia/art/references/0-openkubes-hero-1600x900.webp"
+    owner_or_source: "OpenKubes supplied reference"
+    license: "project-supplied asset; release rights review pending"
+    purpose: "platform ship composition and palette"
+  - asset_id_or_path: "/Users/arash/temp/kubernauts/websites/kg/openkubes-robotics.png"
+    owner_or_source: "OpenKubes supplied working reference"
+    license: "project-supplied asset; release rights review pending"
+    purpose: "robotics capability and recovery vocabulary"
+
+editing:
+  source_file: "aia/art/concepts/aia-captain-cops/OKI-AIA-ROBOTICS-RECOVERY-SCENE-10-v0.1.png"
+  steps:
+    - "Generated from the recorded prompt and supplied project references"
+    - "Copied unchanged into the website image set"
+  editor: "Codex"
+
+exports:
+  - path: "aia/art/concepts/aia-captain-cops/OKI-AIA-ROBOTICS-RECOVERY-SCENE-10-v0.1.png"
+    format: "PNG"
+    dimensions: "1568x1003"
+    color_profile: "embedded/default"
+  - path: "aia/site/public/images/aia-robotics-recovery.png"
+    format: "PNG"
+    dimensions: "1568x1003"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  third_party_assets: false
+  third_party_details: "Uses project-supplied visual references; verify their release status before publication."
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "canon/templates/illustration-conformance-checklist.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING
+
+approval:
+  responsible_person: ""
+  approved_by: ""
+  approved_at: ""
+  release_notes: ""
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: false
+  approval_complete: false

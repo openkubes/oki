@@ -1,0 +1,87 @@
+asset_id: CROSSPLANE-CONDUCTOR-CHAR-001-v1-concept-01
+asset_version: 0.1.0
+title: "Conductor — Crossplane conductor character concept"
+status: CONCEPT
+canon_version: "1.0"
+created_at: 2026-08-19
+updated_at: 2026-08-19
+parent_asset_ids:
+  - CROSSPLANE-CHAR-001-v1-concept-01
+
+purpose:
+  product: "Aia Illustrated Technical Guide"
+  scene: "Character sheet"
+  narrative_job: "Personify Crossplane Composition as a conductor without implying policy or command authority"
+
+creation:
+  tool: "Codex built-in ImageGen"
+  model_or_method: "built-in image editing with the earlier Crossplane character as identity reference"
+  tool_terms_version_or_date: "2026-08-19"
+  creative_brief_file: "aia/story/de/Aia-Captain-Cops-Drehbuch-v0.1.md"
+  prompt_file: "aia/art/prompts/CROSSPLANE-CONDUCTOR-v0.1.md"
+  seed: ""
+  generation_id: "exec-e4afd499-b05f-4dd4-b540-357b22250c78"
+  original_generation_metadata_file: ""
+
+integrity:
+  source_sha256: "f308aab5440492d8319c389e8683f481bacc417743520329ca7a6d235c54aebf"
+  prompt_sha256: "d4dd3acf9912187d82abc7bbe23590b9d10db859db5844e9b7c3cefc2e663c46"
+
+references:
+  - asset_id_or_path: "aia/characters/cops/CROSSPLANE-CHAR-001-v1-concept-01.png"
+    owner_or_source: "Oki Universe superseded concept"
+    license: "project concept asset"
+    purpose: "preserve Crossplane beaver identity, proportions and palette"
+
+editing:
+  source_file: "aia/characters/conductor/CROSSPLANE-CONDUCTOR-CHAR-001-v1-concept-01.png"
+  steps:
+    - "Preserved the orange beaver identity and eight-pose sheet structure"
+    - "Replaced the workshop vest with a teal conductor tailcoat"
+    - "Added baton, Composition score and resource ensembles"
+    - "Copied unchanged into the dynamic and standalone website image sets"
+  editor: "Codex"
+
+exports:
+  - path: "aia/characters/conductor/CROSSPLANE-CONDUCTOR-CHAR-001-v1-concept-01.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+  - path: "aia/site/public/images/conductor-character-sheet.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+  - path: "aia/site/standalone/images/conductor-character-sheet.png"
+    format: "PNG"
+    dimensions: "1536x1024"
+    color_profile: "embedded/default"
+
+rights:
+  review_status: PENDING
+  third_party_assets: false
+  third_party_details: ""
+  attribution_required: false
+  attribution_text: ""
+  approved_openkubes_license: ""
+  rights_reviewed_by: ""
+  rights_reviewed_at: ""
+
+conformance:
+  checklist_file: "canon/templates/illustration-conformance-checklist.md"
+  current_vs_target_reviewed: true
+  architecture_reviewed: false
+  character_reviewed: false
+  result: PENDING
+
+approval:
+  responsible_person: ""
+  approved_by: ""
+  approved_at: ""
+  release_notes: ""
+
+canonical_release_gate:
+  eligible: false
+  required_conformance_result: PASS
+  required_rights_review_status: PASS
+  integrity_verified: false
+  approval_complete: false
